@@ -1,0 +1,366 @@
+{
+  "description": "FANGCUN API tool definitions. Start fangcun-cli serve before use.",
+  "base_urls": {
+    "write": "http://localhost:8901",
+    "checker": "http://localhost:8901",
+    "shi": "http://localhost:8901"
+  },
+  "tools": [
+    {
+      "name": "validate_meter",
+      "description": "校验格律：检测诗词的平仄和押韵是否符合规则。返回逐字平仄比对、错误列表和押韵信息。填词时强烈建议开启 include_punctuation。",
+      "method": "POST",
+      "path": "/api/validate_meter",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "poem_text": {
+            "type": "string",
+            "description": "诗词正文（标点自动忽略，只提取汉字）"
+          },
+          "genre": {
+            "type": "string",
+            "enum": [
+              "Shi",
+              "Ci"
+            ],
+            "description": "Shi（诗）或 Ci（词），默认 Shi"
+          },
+          "rule_name": {
+            "type": "string",
+            "description": "指定规则名（如「五绝仄起」或词牌规则名「念奴娇_龙谱_格一」），不传则自动匹配最接近的"
+          },
+          "rhyme_book_name": {
+            "type": "string",
+            "enum": [
+              "Pingshuiyun",
+              "Cilinzhengyun",
+              "Zhonghua_Tongyun"
+            ],
+            "description": "韵书名，默认 Pingshuiyun"
+          },
+          "include_punctuation": {
+            "type": "boolean",
+            "description": "是否检测句读标点（韵→句号、句→逗号、读→顿号），填词建议开启"
+          },
+          "ensure_longpu": {
+            "type": "boolean",
+            "description": "仅匹配龙谱规则，默认 false"
+          },
+          "warnings": {
+            "description": "重字检测模式。default=标准重字检测（叠词豁免）；2gram=连续两字重复检测；rhyme_duplicate=仅检测韵脚重字；none=不检测。支持数组组合如 [\"2gram\",\"rhyme_duplicate\"]"
+          }
+        },
+        "required": [
+          "poem_text"
+        ]
+      },
+      "base": "write"
+    },
+    {
+      "name": "char_lookup",
+      "description": "查字：查询单个汉字的声调（平上去入）和所属韵部。支持繁体自动转简体。",
+      "method": "GET",
+      "path": "/api/char/lookup",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "char": {
+            "type": "string",
+            "description": "单个汉字"
+          },
+          "book": {
+            "type": "string",
+            "enum": [
+              "Pingshuiyun",
+              "Cilinzhengyun",
+              "Zhonghua_Tongyun"
+            ],
+            "description": "韵书名，不传则返回所有韵书"
+          }
+        },
+        "required": [
+          "char"
+        ]
+      },
+      "base": "write"
+    },
+    {
+      "name": "rhyme_lookup",
+      "description": "查韵部字表：查看某个韵部包含哪些字，按词频降序排列（常用字在前）。建议先用 limit=20 查看最常用的字，需要更多再翻页。可同时返回邻韵字表。",
+      "method": "GET",
+      "path": "/api/rhyme/lookup",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "category": {
+            "type": "string",
+            "description": "韵部名，如「一东」「第1部_平」。词林正韵用「第N部_平/仄」格式，平水韵用「一东」格式"
+          },
+          "book": {
+            "type": "string",
+            "enum": [
+              "Pingshuiyun",
+              "Cilinzhengyun",
+              "Zhonghua_Tongyun"
+            ],
+            "description": "韵书名，默认 Pingshuiyun"
+          },
+          "limit": {
+            "type": "integer",
+            "description": "返回字数，默认全量。建议用 20，按词频降序，常用字在前"
+          },
+          "offset": {
+            "type": "integer",
+            "description": "跳过前 N 个字，用于翻页"
+          },
+          "include": {
+            "type": "string",
+            "description": "包含关联韵部，如「neighbor」返回邻韵字表"
+          }
+        },
+        "required": [
+          "category"
+        ]
+      },
+      "base": "write"
+    },
+    {
+      "name": "rhyme_list",
+      "description": "韵部列表：列出韵书中的所有韵部概览，每个韵部含名称、声调类型、字数和高频字预览。",
+      "method": "GET",
+      "path": "/api/rhyme/list",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "book": {
+            "type": "string",
+            "enum": [
+              "Pingshuiyun",
+              "Cilinzhengyun",
+              "Zhonghua_Tongyun"
+            ],
+            "description": "韵书名，默认 Pingshuiyun"
+          },
+          "tone": {
+            "type": "string",
+            "enum": [
+              "P",
+              "Z"
+            ],
+            "description": "按声调过滤：P（平声韵）或 Z（仄声韵）"
+          }
+        }
+      },
+      "base": "write"
+    },
+    {
+      "name": "rules_list",
+      "description": "格律规则列表：列出可用的诗词格律规则或词牌。诗约16条规则，词约2500+条词牌变体。",
+      "method": "GET",
+      "path": "/api/rules/list",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "genre": {
+            "type": "string",
+            "enum": [
+              "Shi",
+              "Ci"
+            ],
+            "description": "Shi 或 Ci，默认 Ci"
+          },
+          "search": {
+            "type": "string",
+            "description": "按关键词搜索规则名或词牌名"
+          }
+        }
+      },
+      "base": "write"
+    },
+    {
+      "name": "dictionary_search",
+      "description": "词语联想：按首字、尾字查诗词用语，或查对仗字/同位词。按词频降序排列，建议用 limit=10。",
+      "method": "GET",
+      "path": "/api/dictionary/search",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "term": {
+            "type": "string",
+            "description": "查询字/词（支持繁体）"
+          },
+          "mode": {
+            "type": "string",
+            "enum": [
+              "head",
+              "tail",
+              "pair",
+              "tongwei"
+            ],
+            "description": "head=以此字开头的词, tail=以此字结尾的词, pair=对仗字/词, tongwei=同位词（可互换的语法等位词）"
+          },
+          "length": {
+            "type": "string",
+            "description": "词语长度（2,3,...），「all」返回所有长度，默认 2"
+          },
+          "tone": {
+            "type": "string",
+            "enum": [
+              "P",
+              "Z"
+            ],
+            "description": "末字声调过滤：P（平）或 Z（仄）"
+          },
+          "limit": {
+            "type": "integer",
+            "description": "返回条数，默认全量。建议用 10，按词频降序"
+          },
+          "offset": {
+            "type": "integer",
+            "description": "跳过前 N 条，用于翻页"
+          }
+        },
+        "required": [
+          "term"
+        ]
+      },
+      "base": "write"
+    },
+    {
+      "name": "dictionary_allusion",
+      "description": "典故检索：检索包含指定字/词的典形词（文学典故），返回释义、典源、同源典形词和古诗例句。数据约13000条。",
+      "method": "GET",
+      "path": "/api/dictionary/allusion",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "term": {
+            "type": "string",
+            "description": "1-4个汉字（支持繁体）"
+          },
+          "limit": {
+            "type": "integer",
+            "description": "最多返回条数，默认60，上限200"
+          }
+        },
+        "required": [
+          "term"
+        ]
+      },
+      "base": "write"
+    },
+    {
+      "name": "free_rhyme",
+      "description": "自由诗韵脚检测：对不限格律的诗体进行轻量韵脚检测，提取韵脚候选字并按共同韵部分组。",
+      "base": "write",
+      "method": "POST",
+      "path": "/api/free_rhyme",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "lines": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "诗行数组，每行一个字符串"
+          },
+          "rhyme_book_name": {
+            "type": "string",
+            "enum": [
+              "Pingshuiyun",
+              "Cilinzhengyun",
+              "Zhonghua_Tongyun"
+            ],
+            "description": "韵书名，默认 Zhonghua_Tongyun"
+          },
+          "merge_tones": {
+            "type": "boolean",
+            "description": "是否合并平仄（同韵部的平声和仄声字视为同韵），默认 false"
+          }
+        },
+        "required": [
+          "lines"
+        ]
+      }
+    },
+    {
+      "name": "examples",
+      "description": "示例作品：按格律规则名称检索历史范作，支持分页。不清楚规则名称时先调用 rules_list 查询。",
+      "base": "checker",
+      "method": "GET",
+      "path": "/api/examples",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "rule_name": {
+            "type": "string",
+            "description": "格律规则名称，如「水调歌头_龙谱_格一」"
+          },
+          "limit": {
+            "type": "integer",
+            "description": "返回条数，1-50，默认 5"
+          },
+          "offset": {
+            "type": "integer",
+            "description": "跳过前 N 条，默认 0"
+          }
+        },
+        "required": [
+          "rule_name"
+        ]
+      }
+    },
+    {
+      "name": "search_text",
+      "description": "全文检索：基于 FTS5 逐字索引检索古诗词全文。多个关键词空格分隔取 AND。适合按作者+词牌查找特定作品。",
+      "base": "shi",
+      "method": "GET",
+      "path": "/api/search/text",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "q": {
+            "type": "string",
+            "description": "检索关键词，如「明月」「李白」「床前明月光」，多词空格分隔取 AND"
+          },
+          "field": {
+            "type": "string",
+            "enum": [
+              "all",
+              "title",
+              "author",
+              "content"
+            ],
+            "description": "检索字段，默认 all"
+          },
+          "dynasty": {
+            "type": "string",
+            "description": "朝代过滤，如「唐」「宋」「清」"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "诗",
+              "词",
+              "未定"
+            ],
+            "description": "体裁过滤"
+          },
+          "limit": {
+            "type": "integer",
+            "description": "返回条数，1-100，默认 20"
+          },
+          "offset": {
+            "type": "integer",
+            "description": "分页偏移量，默认 0"
+          }
+        },
+        "required": [
+          "q"
+        ]
+      }
+    }
+  ]
+}

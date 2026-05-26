@@ -1,0 +1,43 @@
+{
+  "description": "Ablation D1: Remove template/exemplar tools (rules_list, examples), keep all others. Agent cannot query cipai prosodic templates or historical works by rule name.",
+  "include": [
+    "validate_meter",
+    "char_lookup",
+    "rhyme_lookup",
+    "rhyme_list",
+    "dictionary_search",
+    "dictionary_allusion",
+    "free_rhyme",
+    "search_text"
+  ],
+  "tools": {
+    "validate_meter": {
+      "description": "校验格律：逐字比对平仄和押韵。返回 is_valid、errors[]（位置+类型+描述）、rhyme_name、display_segments。填词时设 include_punctuation=true。",
+      "metadata_defaults": {
+        "genre": "Ci",
+        "include_punctuation": true
+      }
+    },
+    "char_lookup": {
+      "description": "查字：查询单个汉字的声调（平上去入）和所属韵部。"
+    },
+    "rhyme_lookup": {
+      "description": "查韵部字表：查看某韵部包含哪些字（按词频降序），可同时返回邻韵。"
+    },
+    "rhyme_list": {
+      "description": "韵部列表：列出韵书所有韵部概览（名称、声调类型、字数、高频字预览）。"
+    },
+    "dictionary_search": {
+      "description": "词语联想：查对仗字(pair)、首字联想(head)、尾字联想(tail)、同位词(tongwei)。返回 [词, 频次] 数组。"
+    },
+    "dictionary_allusion": {
+      "description": "典故检索：查含指定字的典形词（释义、典源、同源词、例句）。约13000条。"
+    },
+    "free_rhyme": {
+      "description": "自由诗韵脚检测：对古风/自由体检测韵脚候选字并按韵部分组。"
+    },
+    "search_text": {
+      "description": "全文检索：按关键词/作者/标题/正文检索古诗词全文，支持朝代和体裁过滤。"
+    }
+  }
+}

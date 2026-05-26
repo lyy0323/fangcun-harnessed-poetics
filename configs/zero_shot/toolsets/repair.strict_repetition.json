@@ -1,0 +1,61 @@
+{
+  "include": [
+    "get_rule",
+    "check_judou",
+    "check_prosody",
+    "repeat_repair",
+    "strict_repeat_check"
+  ],
+  "limits": {
+    "max_tool_rounds": 20,
+    "max_tool_calls_per_tool": 12
+  },
+  "final_validation": {
+    "tool_names": [
+      "check_judou",
+      "check_prosody",
+      "strict_repeat_check"
+    ]
+  },
+  "tools": {
+    "get_rule": {
+      "description": "Get the cipai structure before repair. text must be only the cipai/rule name; do not include title, prompt, draft body, or explanation.",
+      "metadata_defaults": {
+        "genre": "Ci",
+        "ensure_longpu": true
+      }
+    },
+    "check_judou": {
+      "description": "Check the exact ci body for character count and judou break positions before meter or repetition repair.",
+      "metadata_defaults": {
+        "genre": "Ci",
+        "ensure_longpu": true
+      }
+    },
+    "check_prosody": {
+      "description": "Check tones and rhymes for the exact ci body after judou is correct. Use compact repair-oriented output.",
+      "metadata_defaults": {
+        "genre": "Ci",
+        "rhyme_book_name": "Cilinzhengyun",
+        "ensure_longpu": true,
+        "compact": true
+      }
+    },
+    "repeat_repair": {
+      "description": "Repair repeated substrings. Use metadata.ngram_size for an exact length; use metadata.forbid_single_char_repetition=true when a small ci form disallows repeated characters.",
+      "metadata_defaults": {
+        "min_ngram_size": 2,
+        "max_ngram_size": 6
+      }
+    },
+    "strict_repeat_check": {
+      "source": "repeat_repair",
+      "description": "Final strict repetition validation and repair suggestions. Treat repeated single characters as defects; use this for xiaoling-like constraints.",
+      "metadata_defaults": {
+        "forbid_single_char_repetition": true,
+        "final_check_min_ngram_size": 1,
+        "validation_only": true
+      }
+    }
+  }
+}

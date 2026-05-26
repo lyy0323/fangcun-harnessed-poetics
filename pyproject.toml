@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "longci-bench"
+version = "0.1.0"
+description = "Toolkit for long ci generation, local poetics tools, zero-shot tool calling, and evaluation."
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [
+  {name = "LongCi Bench Contributors"}
+]
+dependencies = []
+
+[project.optional-dependencies]
+api = ["fastapi>=0.110", "uvicorn>=0.27"]
+bert = ["transformers>=4.40", "torch>=2.2"]
+dev = ["pytest>=8"]
+
+[project.scripts]
+longci-bench = "longci_bench.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

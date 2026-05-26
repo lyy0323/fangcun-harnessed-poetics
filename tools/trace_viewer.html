@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trace Viewer — Poetry Experiment</title>
+<style>
+  :root { --bg:#0d1117; --bg2:#161b22; --bg3:#21262d; --border:#30363d; --text:#e6edf3; --text2:#8b949e; --accent:#58a6ff; --green:#3fb950; --red:#f85149; --orange:#d29922; --font:system-ui,-apple-system,sans-serif; --mono:"SF Mono",Menlo,Consolas,monospace; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:var(--font); background:var(--bg); color:var(--text); line-height:1.6; }
+  .layout { display:flex; height:100vh; }
+  .sidebar { width:360px; flex-shrink:0; border-right:1px solid var(--border); display:flex; flex-direction:column; background:var(--bg2); }
+  .sidebar-header { padding:12px 16px; border-bottom:1px solid var(--border); }
+  .sidebar-header h2 { font-size:15px; font-weight:600; }
+  .sidebar-header select, .sidebar-header input { width:100%; margin-top:8px; padding:6px 10px; background:var(--bg3); border:1px solid var(--border); border-radius:6px; color:var(--text); font-size:13px; }
+  .record-list { flex:1; overflow-y:auto; }
+  .record-item { padding:8px 16px; border-bottom:1px solid var(--border); cursor:pointer; font-size:13px; }
+  .record-item:hover { background:var(--bg3); }
+  .record-item.active { background:var(--accent); color:#fff; }
+  .record-item .meta { color:var(--text2); font-size:11px; margin-top:2px; }
+  .record-item.error { border-left:3px solid var(--red); }
+  .record-item.ok { border-left:3px solid var(--green); }
+  .record-item.partial { border-left:3px solid var(--orange); }
+  .stats-bar { padding:8px 16px; border-bottom:1px solid var(--border); font-size:12px; color:var(--text2); background:var(--bg); display:flex; gap:12px; flex-wrap:wrap; }
+  .main { flex:1; overflow-y:auto; padding:24px; }
+  .main h2 { font-size:18px; margin-bottom:16px; }
+  .summary-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(130px,1fr)); gap:10px; margin-bottom:20px; }
+  .stat-card { background:var(--bg2); border:1px solid var(--border); border-radius:8px; padding:12px; text-align:center; }
+  .stat-card .value { font-size:22px; font-weight:700; font-family:var(--mono); }
+  .stat-card .label { font-size:11px; color:var(--text2); margin-top:4px; }
+  .stat-card.pass .value { color:var(--green); }
+  .stat-card.fail .value { color:var(--red); }
+  .stat-card.warn .value { color:var(--orange); }
+  .poem-box { background:var(--bg2); border:1px solid var(--border); border-radius:8px; padding:16px; margin-bottom:16px; white-space:pre-wrap; font-size:16px; line-height:2.2; letter-spacing:0.05em; }
+  .round { background:var(--bg2); border:1px solid var(--border); border-radius:8px; margin-bottom:12px; }
+  .round-header { padding:10px 14px; font-size:13px; font-weight:600; border-bottom:1px solid var(--border); display:flex; justify-content:space-between; cursor:pointer; user-select:none; }
+  .round-header:hover { background:var(--bg3); }
+  .round-body { padding:14px; display:none; }
+  .round.open .round-body { display:block; }
+  .tool-call { margin-bottom:12px; border-left:3px solid var(--accent); padding-left:12px; }
+  .tool-call .name { font-family:var(--mono); font-size:13px; font-weight:600; color:var(--accent); }
+  .tool-call .args, .tool-call .resp { font-family:var(--mono); font-size:12px; background:var(--bg); border-radius:4px; padding:8px; margin-top:6px; overflow-x:auto; white-space:pre-wrap; word-break:break-all; }
+  .badge { display:inline-block; font-size:11px; padding:1px 6px; border-radius:3px; margin-left:8px; font-weight:600; }
+  .badge-pass { background:#0d3320; color:var(--green); }
+  .badge-fail { background:#3d1114; color:var(--red); }
+  .badge-reject { background:#3d2e06; color:var(--orange); }
+  .hint { background:#1a2332; border:1px solid #1f4068; border-radius:6px; padding:8px 12px; margin-top:6px; font-size:12px; color:#79b8ff; }
+  .assistant-text { background:var(--bg); border-radius:6px; padding:10px; margin:8px 0; font-size:13px; white-space:pre-wrap; border:1px solid var(--border); }
+  .empty { color:var(--text2); text-align:center; padding:60px 20px; }
+  .filter-row { display:flex; gap:8px; margin-top:8px; }
+  .filter-row select { flex:1; }
+  .ctx-row { display:flex; gap:8px; margin-top:8px; }
+  .ctx-row select { flex:1; }
+  .refresh-btn { background:var(--bg3); border:1px solid var(--border); color:var(--accent); padding:4px 12px; border-radius:4px; cursor:pointer; font-size:12px; }
+  .refresh-btn:hover { background:var(--accent); color:#fff; }
+  .stats-panel { background:var(--bg2); border:1px solid var(--border); border-radius:8px; padding:16px; margin-bottom:20px; }
+  .stats-panel h3 { font-size:14px; margin-bottom:12px; }
+  .stats-table { width:100%; font-size:12px; border-collapse:collapse; }
+  .stats-table th { text-align:left; padding:4px 8px; border-bottom:1px solid var(--border); color:var(--text2); font-weight:600; }
+  .stats-table td { padding:4px 8px; border-bottom:1px solid var(--border); font-family:var(--mono); }
+  .stats-table tr:hover { background:var(--bg3); }
+  .group-bar { display:inline-block; height:14px; border-radius:2px; margin-right:2px; vertical-align:middle; }
+  .tab-row { display:flex; gap:4px; margin-bottom:12px; }
+  .tab-btn { padding:4px 12px; border:1px solid var(--border); background:var(--bg3); color:var(--text2); border-radius:4px; cursor:pointer; font-size:12px; }
+  .tab-btn.active { background:var(--accent); color:#fff; border-color:var(--accent); }
+</style>
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <h2>Trace Viewer</h2>
+      <div class="ctx-row">
+        <select id="runSelect"><option value="">Loading...</option></select>
+        <select id="condSelect"><option value="">—</option></select>
+        <button class="refresh-btn" onclick="loadRecords()">↻</button>
+        <button class="refresh-btn" onclick="viewMode='stats';renderStats()">📊</button>
+      </div>
+      <div class="filter-row">
+        <select id="modelFilter"><option value="">All Models</option></select>
+        <select id="statusFilter">
+          <option value="">All Status</option>
+          <option value="ok">Pass</option>
+          <option value="partial">Has Errors</option>
+          <option value="error">Failed</option>
+        </select>
+      </div>
+      <input type="text" id="searchBox" placeholder="Search cipai / keyword / id...">
+    </div>
+    <div class="stats-bar" id="statsBar">Loading...</div>
+    <div class="record-list" id="recordList"></div>
+  </aside>
+  <main class="main" id="mainPanel">
+    <div class="empty">Select a run and condition to begin</div>
+  </main>
+</div>
+
+<script>
+let records = [];
+let traceCache = {};
+let activeId = null;
+let activeModel = null;
+let viewMode = 'list'; // 'list' or 'stats'
+
+function curRun() { return document.getElementById('runSelect').value; }
+function curCond() { return document.getElementById('condSelect').value; }
+
+async function init() {
+  const runs = await (await fetch('/api/runs')).json();
+  const sel = document.getElementById('runSelect');
+  sel.innerHTML = runs.map(r => `<option value="${r.name}">${r.name} (${r.conditions.join(',')})</option>`).join('');
+  if (runs.length) {
+    sel.value = runs[runs.length - 1].name;
+    await loadConditions();
+  }
+}
+
+async function loadConditions() {
+  const conds = await (await fetch(`/api/conditions?run=${curRun()}`)).json();
+  const sel = document.getElementById('condSelect');
+  sel.innerHTML = conds.map(c => `<option value="${c.name}">${c.name} (${c.total_records})</option>`).join('');
+  if (conds.length) await loadRecords();
+}
+
+async function loadRecords() {
+  document.getElementById('statsBar').textContent = 'Loading...';
+  traceCache = {};
+  try {
+    records = await (await fetch(`/api/records?run=${curRun()}&condition=${curCond()}`)).json();
+    populateFilters();
+    renderList();
+    if (viewMode === 'stats') renderStats();
+  } catch(e) {
+    document.getElementById('statsBar').textContent = 'Failed: ' + e.message;
+  }
+}
+
+function populateFilters() {
+  const models = [...new Set(records.map(r => r.model))].sort();
+  const sel = document.getElementById('modelFilter');
+  const cur = sel.value;
+  sel.innerHTML = '<option value="">All Models</option>' + models.map(m => `<option value="${m}">${m}</option>`).join('');
+  sel.value = cur;
+}
+
+function getStatus(r) {
+  if (r.error_message || r.finish_reason === 'error') return 'error';
+  if (r.prosody_valid === true && (r.error_count === 0 || r.error_count === null)) return 'ok';
+  if (r.text && r.text.trim()) return 'partial';
+  return 'error';
+}
+
+function renderList() {
+  const model = document.getElementById('modelFilter').value;
+  const status = document.getElementById('statusFilter').value;
+  const search = document.getElementById('searchBox').value.toLowerCase();
+  const filtered = records.filter(r => {
+    if (model && r.model !== model) return false;
+    if (status && getStatus(r) !== status) return false;
+    if (search && !`${r.id} ${r.cipai_name} ${r.keyword} ${r.model}`.toLowerCase().includes(search)) return false;
+    return true;
+  });
+  const counts = {ok:0, partial:0, error:0};
+  filtered.forEach(r => counts[getStatus(r)]++);
+  document.getElementById('statsBar').innerHTML =
+    `<span>${curRun()}/${curCond()}</span><span>${filtered.length} records</span><span style="color:var(--green)">✓ ${counts.ok}</span><span style="color:var(--orange)">⚠ ${counts.partial}</span><span style="color:var(--red)">✗ ${counts.error}</span>`;
+  const list = document.getElementById('recordList');
+  list.innerHTML = filtered.map(r => {
+    const st = getStatus(r);
+    const errs = r.error_count != null ? `${r.error_count}err` : '';
+    const tok = r.total_tokens ? `${(r.total_tokens/1000).toFixed(0)}k` : '';
+    const isActive = r.id===activeId && r.model===activeModel;
+    return `<div class="record-item ${st} ${isActive?'active':''}" data-id="${r.id}" data-model="${r.model}">
+      <b>${r.cipai_name || r.cipai}</b> · <span style="color:var(--text2)">${r.model}</span>
+      <div class="meta">${r.keyword||''} · ${r.elapsed_s||0}s · ${errs} · ${tok} · ${r.tool_rounds||0}rds</div>
+    </div>`;
+  }).join('');
+  list.querySelectorAll('.record-item').forEach(el => {
+    el.addEventListener('click', async () => {
+      activeId = el.dataset.id;
+      activeModel = el.dataset.model;
+      renderList();
+      const rec = records.find(r => r.id === activeId && r.model === activeModel);
+      await renderDetail(rec);
+    });
+  });
+}
+
+async function loadTrace(id, model) {
+  const key = `${curRun()}/${curCond()}/${model}/${id}`;
+  if (traceCache[key]) return traceCache[key];
+  try {
+    const resp = await fetch(`/api/trace?run=${curRun()}&condition=${curCond()}&id=${encodeURIComponent(id)}&model=${encodeURIComponent(model)}`);
+    if (resp.ok) { const d = await resp.json(); if(d) traceCache[key]=d; return d; }
+  } catch(e) {}
+  return null;
+}
+
+async function renderDetail(r) {
+  if (!r) return;
+  const panel = document.getElementById('mainPanel');
+  panel.innerHTML = '<div style="color:var(--accent);padding:20px">Loading trace...</div>';
+  const trace = await loadTrace(r.id, r.model);
+  let html = `<h2>${r.cipai_name || r.cipai} · ${r.model} · ${curCond()}</h2>`;
+  html += `<p style="color:var(--text2);margin-bottom:16px">${esc(r.prompt)}</p>`;
+  html += '<div class="summary-grid">';
+  html += card(r.elapsed_s+'s', 'Time');
+  html += card(r.tool_rounds||0, 'Rounds');
+  html += card(r.tool_call_count||0, 'Tool Calls');
+  html += card(r.total_tokens?`${(r.total_tokens/1000).toFixed(0)}k`:'—', 'Tokens');
+  html += card(r.prosody_valid===true?'PASS':r.prosody_valid===false?'FAIL':'—', 'Prosody', r.prosody_valid===true?'pass':r.prosody_valid===false?'fail':'');
+  html += card(r.error_count??'—', 'Errors', (r.error_count||0)>0?'fail':'pass');
+  html += card(r.tone_errors??'—', 'Tone', (r.tone_errors||0)>0?'fail':'');
+  html += card(r.rhyme_errors??'—', 'Rhyme', (r.rhyme_errors||0)>0?'fail':'');
+  html += '</div>';
+  if (r.error_message) html += `<div style="background:#3d1114;border:1px solid #f85149;border-radius:8px;padding:12px;margin-bottom:16px;font-size:13px;font-family:var(--mono);word-break:break-all">${esc(r.error_message)}</div>`;
+  if (r.text && r.text.trim()) { html += '<h3 style="margin-bottom:8px">Output</h3>'; html += `<div class="poem-box">${esc(r.text)}</div>`; }
+  if (r.per_tool_counts) {
+    html += '<h3 style="margin:16px 0 8px">Tool Usage</h3><div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px">';
+    for (const [n,c] of Object.entries(r.per_tool_counts)) html += `<span style="background:var(--bg2);border:1px solid var(--border);border-radius:4px;padding:4px 10px;font-size:12px;font-family:var(--mono)">${n}: ${c}</span>`;
+    html += '</div>';
+  }
+  if (trace && trace.tool_trace) {
+    html += '<h3 style="margin:16px 0 8px">Trace</h3>';
+    trace.tool_trace.forEach((round, idx) => {
+      const obs = round.observations || []; const fv = round.final_validation;
+      const toolNames = obs.map(o => o.call?.name || '?').join(', ');
+      const anyFail = obs.some(o => o.response?.passed === false);
+      const isLast = idx === trace.tool_trace.length - 1;
+      html += `<div class="round ${isLast?'open':''}"><div class="round-header" onclick="this.parentElement.classList.toggle('open')"><span>Round ${round.round??idx} · ${toolNames||(fv?'final_validation':'—')}</span>${anyFail?'<span style="color:var(--red)">✗</span>':'<span style="color:var(--green)">✓</span>'}</div><div class="round-body">`;
+      obs.forEach(o => {
+        const call=o.call||{}, resp=o.response||{}, passed=resp.passed, rejected=resp.metadata?.rejected;
+        const bc=rejected?'badge-reject':passed?'badge-pass':'badge-fail';
+        const bt=rejected?'REJECTED':passed?'PASS':`FAIL(${resp.issues?.length||0})`;
+        html += `<div class="tool-call"><div class="name">${esc(call.name||'?')} <span class="badge ${bc}">${bt}</span></div>`;
+        const as=JSON.stringify(call.arguments||{},null,2); if(as.length>2) html+=`<div class="args">${esc(as)}</div>`;
+        if(resp.issues?.length){html+='<div class="resp">';resp.issues.forEach(i=>{html+=`<div style="color:var(--red)">• ${esc(i.type||'')}: ${esc(i.message||'')}${i.position!=null?' (pos '+i.position+' «'+esc(i.character||'')+'»)':''}</div>`;});html+='</div>';}
+        (resp.metadata?.hints||[]).forEach(h=>{html+=`<div class="hint">${esc(h)}</div>`;});
+        const res=resp.metadata?.results; if(res){html+=`<div class="resp">${esc(JSON.stringify(res,null,2))}</div>`;}
+        html+='</div>';
+      });
+      if(fv){html+=`<div class="tool-call"><div class="name">final_validation <span class="badge ${fv.passed?'badge-pass':'badge-fail'}">${fv.passed?'PASS':'FAIL'}</span></div><div class="resp">${esc(JSON.stringify(fv,null,2))}</div></div>`;}
+      html+='</div></div>';
+    });
+  }
+  if(trace&&trace.messages){
+    html+='<h3 style="margin:16px 0 8px">Messages</h3>';
+    html+=`<div class="round"><div class="round-header" onclick="this.parentElement.classList.toggle('open')">Full conversation (${trace.messages.length} messages)</div><div class="round-body">`;
+    trace.messages.forEach(msg=>{
+      const role=msg.role,color=role==='assistant'?'var(--accent)':role==='tool'?'var(--green)':role==='system'?'var(--text2)':'var(--text)';
+      const content=msg.content||'';
+      html+=`<div style="margin-bottom:10px;border-left:2px solid ${color};padding-left:10px"><div style="font-size:11px;color:${color};font-weight:600">${role}${msg.name?' ('+msg.name+')':''}</div>`;
+      if(content) html+=`<div class="assistant-text">${esc(content)}</div>`;
+      if(msg.reasoning_content) html+=`<div style="font-size:11px;color:var(--text2);margin-top:4px;white-space:pre-wrap">reasoning: ${esc(msg.reasoning_content)}</div>`;
+      if(msg.tool_calls) msg.tool_calls.forEach(tc=>{html+=`<div style="font-size:12px;color:var(--accent);margin-top:4px;font-family:var(--mono)">→ ${tc.function?.name}(${esc(tc.function?.arguments||'')})</div>`;});
+      html+='</div>';
+    });
+    html+='</div></div>';
+  }
+  panel.innerHTML = html;
+}
+
+function card(v,l,c=''){return `<div class="stat-card ${c}"><div class="value">${v}</div><div class="label">${l}</div></div>`;}
+function esc(s){if(!s)return'';return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+
+async function renderStats() {
+  const panel = document.getElementById('mainPanel');
+  panel.innerHTML = '<div style="color:var(--accent);padding:20px">Loading stats...</div>';
+  try {
+    const stats = await (await fetch(`/api/stats?run=${curRun()}&condition=${curCond()}`)).json();
+    if (!stats || !stats.models) { panel.innerHTML = '<div class="empty">No data</div>'; return; }
+
+    let html = `<div class="tab-row">
+      <button class="tab-btn ${viewMode==='stats'?'active':''}" onclick="viewMode='stats';renderStats()">Stats</button>
+      <button class="tab-btn ${viewMode==='list'?'active':''}" onclick="viewMode='list';document.getElementById('mainPanel').innerHTML='<div class=empty>Select a record</div>'">Records</button>
+    </div>`;
+
+    html += `<div class="stats-panel"><h3>Overall: ${curRun()} / ${curCond()}</h3>`;
+    html += `<div class="summary-grid">`;
+    html += card(stats.total_valid, 'Valid');
+    html += card(stats.total_zer, 'ZER', 'pass');
+    html += card(stats.total_zer_pct+'%', 'ZER%', stats.total_zer_pct > 50 ? 'pass' : 'fail');
+    html += `</div></div>`;
+
+    // Per-model table
+    html += `<div class="stats-panel"><h3>Per Model</h3>`;
+    html += `<table class="stats-table"><tr><th>Model</th><th>n</th><th>ZER</th><th>ZER%</th><th>Avg Err</th><th>Avg Tok</th><th>Avg Time</th><th>Fail</th></tr>`;
+    for (const [model, s] of Object.entries(stats.models).sort((a,b) => b[1].zer_pct - a[1].zer_pct)) {
+      const cls = s.zer_pct >= 80 ? 'color:var(--green)' : s.zer_pct >= 20 ? 'color:var(--orange)' : 'color:var(--red)';
+      html += `<tr><td>${model}</td><td>${s.n}</td><td>${s.zer}</td><td style="${cls}">${s.zer_pct}%</td><td>${s.avg_err}</td><td>${(s.avg_tokens/1000).toFixed(1)}k</td><td>${s.avg_time}s</td><td>${s.fail}</td></tr>`;
+    }
+    html += `</table></div>`;
+
+    // Per split group breakdown
+    const groups = stats.group_order || [];
+    html += `<div class="stats-panel"><h3>By Form Category</h3>`;
+    html += `<table class="stats-table"><tr><th>Model</th>`;
+    groups.forEach(g => { html += `<th>${g}</th>`; });
+    html += `</tr>`;
+    for (const [model, s] of Object.entries(stats.models).sort((a,b) => b[1].zer_pct - a[1].zer_pct)) {
+      html += `<tr><td>${model}</td>`;
+      groups.forEach(g => {
+        const gs = (s.groups || {})[g];
+        if (gs) {
+          const w = Math.max(20, gs.zer_pct);
+          const color = gs.zer_pct >= 80 ? 'var(--green)' : gs.zer_pct >= 20 ? 'var(--orange)' : 'var(--red)';
+          html += `<td><span class="group-bar" style="width:${w}px;background:${color}"></span> ${gs.zer}/${gs.n} (${gs.zer_pct}%)</td>`;
+        } else {
+          html += `<td style="color:var(--text2)">—</td>`;
+        }
+      });
+      html += `</tr>`;
+    }
+    html += `</table></div>`;
+
+    panel.innerHTML = html;
+  } catch(e) {
+    panel.innerHTML = `<div class="empty">Stats error: ${e.message}</div>`;
+  }
+}
+
+document.getElementById('runSelect').addEventListener('change', loadConditions);
+document.getElementById('condSelect').addEventListener('change', loadRecords);
+document.getElementById('modelFilter').addEventListener('change', renderList);
+document.getElementById('statusFilter').addEventListener('change', renderList);
+document.getElementById('searchBox').addEventListener('input', renderList);
+
+init();
+</script>
+</body>
+</html>

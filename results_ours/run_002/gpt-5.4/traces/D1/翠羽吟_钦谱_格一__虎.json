@@ -1,0 +1,4334 @@
+{
+  "id": "翠羽吟_钦谱_格一__虎",
+  "cipai": "翠羽吟_钦谱_格一",
+  "model": "gpt-5.4",
+  "condition": "ablation_d1_no_template",
+  "elapsed_s": 38.03,
+  "tool_trace": [
+    {
+      "round": 0,
+      "observations": [
+        {
+          "call": {
+            "name": "validate_meter",
+            "arguments": {
+              "poem_text": "林壑风生，山君夜啸，斑斓影过荒渡。石径苔深，松关月冷，独立千峰烟暮。电目穿云，霜牙裂雾，百兽潜踪无语。正落叶、卷地如涛，惊起半岩秋雨。\n\n曾卧长林据险，也巡原啮雪，饮涧听瀑。气压狐豺，威临魑魅，谁敢轻婴强弩。世换尘喧，更怜顾盼，犹带大荒雄古。待一啸、震裂空冥，万壑尽回寒鼓。",
+              "rule_name": "翠羽吟",
+              "genre": "Ci",
+              "include_punctuation": true,
+              "rhyme_book_name": "Cilinzhengyun"
+            },
+            "call_id": "call_BECjLCD3cIen2YQuj7FjGkoO"
+          },
+          "response": {
+            "tool_name": "validate_meter",
+            "passed": false,
+            "issues": [
+              {
+                "type": "Length",
+                "message": "字数不匹配 (111字/应126字):\n  从第1句开始不匹配: 「林壑风生」为4字, 谱面第1句应为3字\n  传入句式: [4, 4, 6, 4, 4, 6, 4, 4, 6, 3, 4, 6, 6, 5, 4, 4, 4, 6, 4, 4, 6, 3, 4, 6]\n  谱面句式: [3, 3, 5, 4, 7, 6, 6, 3, 4, 6, 7, 4, 4, 6, 4, 5, 6, 6, 5, 3, 4, 6, 7, 4, 4, 4]",
+                "position": -1,
+                "character": ""
+              }
+            ],
+            "metrics": {
+              "rhyme_name": null,
+              "rhyme_chars": null,
+              "rhyme_positions": null,
+              "closest_rule": null,
+              "display_segments": [],
+              "tone_error_count": 0,
+              "rhyme_error_count": 0,
+              "violation_count": 1,
+              "checked_chars": 0
+            },
+            "metadata": {
+              "raw_response": {
+                "chars": [
+                  "林",
+                  "壑",
+                  "风",
+                  "生",
+                  "山",
+                  "君",
+                  "夜",
+                  "啸",
+                  "斑",
+                  "斓",
+                  "影",
+                  "过",
+                  "荒",
+                  "渡",
+                  "石",
+                  "径",
+                  "苔",
+                  "深",
+                  "松",
+                  "关",
+                  "月",
+                  "冷",
+                  "独",
+                  "立",
+                  "千",
+                  "峰",
+                  "烟",
+                  "暮",
+                  "电",
+                  "目",
+                  "穿",
+                  "云",
+                  "霜",
+                  "牙",
+                  "裂",
+                  "雾",
+                  "百",
+                  "兽",
+                  "潜",
+                  "踪",
+                  "无",
+                  "语",
+                  "正",
+                  "落",
+                  "叶",
+                  "卷",
+                  "地",
+                  "如",
+                  "涛",
+                  "惊",
+                  "起",
+                  "半",
+                  "岩",
+                  "秋",
+                  "雨",
+                  "曾",
+                  "卧",
+                  "长",
+                  "林",
+                  "据",
+                  "险",
+                  "也",
+                  "巡",
+                  "原",
+                  "啮",
+                  "雪",
+                  "饮",
+                  "涧",
+                  "听",
+                  "瀑",
+                  "气",
+                  "压",
+                  "狐",
+                  "豺",
+                  "威",
+                  "临",
+                  "魑",
+                  "魅",
+                  "谁",
+                  "敢",
+                  "轻",
+                  "婴",
+                  "强",
+                  "弩",
+                  "世",
+                  "换",
+                  "尘",
+                  "喧",
+                  "更",
+                  "怜",
+                  "顾",
+                  "盼",
+                  "犹",
+                  "带",
+                  "大",
+                  "荒",
+                  "雄",
+                  "古",
+                  "待",
+                  "一",
+                  "啸",
+                  "震",
+                  "裂",
+                  "空",
+                  "冥",
+                  "万",
+                  "壑",
+                  "尽",
+                  "回",
+                  "寒",
+                  "鼓"
+                ],
+                "closest_rule": null,
+                "display_segments": [],
+                "errors": [
+                  {
+                    "actual": null,
+                    "character": "",
+                    "error_type": "Length",
+                    "expected": null,
+                    "message": "字数不匹配 (111字/应126字):\n  从第1句开始不匹配: 「林壑风生」为4字, 谱面第1句应为3字\n  传入句式: [4, 4, 6, 4, 4, 6, 4, 4, 6, 3, 4, 6, 6, 5, 4, 4, 4, 6, 4, 4, 6, 3, 4, 6]\n  谱面句式: [3, 3, 5, 4, 7, 6, 6, 3, 4, 6, 7, 4, 4, 6, 4, 5, 6, 6, 5, 3, 4, 6, 7, 4, 4, 4]",
+                    "position": -1
+                  }
+                ],
+                "is_valid": false,
+                "rhyme_chars": null,
+                "rhyme_groups": [],
+                "rhyme_name": null,
+                "rhyme_positions": null,
+                "rhyme_relations": [],
+                "tone_pattern": [],
+                "warnings": []
+              },
+              "warning_count": 0,
+              "warnings": [],
+              "hints": [
+                "共 1 处错误，请逐一修改后重新调用 validate_meter 校验。"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "round": 1,
+      "observations": [
+        {
+          "call": {
+            "name": "validate_meter",
+            "arguments": {
+              "poem_text": "山啸起，月啸起，林黑动飞尘。石径苔深人不度，电目穿云裂暮昏。霜爪踏危垠。千嶂静，百兽奔，长风卷怒鳞。 \n\n曾据险，曾饮涧，雪满大荒身。气压狐豺魑魅伏，威振冈峦草木振。斑影过秋榛。今顾盼，尚雄浑，一声摇远旻。",
+              "rule_name": "翠羽吟",
+              "genre": "Ci",
+              "include_punctuation": true,
+              "rhyme_book_name": "Cilinzhengyun"
+            },
+            "call_id": "call_ax1JsgezcCAMZUTZPAkwXnvn"
+          },
+          "response": {
+            "tool_name": "validate_meter",
+            "passed": false,
+            "issues": [
+              {
+                "type": "Length",
+                "message": "字数不匹配 (82字/应126字):\n  前3句匹配, 第4句开始出错: 「石径苔深人不度」为7字, 应为4字\n  传入句式: [3, 3, 5, 7, 7, 5, 3, 3, 5, 3, 3, 5, 7, 7, 5, 3, 3, 5]\n  谱面句式: [3, 3, 5, 4, 7, 6, 6, 3, 4, 6, 7, 4, 4, 6, 4, 5, 6, 6, 5, 3, 4, 6, 7, 4, 4, 4]",
+                "position": -1,
+                "character": ""
+              }
+            ],
+            "metrics": {
+              "rhyme_name": null,
+              "rhyme_chars": null,
+              "rhyme_positions": null,
+              "closest_rule": null,
+              "display_segments": [],
+              "tone_error_count": 0,
+              "rhyme_error_count": 0,
+              "violation_count": 1,
+              "checked_chars": 0
+            },
+            "metadata": {
+              "raw_response": {
+                "chars": [
+                  "山",
+                  "啸",
+                  "起",
+                  "月",
+                  "啸",
+                  "起",
+                  "林",
+                  "黑",
+                  "动",
+                  "飞",
+                  "尘",
+                  "石",
+                  "径",
+                  "苔",
+                  "深",
+                  "人",
+                  "不",
+                  "度",
+                  "电",
+                  "目",
+                  "穿",
+                  "云",
+                  "裂",
+                  "暮",
+                  "昏",
+                  "霜",
+                  "爪",
+                  "踏",
+                  "危",
+                  "垠",
+                  "千",
+                  "嶂",
+                  "静",
+                  "百",
+                  "兽",
+                  "奔",
+                  "长",
+                  "风",
+                  "卷",
+                  "怒",
+                  "鳞",
+                  "曾",
+                  "据",
+                  "险",
+                  "曾",
+                  "饮",
+                  "涧",
+                  "雪",
+                  "满",
+                  "大",
+                  "荒",
+                  "身",
+                  "气",
+                  "压",
+                  "狐",
+                  "豺",
+                  "魑",
+                  "魅",
+                  "伏",
+                  "威",
+                  "振",
+                  "冈",
+                  "峦",
+                  "草",
+                  "木",
+                  "振",
+                  "斑",
+                  "影",
+                  "过",
+                  "秋",
+                  "榛",
+                  "今",
+                  "顾",
+                  "盼",
+                  "尚",
+                  "雄",
+                  "浑",
+                  "一",
+                  "声",
+                  "摇",
+                  "远",
+                  "旻"
+                ],
+                "closest_rule": null,
+                "display_segments": [],
+                "errors": [
+                  {
+                    "actual": null,
+                    "character": "",
+                    "error_type": "Length",
+                    "expected": null,
+                    "message": "字数不匹配 (82字/应126字):\n  前3句匹配, 第4句开始出错: 「石径苔深人不度」为7字, 应为4字\n  传入句式: [3, 3, 5, 7, 7, 5, 3, 3, 5, 3, 3, 5, 7, 7, 5, 3, 3, 5]\n  谱面句式: [3, 3, 5, 4, 7, 6, 6, 3, 4, 6, 7, 4, 4, 6, 4, 5, 6, 6, 5, 3, 4, 6, 7, 4, 4, 4]",
+                    "position": -1
+                  }
+                ],
+                "is_valid": false,
+                "rhyme_chars": null,
+                "rhyme_groups": [],
+                "rhyme_name": null,
+                "rhyme_positions": null,
+                "rhyme_relations": [],
+                "tone_pattern": [],
+                "warnings": []
+              },
+              "warning_count": 0,
+              "warnings": [],
+              "hints": [
+                "共 1 处错误，请逐一修改后重新调用 validate_meter 校验。"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "observations": [
+        {
+          "call": {
+            "name": "validate_meter",
+            "arguments": {
+              "poem_text": "风乍吼，林乍吼，斑影动秋榛。石径深苔，千峰冷月，电目裂荒昏。霜爪踏危石，长啸裂烟云。惊万壑，百兽奔。\n\n曾据险，曾饮涧，雪满大荒身。气压狐豺，威临魑魅，怒步撼山根。顾盼余雄在，苍莽见精神。听一啸，撼乾坤。",
+              "rule_name": "翠羽吟",
+              "genre": "Ci",
+              "include_punctuation": true,
+              "rhyme_book_name": "Cilinzhengyun"
+            },
+            "call_id": "call_JowOB3rXX0Q8nmmXD3yasQyg"
+          },
+          "response": {
+            "tool_name": "validate_meter",
+            "passed": false,
+            "issues": [
+              {
+                "type": "Length",
+                "message": "字数不匹配 (80字/应126字):\n  前4句匹配, 第5句开始出错: 「千峰冷月」为4字, 应为7字\n  传入句式: [3, 3, 5, 4, 4, 5, 5, 5, 3, 3, 3, 3, 5, 4, 4, 5, 5, 5, 3, 3]\n  谱面句式: [3, 3, 5, 4, 7, 6, 6, 3, 4, 6, 7, 4, 4, 6, 4, 5, 6, 6, 5, 3, 4, 6, 7, 4, 4, 4]",
+                "position": -1,
+                "character": ""
+              }
+            ],
+            "metrics": {
+              "rhyme_name": null,
+              "rhyme_chars": null,
+              "rhyme_positions": null,
+              "closest_rule": null,
+              "display_segments": [],
+              "tone_error_count": 0,
+              "rhyme_error_count": 0,
+              "violation_count": 1,
+              "checked_chars": 0
+            },
+            "metadata": {
+              "raw_response": {
+                "chars": [
+                  "风",
+                  "乍",
+                  "吼",
+                  "林",
+                  "乍",
+                  "吼",
+                  "斑",
+                  "影",
+                  "动",
+                  "秋",
+                  "榛",
+                  "石",
+                  "径",
+                  "深",
+                  "苔",
+                  "千",
+                  "峰",
+                  "冷",
+                  "月",
+                  "电",
+                  "目",
+                  "裂",
+                  "荒",
+                  "昏",
+                  "霜",
+                  "爪",
+                  "踏",
+                  "危",
+                  "石",
+                  "长",
+                  "啸",
+                  "裂",
+                  "烟",
+                  "云",
+                  "惊",
+                  "万",
+                  "壑",
+                  "百",
+                  "兽",
+                  "奔",
+                  "曾",
+                  "据",
+                  "险",
+                  "曾",
+                  "饮",
+                  "涧",
+                  "雪",
+                  "满",
+                  "大",
+                  "荒",
+                  "身",
+                  "气",
+                  "压",
+                  "狐",
+                  "豺",
+                  "威",
+                  "临",
+                  "魑",
+                  "魅",
+                  "怒",
+                  "步",
+                  "撼",
+                  "山",
+                  "根",
+                  "顾",
+                  "盼",
+                  "余",
+                  "雄",
+                  "在",
+                  "苍",
+                  "莽",
+                  "见",
+                  "精",
+                  "神",
+                  "听",
+                  "一",
+                  "啸",
+                  "撼",
+                  "乾",
+                  "坤"
+                ],
+                "closest_rule": null,
+                "display_segments": [],
+                "errors": [
+                  {
+                    "actual": null,
+                    "character": "",
+                    "error_type": "Length",
+                    "expected": null,
+                    "message": "字数不匹配 (80字/应126字):\n  前4句匹配, 第5句开始出错: 「千峰冷月」为4字, 应为7字\n  传入句式: [3, 3, 5, 4, 4, 5, 5, 5, 3, 3, 3, 3, 5, 4, 4, 5, 5, 5, 3, 3]\n  谱面句式: [3, 3, 5, 4, 7, 6, 6, 3, 4, 6, 7, 4, 4, 6, 4, 5, 6, 6, 5, 3, 4, 6, 7, 4, 4, 4]",
+                    "position": -1
+                  }
+                ],
+                "is_valid": false,
+                "rhyme_chars": null,
+                "rhyme_groups": [],
+                "rhyme_name": null,
+                "rhyme_positions": null,
+                "rhyme_relations": [],
+                "tone_pattern": [],
+                "warnings": []
+              },
+              "warning_count": 0,
+              "warnings": [],
+              "hints": [
+                "共 1 处错误，请逐一修改后重新调用 validate_meter 校验。"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "observations": [
+        {
+          "call": {
+            "name": "validate_meter",
+            "arguments": {
+              "poem_text": "风乍吼，林乍吼，斑影动秋榛。石径深苔，千峰寒月照空岷，电目裂昏尘。霜爪踏危巘，长啸振层云。惊万壑，百兽奔，叶落满溪津。 \n\n曾据险，曾饮涧，雪满大荒身。气压狐豺，威临魑魅镇山神，怒步撼嶙峋。顾盼余雄在，苍莽见精神。听一啸，裂夕曛，四野寂无邻。",
+              "rule_name": "翠羽吟",
+              "genre": "Ci",
+              "include_punctuation": true,
+              "rhyme_book_name": "Cilinzhengyun"
+            },
+            "call_id": "call_gRAJayFqAoHNbJQWa2bSGn4n"
+          },
+          "response": {
+            "tool_name": "validate_meter",
+            "passed": false,
+            "issues": [
+              {
+                "type": "Length",
+                "message": "字数不匹配 (96字/应126字):\n  前5句匹配, 第6句开始出错: 「电目裂昏尘」为5字, 应为6字\n  传入句式: [3, 3, 5, 4, 7, 5, 5, 5, 3, 3, 5, 3, 3, 5, 4, 7, 5, 5, 5, 3, 3, 5]\n  谱面句式: [3, 3, 5, 4, 7, 6, 6, 3, 4, 6, 7, 4, 4, 6, 4, 5, 6, 6, 5, 3, 4, 6, 7, 4, 4, 4]",
+                "position": -1,
+                "character": ""
+              }
+            ],
+            "metrics": {
+              "rhyme_name": null,
+              "rhyme_chars": null,
+              "rhyme_positions": null,
+              "closest_rule": null,
+              "display_segments": [],
+              "tone_error_count": 0,
+              "rhyme_error_count": 0,
+              "violation_count": 1,
+              "checked_chars": 0
+            },
+            "metadata": {
+              "raw_response": {
+                "chars": [
+                  "风",
+                  "乍",
+                  "吼",
+                  "林",
+                  "乍",
+                  "吼",
+                  "斑",
+                  "影",
+                  "动",
+                  "秋",
+                  "榛",
+                  "石",
+                  "径",
+                  "深",
+                  "苔",
+                  "千",
+                  "峰",
+                  "寒",
+                  "月",
+                  "照",
+                  "空",
+                  "岷",
+                  "电",
+                  "目",
+                  "裂",
+                  "昏",
+                  "尘",
+                  "霜",
+                  "爪",
+                  "踏",
+                  "危",
+                  "巘",
+                  "长",
+                  "啸",
+                  "振",
+                  "层",
+                  "云",
+                  "惊",
+                  "万",
+                  "壑",
+                  "百",
+                  "兽",
+                  "奔",
+                  "叶",
+                  "落",
+                  "满",
+                  "溪",
+                  "津",
+                  "曾",
+                  "据",
+                  "险",
+                  "曾",
+                  "饮",
+                  "涧",
+                  "雪",
+                  "满",
+                  "大",
+                  "荒",
+                  "身",
+                  "气",
+                  "压",
+                  "狐",
+                  "豺",
+                  "威",
+                  "临",
+                  "魑",
+                  "魅",
+                  "镇",
+                  "山",
+                  "神",
+                  "怒",
+                  "步",
+                  "撼",
+                  "嶙",
+                  "峋",
+                  "顾",
+                  "盼",
+                  "余",
+                  "雄",
+                  "在",
+                  "苍",
+                  "莽",
+                  "见",
+                  "精",
+                  "神",
+                  "听",
+                  "一",
+                  "啸",
+                  "裂",
+                  "夕",
+                  "曛",
+                  "四",
+                  "野",
+                  "寂",
+                  "无",
+                  "邻"
+                ],
+                "closest_rule": null,
+                "display_segments": [],
+                "errors": [
+                  {
+                    "actual": null,
+                    "character": "",
+                    "error_type": "Length",
+                    "expected": null,
+                    "message": "字数不匹配 (96字/应126字):\n  前5句匹配, 第6句开始出错: 「电目裂昏尘」为5字, 应为6字\n  传入句式: [3, 3, 5, 4, 7, 5, 5, 5, 3, 3, 5, 3, 3, 5, 4, 7, 5, 5, 5, 3, 3, 5]\n  谱面句式: [3, 3, 5, 4, 7, 6, 6, 3, 4, 6, 7, 4, 4, 6, 4, 5, 6, 6, 5, 3, 4, 6, 7, 4, 4, 4]",
+                    "position": -1
+                  }
+                ],
+                "is_valid": false,
+                "rhyme_chars": null,
+                "rhyme_groups": [],
+                "rhyme_name": null,
+                "rhyme_positions": null,
+                "rhyme_relations": [],
+                "tone_pattern": [],
+                "warnings": []
+              },
+              "warning_count": 0,
+              "warnings": [],
+              "hints": [
+                "共 1 处错误，请逐一修改后重新调用 validate_meter 校验。"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "round": 4,
+      "observations": [
+        {
+          "call": {
+            "name": "validate_meter",
+            "arguments": {
+              "poem_text": "风乍吼，林乍吼，斑影动秋榛。石径深苔，千峰寒月照空岷，电目裂荒昏。霜爪踏危巘，长啸振层云。惊万壑，百兽奔。松末叶飞纷。\n\n曾据险，曾饮涧，雪满大荒身。气压狐豺，威临魑魅镇山神，怒步撼嶙峋。顾盼余雄在，苍莽见精神。听一啸，裂夕曛。四野寂无邻。\n\n今尚有，人尚说，幽壁走星纹。夜半溪桥樵子过，犹道林深不可扪。清梦落寒雯。",
+              "rule_name": "翠羽吟",
+              "genre": "Ci",
+              "include_punctuation": true,
+              "rhyme_book_name": "Cilinzhengyun"
+            },
+            "call_id": "call_8Jwto4IK1a9F8OuGoZx22lh9"
+          },
+          "response": {
+            "tool_name": "validate_meter",
+            "passed": false,
+            "issues": [
+              {
+                "type": "Tone",
+                "message": "应为仄, 实为平",
+                "position": 0,
+                "character": "风"
+              },
+              {
+                "type": "Tone",
+                "message": "应为平, 实为仄",
+                "position": 2,
+                "character": "吼"
+              },
+              {
+                "type": "Tone",
+                "message": "应为仄, 实为平",
+                "position": 3,
+                "character": "林"
+              },
+              {
+                "type": "Tone",
+                "message": "应为平, 实为仄",
+                "position": 5,
+                "character": "吼"
+              },
+              {
+                "type": "Tone",
+                "message": "应为仄, 实为平",
+                "position": 15,
+                "character": "千"
+              },
+              {
+                "type": "Tone",
+                "message": "应为平, 实为仄",
+                "position": 23,
+                "character": "目"
+              },
+              {
+                "type": "Tone",
+                "message": "应为平, 实为仄",
+                "position": 24,
+                "character": "裂"
+              },
+              {
+                "type": "Tone",
+                "message": "应为仄, 实为平",
+                "position": 26,
+                "character": "昏"
+              },
+              {
+                "type": "Tone",
+                "message": "应为仄, 实为平",
+                "position": 27,
+                "character": "霜"
+              },
+              {
+                "type": "Tone",
+                "message": "应为平, 实为仄",
+                "position": 28,
+                "character": "爪"
+              },
+              {
+                "type": "Tone",
+                "message": "应为平, 实为仄",
+                "position": 33,
+                "character": "啸"
+              },
+              {
+                "type": "Tone",
+                "message": "应为仄, 实为平",
+                "position": 35,
+                "character": "层"
+              },
+              {
+                "type": "Tone",
+                "message": "应为仄, 实为平",
+                "position": 37,
+                "character": "惊"
+              },
+              {
+                "type": "Tone",
+                "message": "应为平, 实为仄",
+                "position": 38,
+                "character": "万"
+              },
+              {
+                "type": "Tone",
+                "message": "应为平, 实为仄",
+                "position": 39,
+                "character": "壑"
+              },
+              {
+                "type": "Tone",
+                "message": "应为平, 实为仄",
+                "position": 41,
+                "character": "兽"
+              },
+              {
+                "type": "Tone",
+                "message": "应为仄, 实为平",
+                "position": 43,
+                "character": "松"
+              },
+              {
+                "type": "Tone",
+                "message": "应为平, 实为仄",
+                "position": 45,
+                "character": "叶"
+              },
+              {
+                "type": "Tone",
+                "message": "应为仄, 实为平",
+                "position": 48,
+                "character": "曾"
+              },
+              {
+                "type": "Tone",
+                "message": "应为仄, 实为平",
+                "position": 51,
+                "character": "曾"
+              },
+              {
+                "type": "Tone",
+                "message": "应为平, 实为仄",
+                "position": 52,
+                "character": "饮"
+              },
+              {
+                "type": "Tone",
+                "message": "应为平, 实为仄",
+                "position": 53,
+                "character": "涧"
+              },
+              {
+                "type": "Tone",
+                "message": "应为平, 实为仄",
+                "position": 54,
+                "character": "雪"
+              },
+              {
+                "type": "Tone",
+                "message": "应为平, 实为仄",
+                "position": 55,
+                "character": "满"
+              },
+              {
+                "type": "Tone",
+                "message": "应为平, 实为仄",
+                "position": 56,
+                "character": "大"
+              },
+              {
+                "type": "Tone",
+                "message": "应为仄, 实为平",
+                "position": 57,
+                "character": "荒"
+              },
+              {
+                "type": "Tone",
+                "message": "应为仄, 实为平",
+                "position": 58,
+                "character": "身"
+              },
+              {
+                "type": "Tone",
+                "message": "应为平, 实为仄",
+                "position": 60,
+                "character": "压"
+              },
+              {
+                "type": "Tone",
+                "message": "应为仄, 实为平",
+                "position": 62,
+                "character": "豺"
+              },
+              {
+                "type": "Tone",
+                "message": "应为仄, 实为平",
+                "position": 63,
+                "character": "威"
+              },
+              {
+                "type": "Tone",
+                "message": "应为仄, 实为平",
+                "position": 69,
+                "character": "神"
+              },
+              {
+                "type": "Tone",
+                "message": "应为平, 实为仄",
+                "position": 72,
+                "character": "撼"
+              },
+              {
+                "type": "Tone",
+                "message": "应为平, 实为仄",
+                "position": 76,
+                "character": "盼"
+              },
+              {
+                "type": "Tone",
+                "message": "应为仄, 实为平",
+                "position": 77,
+                "character": "余"
+              },
+              {
+                "type": "Tone",
+                "message": "应为平, 实为仄",
+                "position": 81,
+                "character": "莽"
+              },
+              {
+                "type": "Tone",
+                "message": "应为平, 实为仄",
+                "position": 82,
+                "character": "见"
+              },
+              {
+                "type": "Tone",
+                "message": "应为仄, 实为平",
+                "position": 83,
+                "character": "精"
+              },
+              {
+                "type": "Tone",
+                "message": "应为仄, 实为平",
+                "position": 84,
+                "character": "神"
+              },
+              {
+                "type": "Tone",
+                "message": "应为平, 实为仄",
+                "position": 87,
+                "character": "啸"
+              },
+              {
+                "type": "Tone",
+                "message": "应为平, 实为仄",
+                "position": 88,
+                "character": "裂"
+              },
+              {
+                "type": "Tone",
+                "message": "应为仄, 实为平",
+                "position": 90,
+                "character": "曛"
+              },
+              {
+                "type": "Tone",
+                "message": "应为平, 实为仄",
+                "position": 91,
+                "character": "四"
+              },
+              {
+                "type": "Tone",
+                "message": "应为平, 实为仄",
+                "position": 92,
+                "character": "野"
+              },
+              {
+                "type": "Tone",
+                "message": "应为仄, 实为平",
+                "position": 95,
+                "character": "邻"
+              },
+              {
+                "type": "Tone",
+                "message": "应为仄, 实为平",
+                "position": 96,
+                "character": "今"
+              },
+              {
+                "type": "Tone",
+                "message": "应为仄, 实为平",
+                "position": 102,
+                "character": "幽"
+              },
+              {
+                "type": "Tone",
+                "message": "应为平, 实为仄",
+                "position": 103,
+                "character": "壁"
+              },
+              {
+                "type": "Tone",
+                "message": "应为平, 实为仄",
+                "position": 104,
+                "character": "走"
+              },
+              {
+                "type": "Tone",
+                "message": "应为仄, 实为平",
+                "position": 105,
+                "character": "星"
+              },
+              {
+                "type": "Tone",
+                "message": "应为平, 实为仄",
+                "position": 108,
+                "character": "半"
+              },
+              {
+                "type": "Tone",
+                "message": "应为仄, 实为平",
+                "position": 110,
+                "character": "桥"
+              },
+              {
+                "type": "Tone",
+                "message": "应为仄, 实为平",
+                "position": 111,
+                "character": "樵"
+              },
+              {
+                "type": "Tone",
+                "message": "应为平, 实为仄",
+                "position": 112,
+                "character": "子"
+              },
+              {
+                "type": "Tone",
+                "message": "应为平, 实为仄",
+                "position": 115,
+                "character": "道"
+              },
+              {
+                "type": "Tone",
+                "message": "应为仄, 实为平",
+                "position": 116,
+                "character": "林"
+              },
+              {
+                "type": "Tone",
+                "message": "应为仄, 实为平",
+                "position": 124,
+                "character": "寒"
+              },
+              {
+                "type": "Rhyme",
+                "message": "出韵",
+                "position": 2,
+                "character": "吼"
+              },
+              {
+                "type": "Rhyme",
+                "message": "出韵",
+                "position": 5,
+                "character": "吼"
+              },
+              {
+                "type": "Rhyme",
+                "message": "出韵",
+                "position": 33,
+                "character": "啸"
+              },
+              {
+                "type": "Rhyme",
+                "message": "出韵",
+                "position": 46,
+                "character": "飞"
+              },
+              {
+                "type": "Rhyme",
+                "message": "出韵",
+                "position": 53,
+                "character": "涧"
+              },
+              {
+                "type": "Rhyme",
+                "message": "出韵",
+                "position": 61,
+                "character": "狐"
+              },
+              {
+                "type": "Rhyme",
+                "message": "出韵",
+                "position": 76,
+                "character": "盼"
+              },
+              {
+                "type": "Rhyme",
+                "message": "出韵",
+                "position": 88,
+                "character": "裂"
+              },
+              {
+                "type": "Rhyme",
+                "message": "出韵",
+                "position": 100,
+                "character": "尚"
+              },
+              {
+                "type": "Rhyme",
+                "message": "出韵",
+                "position": 113,
+                "character": "过"
+              },
+              {
+                "type": "Punctuation",
+                "message": "标点有误: 第3字「吼」后应为句号(。), 实为，",
+                "position": 2,
+                "character": "吼"
+              },
+              {
+                "type": "Punctuation",
+                "message": "标点有误: 第6字「吼」后应为句号(。), 实为，",
+                "position": 5,
+                "character": "吼"
+              },
+              {
+                "type": "Punctuation",
+                "message": "标点有误: 第22字「岷」后应为句号(。), 实为，",
+                "position": 21,
+                "character": "岷"
+              },
+              {
+                "type": "Punctuation",
+                "message": "缺少标点: 第28字「霜」后应为逗号(，)",
+                "position": 27,
+                "character": "霜"
+              },
+              {
+                "type": "Punctuation",
+                "message": "缺少标点: 第34字「啸」后应为句号(。)",
+                "position": 33,
+                "character": "啸"
+              },
+              {
+                "type": "Punctuation",
+                "message": "标点有误: 第37字「云」后应为顿号(、), 实为。",
+                "position": 36,
+                "character": "云"
+              },
+              {
+                "type": "Punctuation",
+                "message": "缺少标点: 第41字「百」后应为逗号(，)",
+                "position": 40,
+                "character": "百"
+              },
+              {
+                "type": "Punctuation",
+                "message": "缺少标点: 第47字「飞」后应为句号(。)",
+                "position": 46,
+                "character": "飞"
+              },
+              {
+                "type": "Punctuation",
+                "message": "标点有误: 第54字「涧」后应为句号(。), 实为，",
+                "position": 53,
+                "character": "涧"
+              },
+              {
+                "type": "Punctuation",
+                "message": "缺少标点: 第58字「荒」后应为逗号(，)",
+                "position": 57,
+                "character": "荒"
+              },
+              {
+                "type": "Punctuation",
+                "message": "缺少标点: 第62字「狐」后应为句号(。)",
+                "position": 61,
+                "character": "狐"
+              },
+              {
+                "type": "Punctuation",
+                "message": "缺少标点: 第68字「镇」后应为逗号(，)",
+                "position": 67,
+                "character": "镇"
+              },
+              {
+                "type": "Punctuation",
+                "message": "缺少标点: 第72字「步」后应为逗号(，)",
+                "position": 71,
+                "character": "步"
+              },
+              {
+                "type": "Punctuation",
+                "message": "缺少标点: 第77字「盼」后应为句号(。)",
+                "position": 76,
+                "character": "盼"
+              },
+              {
+                "type": "Punctuation",
+                "message": "缺少标点: 第83字「见」后应为逗号(，)",
+                "position": 82,
+                "character": "见"
+              },
+              {
+                "type": "Punctuation",
+                "message": "缺少标点: 第89字「裂」后应为句号(。)",
+                "position": 88,
+                "character": "裂"
+              },
+              {
+                "type": "Punctuation",
+                "message": "缺少标点: 第94字「寂」后应为逗号(，)",
+                "position": 93,
+                "character": "寂"
+              },
+              {
+                "type": "Punctuation",
+                "message": "缺少标点: 第97字「今」后应为顿号(、)",
+                "position": 96,
+                "character": "今"
+              },
+              {
+                "type": "Punctuation",
+                "message": "缺少标点: 第101字「尚」后应为句号(。)",
+                "position": 100,
+                "character": "尚"
+              },
+              {
+                "type": "Punctuation",
+                "message": "标点有误: 第114字「过」后应为句号(。), 实为，",
+                "position": 113,
+                "character": "过"
+              },
+              {
+                "type": "Punctuation",
+                "message": "缺少标点: 第118字「深」后应为逗号(，)",
+                "position": 117,
+                "character": "深"
+              },
+              {
+                "type": "Punctuation",
+                "message": "缺少标点: 第122字「清」后应为逗号(，)",
+                "position": 121,
+                "character": "清"
+              },
+              {
+                "type": "Punctuation",
+                "message": "多余标点: 第27字「昏」后不应有标点(。)",
+                "position": 26,
+                "character": "昏"
+              },
+              {
+                "type": "Punctuation",
+                "message": "多余标点: 第32字「巘」后不应有标点(，)",
+                "position": 31,
+                "character": "巘"
+              },
+              {
+                "type": "Punctuation",
+                "message": "多余标点: 第40字「壑」后不应有标点(，)",
+                "position": 39,
+                "character": "壑"
+              },
+              {
+                "type": "Punctuation",
+                "message": "多余标点: 第43字「奔」后不应有标点(。)",
+                "position": 42,
+                "character": "奔"
+              },
+              {
+                "type": "Punctuation",
+                "message": "多余标点: 第48字「纷」后不应有标点(。)",
+                "position": 47,
+                "character": "纷"
+              },
+              {
+                "type": "Punctuation",
+                "message": "多余标点: 第51字「险」后不应有标点(，)",
+                "position": 50,
+                "character": "险"
+              },
+              {
+                "type": "Punctuation",
+                "message": "多余标点: 第59字「身」后不应有标点(。)",
+                "position": 58,
+                "character": "身"
+              },
+              {
+                "type": "Punctuation",
+                "message": "多余标点: 第63字「豺」后不应有标点(，)",
+                "position": 62,
+                "character": "豺"
+              },
+              {
+                "type": "Punctuation",
+                "message": "多余标点: 第70字「神」后不应有标点(，)",
+                "position": 69,
+                "character": "神"
+              },
+              {
+                "type": "Punctuation",
+                "message": "多余标点: 第75字「峋」后不应有标点(。)",
+                "position": 74,
+                "character": "峋"
+              },
+              {
+                "type": "Punctuation",
+                "message": "多余标点: 第80字「在」后不应有标点(，)",
+                "position": 79,
+                "character": "在"
+              },
+              {
+                "type": "Punctuation",
+                "message": "多余标点: 第85字「神」后不应有标点(。)",
+                "position": 84,
+                "character": "神"
+              },
+              {
+                "type": "Punctuation",
+                "message": "多余标点: 第88字「啸」后不应有标点(，)",
+                "position": 87,
+                "character": "啸"
+              },
+              {
+                "type": "Punctuation",
+                "message": "多余标点: 第91字「曛」后不应有标点(。)",
+                "position": 90,
+                "character": "曛"
+              },
+              {
+                "type": "Punctuation",
+                "message": "多余标点: 第96字「邻」后不应有标点(。)",
+                "position": 95,
+                "character": "邻"
+              },
+              {
+                "type": "Punctuation",
+                "message": "多余标点: 第99字「有」后不应有标点(，)",
+                "position": 98,
+                "character": "有"
+              },
+              {
+                "type": "Punctuation",
+                "message": "多余标点: 第102字「说」后不应有标点(，)",
+                "position": 101,
+                "character": "说"
+              },
+              {
+                "type": "Punctuation",
+                "message": "多余标点: 第121字「扪」后不应有标点(。)",
+                "position": 120,
+                "character": "扪"
+              }
+            ],
+            "metrics": {
+              "rhyme_name": "第6部_平",
+              "rhyme_chars": [
+                "吼",
+                "吼",
+                "榛",
+                "岷",
+                "啸",
+                "飞",
+                "涧",
+                "狐",
+                "盼",
+                "裂",
+                "尚",
+                "纹",
+                "过",
+                "雯"
+              ],
+              "rhyme_positions": [
+                2,
+                5,
+                10,
+                21,
+                33,
+                46,
+                53,
+                61,
+                76,
+                88,
+                100,
+                106,
+                113,
+                125
+              ],
+              "closest_rule": {
+                "char_count": 126,
+                "cipai": "翠羽吟",
+                "genre": "Ci",
+                "name": "翠羽吟_钦谱_格一"
+              },
+              "display_segments": [
+                {
+                  "rule_items": [
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    }
+                  ],
+                  "start_index": 0,
+                  "text_chars": [
+                    "风",
+                    "乍",
+                    "吼"
+                  ]
+                },
+                {
+                  "rule_items": [
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    }
+                  ],
+                  "start_index": 3,
+                  "text_chars": [
+                    "林",
+                    "乍",
+                    "吼"
+                  ]
+                },
+                {
+                  "rule_items": [
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    }
+                  ],
+                  "start_index": 6,
+                  "text_chars": [
+                    "斑",
+                    "影",
+                    "动",
+                    "秋",
+                    "榛"
+                  ]
+                },
+                {
+                  "rule_items": [
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": "句",
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    }
+                  ],
+                  "start_index": 11,
+                  "text_chars": [
+                    "石",
+                    "径",
+                    "深",
+                    "苔",
+                    "千",
+                    "峰",
+                    "寒",
+                    "月",
+                    "照",
+                    "空",
+                    "岷"
+                  ]
+                },
+                {
+                  "rule_items": [
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": "句",
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    }
+                  ],
+                  "start_index": 22,
+                  "text_chars": [
+                    "电",
+                    "目",
+                    "裂",
+                    "荒",
+                    "昏",
+                    "霜",
+                    "爪",
+                    "踏",
+                    "危",
+                    "巘",
+                    "长",
+                    "啸"
+                  ]
+                },
+                {
+                  "rule_items": [
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": "读",
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": "句",
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    }
+                  ],
+                  "start_index": 34,
+                  "text_chars": [
+                    "振",
+                    "层",
+                    "云",
+                    "惊",
+                    "万",
+                    "壑",
+                    "百",
+                    "兽",
+                    "奔",
+                    "松",
+                    "末",
+                    "叶",
+                    "飞"
+                  ]
+                },
+                {
+                  "rule_items": [
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    }
+                  ],
+                  "start_index": 47,
+                  "text_chars": [
+                    "纷",
+                    "曾",
+                    "据",
+                    "险",
+                    "曾",
+                    "饮",
+                    "涧"
+                  ]
+                },
+                {
+                  "rule_items": [
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": "句",
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    }
+                  ],
+                  "start_index": 54,
+                  "text_chars": [
+                    "雪",
+                    "满",
+                    "大",
+                    "荒",
+                    "身",
+                    "气",
+                    "压",
+                    "狐"
+                  ]
+                },
+                {
+                  "rule_items": [
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": "句",
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": "句",
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    }
+                  ],
+                  "start_index": 62,
+                  "text_chars": [
+                    "豺",
+                    "威",
+                    "临",
+                    "魑",
+                    "魅",
+                    "镇",
+                    "山",
+                    "神",
+                    "怒",
+                    "步",
+                    "撼",
+                    "嶙",
+                    "峋",
+                    "顾",
+                    "盼"
+                  ]
+                },
+                {
+                  "rule_items": [
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": "句",
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    }
+                  ],
+                  "start_index": 77,
+                  "text_chars": [
+                    "余",
+                    "雄",
+                    "在",
+                    "苍",
+                    "莽",
+                    "见",
+                    "精",
+                    "神",
+                    "听",
+                    "一",
+                    "啸",
+                    "裂"
+                  ]
+                },
+                {
+                  "rule_items": [
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": "句",
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": "读",
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    }
+                  ],
+                  "start_index": 89,
+                  "text_chars": [
+                    "夕",
+                    "曛",
+                    "四",
+                    "野",
+                    "寂",
+                    "无",
+                    "邻",
+                    "今",
+                    "尚",
+                    "有",
+                    "人",
+                    "尚"
+                  ]
+                },
+                {
+                  "rule_items": [
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    }
+                  ],
+                  "start_index": 101,
+                  "text_chars": [
+                    "说",
+                    "幽",
+                    "壁",
+                    "走",
+                    "星",
+                    "纹"
+                  ]
+                },
+                {
+                  "rule_items": [
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    }
+                  ],
+                  "start_index": 107,
+                  "text_chars": [
+                    "夜",
+                    "半",
+                    "溪",
+                    "桥",
+                    "樵",
+                    "子",
+                    "过"
+                  ]
+                },
+                {
+                  "rule_items": [
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": "句",
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": "句",
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    }
+                  ],
+                  "start_index": 114,
+                  "text_chars": [
+                    "犹",
+                    "道",
+                    "林",
+                    "深",
+                    "不",
+                    "可",
+                    "扪",
+                    "清",
+                    "梦",
+                    "落",
+                    "寒",
+                    "雯"
+                  ]
+                }
+              ],
+              "tone_error_count": 56,
+              "rhyme_error_count": 10,
+              "violation_count": 106,
+              "checked_chars": 126
+            },
+            "metadata": {
+              "raw_response": {
+                "chars": [
+                  "风",
+                  "乍",
+                  "吼",
+                  "林",
+                  "乍",
+                  "吼",
+                  "斑",
+                  "影",
+                  "动",
+                  "秋",
+                  "榛",
+                  "石",
+                  "径",
+                  "深",
+                  "苔",
+                  "千",
+                  "峰",
+                  "寒",
+                  "月",
+                  "照",
+                  "空",
+                  "岷",
+                  "电",
+                  "目",
+                  "裂",
+                  "荒",
+                  "昏",
+                  "霜",
+                  "爪",
+                  "踏",
+                  "危",
+                  "巘",
+                  "长",
+                  "啸",
+                  "振",
+                  "层",
+                  "云",
+                  "惊",
+                  "万",
+                  "壑",
+                  "百",
+                  "兽",
+                  "奔",
+                  "松",
+                  "末",
+                  "叶",
+                  "飞",
+                  "纷",
+                  "曾",
+                  "据",
+                  "险",
+                  "曾",
+                  "饮",
+                  "涧",
+                  "雪",
+                  "满",
+                  "大",
+                  "荒",
+                  "身",
+                  "气",
+                  "压",
+                  "狐",
+                  "豺",
+                  "威",
+                  "临",
+                  "魑",
+                  "魅",
+                  "镇",
+                  "山",
+                  "神",
+                  "怒",
+                  "步",
+                  "撼",
+                  "嶙",
+                  "峋",
+                  "顾",
+                  "盼",
+                  "余",
+                  "雄",
+                  "在",
+                  "苍",
+                  "莽",
+                  "见",
+                  "精",
+                  "神",
+                  "听",
+                  "一",
+                  "啸",
+                  "裂",
+                  "夕",
+                  "曛",
+                  "四",
+                  "野",
+                  "寂",
+                  "无",
+                  "邻",
+                  "今",
+                  "尚",
+                  "有",
+                  "人",
+                  "尚",
+                  "说",
+                  "幽",
+                  "壁",
+                  "走",
+                  "星",
+                  "纹",
+                  "夜",
+                  "半",
+                  "溪",
+                  "桥",
+                  "樵",
+                  "子",
+                  "过",
+                  "犹",
+                  "道",
+                  "林",
+                  "深",
+                  "不",
+                  "可",
+                  "扪",
+                  "清",
+                  "梦",
+                  "落",
+                  "寒",
+                  "雯"
+                ],
+                "closest_rule": {
+                  "char_count": 126,
+                  "cipai": "翠羽吟",
+                  "genre": "Ci",
+                  "name": "翠羽吟_钦谱_格一"
+                },
+                "display_segments": [
+                  {
+                    "rule_items": [
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      }
+                    ],
+                    "start_index": 0,
+                    "text_chars": [
+                      "风",
+                      "乍",
+                      "吼"
+                    ]
+                  },
+                  {
+                    "rule_items": [
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      }
+                    ],
+                    "start_index": 3,
+                    "text_chars": [
+                      "林",
+                      "乍",
+                      "吼"
+                    ]
+                  },
+                  {
+                    "rule_items": [
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      }
+                    ],
+                    "start_index": 6,
+                    "text_chars": [
+                      "斑",
+                      "影",
+                      "动",
+                      "秋",
+                      "榛"
+                    ]
+                  },
+                  {
+                    "rule_items": [
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": "句",
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      }
+                    ],
+                    "start_index": 11,
+                    "text_chars": [
+                      "石",
+                      "径",
+                      "深",
+                      "苔",
+                      "千",
+                      "峰",
+                      "寒",
+                      "月",
+                      "照",
+                      "空",
+                      "岷"
+                    ]
+                  },
+                  {
+                    "rule_items": [
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": "句",
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      }
+                    ],
+                    "start_index": 22,
+                    "text_chars": [
+                      "电",
+                      "目",
+                      "裂",
+                      "荒",
+                      "昏",
+                      "霜",
+                      "爪",
+                      "踏",
+                      "危",
+                      "巘",
+                      "长",
+                      "啸"
+                    ]
+                  },
+                  {
+                    "rule_items": [
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": "读",
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": "句",
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      }
+                    ],
+                    "start_index": 34,
+                    "text_chars": [
+                      "振",
+                      "层",
+                      "云",
+                      "惊",
+                      "万",
+                      "壑",
+                      "百",
+                      "兽",
+                      "奔",
+                      "松",
+                      "末",
+                      "叶",
+                      "飞"
+                    ]
+                  },
+                  {
+                    "rule_items": [
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      }
+                    ],
+                    "start_index": 47,
+                    "text_chars": [
+                      "纷",
+                      "曾",
+                      "据",
+                      "险",
+                      "曾",
+                      "饮",
+                      "涧"
+                    ]
+                  },
+                  {
+                    "rule_items": [
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": "句",
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      }
+                    ],
+                    "start_index": 54,
+                    "text_chars": [
+                      "雪",
+                      "满",
+                      "大",
+                      "荒",
+                      "身",
+                      "气",
+                      "压",
+                      "狐"
+                    ]
+                  },
+                  {
+                    "rule_items": [
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": "句",
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": "句",
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      }
+                    ],
+                    "start_index": 62,
+                    "text_chars": [
+                      "豺",
+                      "威",
+                      "临",
+                      "魑",
+                      "魅",
+                      "镇",
+                      "山",
+                      "神",
+                      "怒",
+                      "步",
+                      "撼",
+                      "嶙",
+                      "峋",
+                      "顾",
+                      "盼"
+                    ]
+                  },
+                  {
+                    "rule_items": [
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": "句",
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      }
+                    ],
+                    "start_index": 77,
+                    "text_chars": [
+                      "余",
+                      "雄",
+                      "在",
+                      "苍",
+                      "莽",
+                      "见",
+                      "精",
+                      "神",
+                      "听",
+                      "一",
+                      "啸",
+                      "裂"
+                    ]
+                  },
+                  {
+                    "rule_items": [
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": "句",
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": "读",
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      }
+                    ],
+                    "start_index": 89,
+                    "text_chars": [
+                      "夕",
+                      "曛",
+                      "四",
+                      "野",
+                      "寂",
+                      "无",
+                      "邻",
+                      "今",
+                      "尚",
+                      "有",
+                      "人",
+                      "尚"
+                    ]
+                  },
+                  {
+                    "rule_items": [
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      }
+                    ],
+                    "start_index": 101,
+                    "text_chars": [
+                      "说",
+                      "幽",
+                      "壁",
+                      "走",
+                      "星",
+                      "纹"
+                    ]
+                  },
+                  {
+                    "rule_items": [
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      }
+                    ],
+                    "start_index": 107,
+                    "text_chars": [
+                      "夜",
+                      "半",
+                      "溪",
+                      "桥",
+                      "樵",
+                      "子",
+                      "过"
+                    ]
+                  },
+                  {
+                    "rule_items": [
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": "句",
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": "句",
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      }
+                    ],
+                    "start_index": 114,
+                    "text_chars": [
+                      "犹",
+                      "道",
+                      "林",
+                      "深",
+                      "不",
+                      "可",
+                      "扪",
+                      "清",
+                      "梦",
+                      "落",
+                      "寒",
+                      "雯"
+                    ]
+                  }
+                ],
+                "errors": [
+                  {
+                    "actual": "P",
+                    "character": "风",
+                    "error_type": "Tone",
+                    "expected": "Z",
+                    "message": "应为仄, 实为平",
+                    "position": 0
+                  },
+                  {
+                    "actual": "Z",
+                    "character": "吼",
+                    "error_type": "Tone",
+                    "expected": "P",
+                    "message": "应为平, 实为仄",
+                    "position": 2
+                  },
+                  {
+                    "actual": "P",
+                    "character": "林",
+                    "error_type": "Tone",
+                    "expected": "Z",
+                    "message": "应为仄, 实为平",
+                    "position": 3
+                  },
+                  {
+                    "actual": "Z",
+                    "character": "吼",
+                    "error_type": "Tone",
+                    "expected": "P",
+                    "message": "应为平, 实为仄",
+                    "position": 5
+                  },
+                  {
+                    "actual": "P",
+                    "character": "千",
+                    "error_type": "Tone",
+                    "expected": "Z",
+                    "message": "应为仄, 实为平",
+                    "position": 15
+                  },
+                  {
+                    "actual": "Z",
+                    "character": "目",
+                    "error_type": "Tone",
+                    "expected": "P",
+                    "message": "应为平, 实为仄",
+                    "position": 23
+                  },
+                  {
+                    "actual": "Z",
+                    "character": "裂",
+                    "error_type": "Tone",
+                    "expected": "P",
+                    "message": "应为平, 实为仄",
+                    "position": 24
+                  },
+                  {
+                    "actual": "P",
+                    "character": "昏",
+                    "error_type": "Tone",
+                    "expected": "Z",
+                    "message": "应为仄, 实为平",
+                    "position": 26
+                  },
+                  {
+                    "actual": "P",
+                    "character": "霜",
+                    "error_type": "Tone",
+                    "expected": "Z",
+                    "message": "应为仄, 实为平",
+                    "position": 27
+                  },
+                  {
+                    "actual": "Z",
+                    "character": "爪",
+                    "error_type": "Tone",
+                    "expected": "P",
+                    "message": "应为平, 实为仄",
+                    "position": 28
+                  },
+                  {
+                    "actual": "Z",
+                    "character": "啸",
+                    "error_type": "Tone",
+                    "expected": "P",
+                    "message": "应为平, 实为仄",
+                    "position": 33
+                  },
+                  {
+                    "actual": "P",
+                    "character": "层",
+                    "error_type": "Tone",
+                    "expected": "Z",
+                    "message": "应为仄, 实为平",
+                    "position": 35
+                  },
+                  {
+                    "actual": "P",
+                    "character": "惊",
+                    "error_type": "Tone",
+                    "expected": "Z",
+                    "message": "应为仄, 实为平",
+                    "position": 37
+                  },
+                  {
+                    "actual": "Z",
+                    "character": "万",
+                    "error_type": "Tone",
+                    "expected": "P",
+                    "message": "应为平, 实为仄",
+                    "position": 38
+                  },
+                  {
+                    "actual": "Z",
+                    "character": "壑",
+                    "error_type": "Tone",
+                    "expected": "P",
+                    "message": "应为平, 实为仄",
+                    "position": 39
+                  },
+                  {
+                    "actual": "Z",
+                    "character": "兽",
+                    "error_type": "Tone",
+                    "expected": "P",
+                    "message": "应为平, 实为仄",
+                    "position": 41
+                  },
+                  {
+                    "actual": "P",
+                    "character": "松",
+                    "error_type": "Tone",
+                    "expected": "Z",
+                    "message": "应为仄, 实为平",
+                    "position": 43
+                  },
+                  {
+                    "actual": "Z",
+                    "character": "叶",
+                    "error_type": "Tone",
+                    "expected": "P",
+                    "message": "应为平, 实为仄",
+                    "position": 45
+                  },
+                  {
+                    "actual": "P",
+                    "character": "曾",
+                    "error_type": "Tone",
+                    "expected": "Z",
+                    "message": "应为仄, 实为平",
+                    "position": 48
+                  },
+                  {
+                    "actual": "P",
+                    "character": "曾",
+                    "error_type": "Tone",
+                    "expected": "Z",
+                    "message": "应为仄, 实为平",
+                    "position": 51
+                  },
+                  {
+                    "actual": "Z",
+                    "character": "饮",
+                    "error_type": "Tone",
+                    "expected": "P",
+                    "message": "应为平, 实为仄",
+                    "position": 52
+                  },
+                  {
+                    "actual": "Z",
+                    "character": "涧",
+                    "error_type": "Tone",
+                    "expected": "P",
+                    "message": "应为平, 实为仄",
+                    "position": 53
+                  },
+                  {
+                    "actual": "Z",
+                    "character": "雪",
+                    "error_type": "Tone",
+                    "expected": "P",
+                    "message": "应为平, 实为仄",
+                    "position": 54
+                  },
+                  {
+                    "actual": "Z",
+                    "character": "满",
+                    "error_type": "Tone",
+                    "expected": "P",
+                    "message": "应为平, 实为仄",
+                    "position": 55
+                  },
+                  {
+                    "actual": "Z",
+                    "character": "大",
+                    "error_type": "Tone",
+                    "expected": "P",
+                    "message": "应为平, 实为仄",
+                    "position": 56
+                  },
+                  {
+                    "actual": "P",
+                    "character": "荒",
+                    "error_type": "Tone",
+                    "expected": "Z",
+                    "message": "应为仄, 实为平",
+                    "position": 57
+                  },
+                  {
+                    "actual": "P",
+                    "character": "身",
+                    "error_type": "Tone",
+                    "expected": "Z",
+                    "message": "应为仄, 实为平",
+                    "position": 58
+                  },
+                  {
+                    "actual": "Z",
+                    "character": "压",
+                    "error_type": "Tone",
+                    "expected": "P",
+                    "message": "应为平, 实为仄",
+                    "position": 60
+                  },
+                  {
+                    "actual": "P",
+                    "character": "豺",
+                    "error_type": "Tone",
+                    "expected": "Z",
+                    "message": "应为仄, 实为平",
+                    "position": 62
+                  },
+                  {
+                    "actual": "P",
+                    "character": "威",
+                    "error_type": "Tone",
+                    "expected": "Z",
+                    "message": "应为仄, 实为平",
+                    "position": 63
+                  },
+                  {
+                    "actual": "P",
+                    "character": "神",
+                    "error_type": "Tone",
+                    "expected": "Z",
+                    "message": "应为仄, 实为平",
+                    "position": 69
+                  },
+                  {
+                    "actual": "Z",
+                    "character": "撼",
+                    "error_type": "Tone",
+                    "expected": "P",
+                    "message": "应为平, 实为仄",
+                    "position": 72
+                  },
+                  {
+                    "actual": "Z",
+                    "character": "盼",
+                    "error_type": "Tone",
+                    "expected": "P",
+                    "message": "应为平, 实为仄",
+                    "position": 76
+                  },
+                  {
+                    "actual": "P",
+                    "character": "余",
+                    "error_type": "Tone",
+                    "expected": "Z",
+                    "message": "应为仄, 实为平",
+                    "position": 77
+                  },
+                  {
+                    "actual": "Z",
+                    "character": "莽",
+                    "error_type": "Tone",
+                    "expected": "P",
+                    "message": "应为平, 实为仄",
+                    "position": 81
+                  },
+                  {
+                    "actual": "Z",
+                    "character": "见",
+                    "error_type": "Tone",
+                    "expected": "P",
+                    "message": "应为平, 实为仄",
+                    "position": 82
+                  },
+                  {
+                    "actual": "P",
+                    "character": "精",
+                    "error_type": "Tone",
+                    "expected": "Z",
+                    "message": "应为仄, 实为平",
+                    "position": 83
+                  },
+                  {
+                    "actual": "P",
+                    "character": "神",
+                    "error_type": "Tone",
+                    "expected": "Z",
+                    "message": "应为仄, 实为平",
+                    "position": 84
+                  },
+                  {
+                    "actual": "Z",
+                    "character": "啸",
+                    "error_type": "Tone",
+                    "expected": "P",
+                    "message": "应为平, 实为仄",
+                    "position": 87
+                  },
+                  {
+                    "actual": "Z",
+                    "character": "裂",
+                    "error_type": "Tone",
+                    "expected": "P",
+                    "message": "应为平, 实为仄",
+                    "position": 88
+                  },
+                  {
+                    "actual": "P",
+                    "character": "曛",
+                    "error_type": "Tone",
+                    "expected": "Z",
+                    "message": "应为仄, 实为平",
+                    "position": 90
+                  },
+                  {
+                    "actual": "Z",
+                    "character": "四",
+                    "error_type": "Tone",
+                    "expected": "P",
+                    "message": "应为平, 实为仄",
+                    "position": 91
+                  },
+                  {
+                    "actual": "Z",
+                    "character": "野",
+                    "error_type": "Tone",
+                    "expected": "P",
+                    "message": "应为平, 实为仄",
+                    "position": 92
+                  },
+                  {
+                    "actual": "P",
+                    "character": "邻",
+                    "error_type": "Tone",
+                    "expected": "Z",
+                    "message": "应为仄, 实为平",
+                    "position": 95
+                  },
+                  {
+                    "actual": "P",
+                    "character": "今",
+                    "error_type": "Tone",
+                    "expected": "Z",
+                    "message": "应为仄, 实为平",
+                    "position": 96
+                  },
+                  {
+                    "actual": "P",
+                    "character": "幽",
+                    "error_type": "Tone",
+                    "expected": "Z",
+                    "message": "应为仄, 实为平",
+                    "position": 102
+                  },
+                  {
+                    "actual": "Z",
+                    "character": "壁",
+                    "error_type": "Tone",
+                    "expected": "P",
+                    "message": "应为平, 实为仄",
+                    "position": 103
+                  },
+                  {
+                    "actual": "Z",
+                    "character": "走",
+                    "error_type": "Tone",
+                    "expected": "P",
+                    "message": "应为平, 实为仄",
+                    "position": 104
+                  },
+                  {
+                    "actual": "P",
+                    "character": "星",
+                    "error_type": "Tone",
+                    "expected": "Z",
+                    "message": "应为仄, 实为平",
+                    "position": 105
+                  },
+                  {
+                    "actual": "Z",
+                    "character": "半",
+                    "error_type": "Tone",
+                    "expected": "P",
+                    "message": "应为平, 实为仄",
+                    "position": 108
+                  },
+                  {
+                    "actual": "P",
+                    "character": "桥",
+                    "error_type": "Tone",
+                    "expected": "Z",
+                    "message": "应为仄, 实为平",
+                    "position": 110
+                  },
+                  {
+                    "actual": "P",
+                    "character": "樵",
+                    "error_type": "Tone",
+                    "expected": "Z",
+                    "message": "应为仄, 实为平",
+                    "position": 111
+                  },
+                  {
+                    "actual": "Z",
+                    "character": "子",
+                    "error_type": "Tone",
+                    "expected": "P",
+                    "message": "应为平, 实为仄",
+                    "position": 112
+                  },
+                  {
+                    "actual": "Z",
+                    "character": "道",
+                    "error_type": "Tone",
+                    "expected": "P",
+                    "message": "应为平, 实为仄",
+                    "position": 115
+                  },
+                  {
+                    "actual": "P",
+                    "character": "林",
+                    "error_type": "Tone",
+                    "expected": "Z",
+                    "message": "应为仄, 实为平",
+                    "position": 116
+                  },
+                  {
+                    "actual": "P",
+                    "character": "寒",
+                    "error_type": "Tone",
+                    "expected": "Z",
+                    "message": "应为仄, 实为平",
+                    "position": 124
+                  },
+                  {
+                    "actual": "第12部_仄",
+                    "character": "吼",
+                    "error_type": "Rhyme",
+                    "expected": "第6部_平",
+                    "message": "出韵",
+                    "position": 2
+                  },
+                  {
+                    "actual": "第12部_仄",
+                    "character": "吼",
+                    "error_type": "Rhyme",
+                    "expected": "第6部_平",
+                    "message": "出韵",
+                    "position": 5
+                  },
+                  {
+                    "actual": "第8部_仄",
+                    "character": "啸",
+                    "error_type": "Rhyme",
+                    "expected": "第6部_平",
+                    "message": "出韵",
+                    "position": 33
+                  },
+                  {
+                    "actual": "第3部_平",
+                    "character": "飞",
+                    "error_type": "Rhyme",
+                    "expected": "第6部_平",
+                    "message": "出韵",
+                    "position": 46
+                  },
+                  {
+                    "actual": "第7部_仄",
+                    "character": "涧",
+                    "error_type": "Rhyme",
+                    "expected": "第6部_平",
+                    "message": "出韵",
+                    "position": 53
+                  },
+                  {
+                    "actual": "第4部_平",
+                    "character": "狐",
+                    "error_type": "Rhyme",
+                    "expected": "第6部_平",
+                    "message": "出韵",
+                    "position": 61
+                  },
+                  {
+                    "actual": "第7部_仄",
+                    "character": "盼",
+                    "error_type": "Rhyme",
+                    "expected": "第6部_平",
+                    "message": "出韵",
+                    "position": 76
+                  },
+                  {
+                    "actual": "第18部_入",
+                    "character": "裂",
+                    "error_type": "Rhyme",
+                    "expected": "第6部_平",
+                    "message": "出韵",
+                    "position": 88
+                  },
+                  {
+                    "actual": "第2部_仄,第2部_平",
+                    "character": "尚",
+                    "error_type": "Rhyme",
+                    "expected": "第6部_平",
+                    "message": "出韵",
+                    "position": 100
+                  },
+                  {
+                    "actual": "第9部_仄,第9部_平",
+                    "character": "过",
+                    "error_type": "Rhyme",
+                    "expected": "第6部_平",
+                    "message": "出韵",
+                    "position": 113
+                  },
+                  {
+                    "actual": "，",
+                    "character": "吼",
+                    "error_type": "Punctuation",
+                    "expected": "句号(。)",
+                    "message": "标点有误: 第3字「吼」后应为句号(。), 实为，",
+                    "position": 2
+                  },
+                  {
+                    "actual": "，",
+                    "character": "吼",
+                    "error_type": "Punctuation",
+                    "expected": "句号(。)",
+                    "message": "标点有误: 第6字「吼」后应为句号(。), 实为，",
+                    "position": 5
+                  },
+                  {
+                    "actual": "，",
+                    "character": "岷",
+                    "error_type": "Punctuation",
+                    "expected": "句号(。)",
+                    "message": "标点有误: 第22字「岷」后应为句号(。), 实为，",
+                    "position": 21
+                  },
+                  {
+                    "actual": null,
+                    "character": "霜",
+                    "error_type": "Punctuation",
+                    "expected": "逗号(，)",
+                    "message": "缺少标点: 第28字「霜」后应为逗号(，)",
+                    "position": 27
+                  },
+                  {
+                    "actual": null,
+                    "character": "啸",
+                    "error_type": "Punctuation",
+                    "expected": "句号(。)",
+                    "message": "缺少标点: 第34字「啸」后应为句号(。)",
+                    "position": 33
+                  },
+                  {
+                    "actual": "。",
+                    "character": "云",
+                    "error_type": "Punctuation",
+                    "expected": "顿号(、)",
+                    "message": "标点有误: 第37字「云」后应为顿号(、), 实为。",
+                    "position": 36
+                  },
+                  {
+                    "actual": null,
+                    "character": "百",
+                    "error_type": "Punctuation",
+                    "expected": "逗号(，)",
+                    "message": "缺少标点: 第41字「百」后应为逗号(，)",
+                    "position": 40
+                  },
+                  {
+                    "actual": null,
+                    "character": "飞",
+                    "error_type": "Punctuation",
+                    "expected": "句号(。)",
+                    "message": "缺少标点: 第47字「飞」后应为句号(。)",
+                    "position": 46
+                  },
+                  {
+                    "actual": "，",
+                    "character": "涧",
+                    "error_type": "Punctuation",
+                    "expected": "句号(。)",
+                    "message": "标点有误: 第54字「涧」后应为句号(。), 实为，",
+                    "position": 53
+                  },
+                  {
+                    "actual": null,
+                    "character": "荒",
+                    "error_type": "Punctuation",
+                    "expected": "逗号(，)",
+                    "message": "缺少标点: 第58字「荒」后应为逗号(，)",
+                    "position": 57
+                  },
+                  {
+                    "actual": null,
+                    "character": "狐",
+                    "error_type": "Punctuation",
+                    "expected": "句号(。)",
+                    "message": "缺少标点: 第62字「狐」后应为句号(。)",
+                    "position": 61
+                  },
+                  {
+                    "actual": null,
+                    "character": "镇",
+                    "error_type": "Punctuation",
+                    "expected": "逗号(，)",
+                    "message": "缺少标点: 第68字「镇」后应为逗号(，)",
+                    "position": 67
+                  },
+                  {
+                    "actual": null,
+                    "character": "步",
+                    "error_type": "Punctuation",
+                    "expected": "逗号(，)",
+                    "message": "缺少标点: 第72字「步」后应为逗号(，)",
+                    "position": 71
+                  },
+                  {
+                    "actual": null,
+                    "character": "盼",
+                    "error_type": "Punctuation",
+                    "expected": "句号(。)",
+                    "message": "缺少标点: 第77字「盼」后应为句号(。)",
+                    "position": 76
+                  },
+                  {
+                    "actual": null,
+                    "character": "见",
+                    "error_type": "Punctuation",
+                    "expected": "逗号(，)",
+                    "message": "缺少标点: 第83字「见」后应为逗号(，)",
+                    "position": 82
+                  },
+                  {
+                    "actual": null,
+                    "character": "裂",
+                    "error_type": "Punctuation",
+                    "expected": "句号(。)",
+                    "message": "缺少标点: 第89字「裂」后应为句号(。)",
+                    "position": 88
+                  },
+                  {
+                    "actual": null,
+                    "character": "寂",
+                    "error_type": "Punctuation",
+                    "expected": "逗号(，)",
+                    "message": "缺少标点: 第94字「寂」后应为逗号(，)",
+                    "position": 93
+                  },
+                  {
+                    "actual": null,
+                    "character": "今",
+                    "error_type": "Punctuation",
+                    "expected": "顿号(、)",
+                    "message": "缺少标点: 第97字「今」后应为顿号(、)",
+                    "position": 96
+                  },
+                  {
+                    "actual": null,
+                    "character": "尚",
+                    "error_type": "Punctuation",
+                    "expected": "句号(。)",
+                    "message": "缺少标点: 第101字「尚」后应为句号(。)",
+                    "position": 100
+                  },
+                  {
+                    "actual": "，",
+                    "character": "过",
+                    "error_type": "Punctuation",
+                    "expected": "句号(。)",
+                    "message": "标点有误: 第114字「过」后应为句号(。), 实为，",
+                    "position": 113
+                  },
+                  {
+                    "actual": null,
+                    "character": "深",
+                    "error_type": "Punctuation",
+                    "expected": "逗号(，)",
+                    "message": "缺少标点: 第118字「深」后应为逗号(，)",
+                    "position": 117
+                  },
+                  {
+                    "actual": null,
+                    "character": "清",
+                    "error_type": "Punctuation",
+                    "expected": "逗号(，)",
+                    "message": "缺少标点: 第122字「清」后应为逗号(，)",
+                    "position": 121
+                  },
+                  {
+                    "actual": "。",
+                    "character": "昏",
+                    "error_type": "Punctuation",
+                    "expected": null,
+                    "message": "多余标点: 第27字「昏」后不应有标点(。)",
+                    "position": 26
+                  },
+                  {
+                    "actual": "，",
+                    "character": "巘",
+                    "error_type": "Punctuation",
+                    "expected": null,
+                    "message": "多余标点: 第32字「巘」后不应有标点(，)",
+                    "position": 31
+                  },
+                  {
+                    "actual": "，",
+                    "character": "壑",
+                    "error_type": "Punctuation",
+                    "expected": null,
+                    "message": "多余标点: 第40字「壑」后不应有标点(，)",
+                    "position": 39
+                  },
+                  {
+                    "actual": "。",
+                    "character": "奔",
+                    "error_type": "Punctuation",
+                    "expected": null,
+                    "message": "多余标点: 第43字「奔」后不应有标点(。)",
+                    "position": 42
+                  },
+                  {
+                    "actual": "。",
+                    "character": "纷",
+                    "error_type": "Punctuation",
+                    "expected": null,
+                    "message": "多余标点: 第48字「纷」后不应有标点(。)",
+                    "position": 47
+                  },
+                  {
+                    "actual": "，",
+                    "character": "险",
+                    "error_type": "Punctuation",
+                    "expected": null,
+                    "message": "多余标点: 第51字「险」后不应有标点(，)",
+                    "position": 50
+                  },
+                  {
+                    "actual": "。",
+                    "character": "身",
+                    "error_type": "Punctuation",
+                    "expected": null,
+                    "message": "多余标点: 第59字「身」后不应有标点(。)",
+                    "position": 58
+                  },
+                  {
+                    "actual": "，",
+                    "character": "豺",
+                    "error_type": "Punctuation",
+                    "expected": null,
+                    "message": "多余标点: 第63字「豺」后不应有标点(，)",
+                    "position": 62
+                  },
+                  {
+                    "actual": "，",
+                    "character": "神",
+                    "error_type": "Punctuation",
+                    "expected": null,
+                    "message": "多余标点: 第70字「神」后不应有标点(，)",
+                    "position": 69
+                  },
+                  {
+                    "actual": "。",
+                    "character": "峋",
+                    "error_type": "Punctuation",
+                    "expected": null,
+                    "message": "多余标点: 第75字「峋」后不应有标点(。)",
+                    "position": 74
+                  },
+                  {
+                    "actual": "，",
+                    "character": "在",
+                    "error_type": "Punctuation",
+                    "expected": null,
+                    "message": "多余标点: 第80字「在」后不应有标点(，)",
+                    "position": 79
+                  },
+                  {
+                    "actual": "。",
+                    "character": "神",
+                    "error_type": "Punctuation",
+                    "expected": null,
+                    "message": "多余标点: 第85字「神」后不应有标点(。)",
+                    "position": 84
+                  },
+                  {
+                    "actual": "，",
+                    "character": "啸",
+                    "error_type": "Punctuation",
+                    "expected": null,
+                    "message": "多余标点: 第88字「啸」后不应有标点(，)",
+                    "position": 87
+                  },
+                  {
+                    "actual": "。",
+                    "character": "曛",
+                    "error_type": "Punctuation",
+                    "expected": null,
+                    "message": "多余标点: 第91字「曛」后不应有标点(。)",
+                    "position": 90
+                  },
+                  {
+                    "actual": "。",
+                    "character": "邻",
+                    "error_type": "Punctuation",
+                    "expected": null,
+                    "message": "多余标点: 第96字「邻」后不应有标点(。)",
+                    "position": 95
+                  },
+                  {
+                    "actual": "，",
+                    "character": "有",
+                    "error_type": "Punctuation",
+                    "expected": null,
+                    "message": "多余标点: 第99字「有」后不应有标点(，)",
+                    "position": 98
+                  },
+                  {
+                    "actual": "，",
+                    "character": "说",
+                    "error_type": "Punctuation",
+                    "expected": null,
+                    "message": "多余标点: 第102字「说」后不应有标点(，)",
+                    "position": 101
+                  },
+                  {
+                    "actual": "。",
+                    "character": "扪",
+                    "error_type": "Punctuation",
+                    "expected": null,
+                    "message": "多余标点: 第121字「扪」后不应有标点(。)",
+                    "position": 120
+                  }
+                ],
+                "is_valid": false,
+                "rhyme_chars": [
+                  "吼",
+                  "吼",
+                  "榛",
+                  "岷",
+                  "啸",
+                  "飞",
+                  "涧",
+                  "狐",
+                  "盼",
+                  "裂",
+                  "尚",
+                  "纹",
+                  "过",
+                  "雯"
+                ],
+                "rhyme_groups": [
+                  {
+                    "positions": [
+                      2,
+                      5,
+                      10,
+                      21,
+                      33,
+                      46,
+                      53,
+                      61,
+                      76,
+                      88,
+                      100,
+                      106,
+                      113,
+                      125
+                    ],
+                    "type": "same"
+                  }
+                ],
+                "rhyme_name": "第6部_平",
+                "rhyme_positions": [
+                  2,
+                  5,
+                  10,
+                  21,
+                  33,
+                  46,
+                  53,
+                  61,
+                  76,
+                  88,
+                  100,
+                  106,
+                  113,
+                  125
+                ],
+                "rhyme_relations": [],
+                "tone_pattern": [
+                  "Z",
+                  "Z",
+                  "P",
+                  "Z",
+                  "Z",
+                  "P",
+                  "P",
+                  "Z",
+                  "Z",
+                  "P",
+                  "P",
+                  "Z",
+                  "Z",
+                  "Z",
+                  "P",
+                  "Z",
+                  "P",
+                  "P",
+                  "Z",
+                  "Z",
+                  "P",
+                  "P",
+                  "Z",
+                  "P",
+                  "P",
+                  "P",
+                  "Z",
+                  "Z",
+                  "P",
+                  "Z",
+                  "P",
+                  "Z",
+                  "P",
+                  "P",
+                  "Z",
+                  "Z",
+                  "P",
+                  "Z",
+                  "P",
+                  "P",
+                  "Z",
+                  "P",
+                  "P",
+                  "Z",
+                  "Z",
+                  "P",
+                  "P",
+                  "P",
+                  "Z",
+                  "P",
+                  "Z",
+                  "Z",
+                  "P",
+                  "P",
+                  "P",
+                  "P",
+                  "P",
+                  "Z",
+                  "Z",
+                  "Z",
+                  "P",
+                  "P",
+                  "Z",
+                  "Z",
+                  "P",
+                  "P",
+                  "Z",
+                  "Z",
+                  "P",
+                  "Z",
+                  "Z",
+                  "Z",
+                  "P",
+                  "P",
+                  "P",
+                  "Z",
+                  "P",
+                  "Z",
+                  "P",
+                  "Z",
+                  "Z",
+                  "P",
+                  "P",
+                  "Z",
+                  "Z",
+                  "Z",
+                  "Z",
+                  "P",
+                  "P",
+                  "Z",
+                  "Z",
+                  "P",
+                  "P",
+                  "Z",
+                  "P",
+                  "Z",
+                  "Z",
+                  "P",
+                  "Z",
+                  "P",
+                  "P",
+                  "Z",
+                  "Z",
+                  "P",
+                  "P",
+                  "Z",
+                  "P",
+                  "Z",
+                  "P",
+                  "P",
+                  "Z",
+                  "Z",
+                  "P",
+                  "P",
+                  "P",
+                  "P",
+                  "Z",
+                  "Z",
+                  "Z",
+                  "Z",
+                  "P",
+                  "P",
+                  "Z",
+                  "Z",
+                  "Z",
+                  "P"
+                ],
+                "warnings": [
+                  {
+                    "character": "乍",
+                    "message": "「乍」在第2、5字出现2次",
+                    "positions": [
+                      1,
+                      4
+                    ],
+                    "warning_type": "Duplicate"
+                  },
+                  {
+                    "character": "吼",
+                    "message": "「吼」在第3、6字出现2次",
+                    "positions": [
+                      2,
+                      5
+                    ],
+                    "warning_type": "Duplicate"
+                  },
+                  {
+                    "character": "林",
+                    "message": "「林」在第4、117字出现2次",
+                    "positions": [
+                      3,
+                      116
+                    ],
+                    "warning_type": "Duplicate"
+                  },
+                  {
+                    "character": "深",
+                    "message": "「深」在第14、118字出现2次",
+                    "positions": [
+                      13,
+                      117
+                    ],
+                    "warning_type": "Duplicate"
+                  },
+                  {
+                    "character": "寒",
+                    "message": "「寒」在第18、125字出现2次",
+                    "positions": [
+                      17,
+                      124
+                    ],
+                    "warning_type": "Duplicate"
+                  },
+                  {
+                    "character": "裂",
+                    "message": "「裂」在第25、89字出现2次",
+                    "positions": [
+                      24,
+                      88
+                    ],
+                    "warning_type": "Duplicate"
+                  },
+                  {
+                    "character": "荒",
+                    "message": "「荒」在第26、58字出现2次",
+                    "positions": [
+                      25,
+                      57
+                    ],
+                    "warning_type": "Duplicate"
+                  },
+                  {
+                    "character": "啸",
+                    "message": "「啸」在第34、88字出现2次",
+                    "positions": [
+                      33,
+                      87
+                    ],
+                    "warning_type": "Duplicate"
+                  },
+                  {
+                    "character": "曾",
+                    "message": "「曾」在第49、52字出现2次",
+                    "positions": [
+                      48,
+                      51
+                    ],
+                    "warning_type": "Duplicate"
+                  },
+                  {
+                    "character": "神",
+                    "message": "「神」在第70、85字出现2次",
+                    "positions": [
+                      69,
+                      84
+                    ],
+                    "warning_type": "Duplicate"
+                  },
+                  {
+                    "character": "尚",
+                    "message": "「尚」在第98、101字出现2次",
+                    "positions": [
+                      97,
+                      100
+                    ],
+                    "warning_type": "Duplicate"
+                  }
+                ]
+              },
+              "warning_count": 11,
+              "warnings": [
+                {
+                  "character": "乍",
+                  "message": "「乍」在第2、5字出现2次",
+                  "positions": [
+                    1,
+                    4
+                  ],
+                  "warning_type": "Duplicate"
+                },
+                {
+                  "character": "吼",
+                  "message": "「吼」在第3、6字出现2次",
+                  "positions": [
+                    2,
+                    5
+                  ],
+                  "warning_type": "Duplicate"
+                },
+                {
+                  "character": "林",
+                  "message": "「林」在第4、117字出现2次",
+                  "positions": [
+                    3,
+                    116
+                  ],
+                  "warning_type": "Duplicate"
+                },
+                {
+                  "character": "深",
+                  "message": "「深」在第14、118字出现2次",
+                  "positions": [
+                    13,
+                    117
+                  ],
+                  "warning_type": "Duplicate"
+                },
+                {
+                  "character": "寒",
+                  "message": "「寒」在第18、125字出现2次",
+                  "positions": [
+                    17,
+                    124
+                  ],
+                  "warning_type": "Duplicate"
+                },
+                {
+                  "character": "裂",
+                  "message": "「裂」在第25、89字出现2次",
+                  "positions": [
+                    24,
+                    88
+                  ],
+                  "warning_type": "Duplicate"
+                },
+                {
+                  "character": "荒",
+                  "message": "「荒」在第26、58字出现2次",
+                  "positions": [
+                    25,
+                    57
+                  ],
+                  "warning_type": "Duplicate"
+                },
+                {
+                  "character": "啸",
+                  "message": "「啸」在第34、88字出现2次",
+                  "positions": [
+                    33,
+                    87
+                  ],
+                  "warning_type": "Duplicate"
+                },
+                {
+                  "character": "曾",
+                  "message": "「曾」在第49、52字出现2次",
+                  "positions": [
+                    48,
+                    51
+                  ],
+                  "warning_type": "Duplicate"
+                },
+                {
+                  "character": "神",
+                  "message": "「神」在第70、85字出现2次",
+                  "positions": [
+                    69,
+                    84
+                  ],
+                  "warning_type": "Duplicate"
+                },
+                {
+                  "character": "尚",
+                  "message": "「尚」在第98、101字出现2次",
+                  "positions": [
+                    97,
+                    100
+                  ],
+                  "warning_type": "Duplicate"
+                }
+              ],
+              "hints": [
+                "平仄错误（应平实仄）：位置2「吼」、位置5「吼」、位置23「目」、位置24「裂」、位置28「爪」等，共 29 处。",
+                "平仄错误（应仄实平）：位置0「风」、位置3「林」、位置15「千」、位置26「昏」、位置27「霜」等，共 27 处。",
+                "押韵错误：韵脚 「吼」、「吼」、「啸」、「飞」、「涧」 不在目标韵部「第6部_平」中。调用 rhyme_lookup(category=第6部_平, book=Cilinzhengyun, limit=20) 查看常用字。",
+                "修改以上 106 处错误后，重新调用 validate_meter 校验，直到零错误。"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "messages": [
+    {
+      "role": "system",
+      "content": "你是一位精通格律的中国古典诗词创作助手。你可以调用部分「方寸」诗词知识工具来辅助创作。\n\n## 关于词谱（你无法查询，需凭自身知识）\n\n你无法调用词谱查询工具（rules_list/examples），需要凭自身对词牌格律的记忆来创作：\n- 每个词牌规定了精确的行数、每行字数、每个字位的平仄类别（平/仄/可平可仄），以及押韵位置\n- 词牌有约800种，龙谱和钦谱共收录2500+变体\n- 词按字数分为：小令（≤58字）、中调（59-90字）、长调（>90字）\n- 词用词林正韵（Cilinzhengyun，19个韵部），诗用平水韵（Pingshuiyun，106个韵部），不可搞混\n- 你需要根据词牌名回忆其格律结构，包括句式、平仄和韵位\n\n## 严格执行以下流程\n\n### 第一步：起草\n凭记忆中的词牌格律起草正文，带标点（韵脚用句号，句用逗号，读用顿号）。正文必须放在 content 中。\n\n### 第二步：立即校验\n起草完成后**立即**调用 validate_meter，参数：\n- poem_text = 正文\n- rule_name = 词牌名（如「念奴娇」，不需要精确到格几）\n- genre = Ci（词）或 Shi（诗）\n- include_punctuation = true（词）\n\n### 第三步：修订循环\n根据 validate_meter 返回的 errors、warnings 和 hints 修改正文：\n- errors 必须修复，参考 hints 中的替换建议\n- warnings（重字警告）尽量避免\n- 每次修改后重新 validate_meter，直到 is_valid=true\n- 系统会提示剩余轮次数，轮次不足时优先输出当前最佳版本\n\n## 可用工具\n- validate_meter：校验格律（核心）\n- char_lookup：查字的声调和韵部\n- rhyme_lookup：查韵部字表（建议 limit=20）\n- rhyme_list：浏览韵部概览\n- dictionary_search：查对仗字、词语联想（建议 limit=10）\n- dictionary_allusion：查典故\n- free_rhyme：韵脚检测\n- search_text：全文检索古诗词\n\n## 重要约束\n\n- 禁止输出古人原作或已有作品，必须原创\n- 正文必须始终出现在 content 中，不要只放在工具参数里\n- 起草时可以用□（方框）作为占位符，提交 validate_meter 时允许，但最终 \\boxed{} 输出中不得包含□\n\n## 输出要求\n\n- 格律校验通过后，立即将诗词正文包裹在 \\boxed{} 中输出，不要继续思考或修改\n- \\boxed{} 内只放诗词正文（带标点），不放任何其他内容\n- 不输出标题、词牌名、注释或创作过程说明"
+    },
+    {
+      "role": "user",
+      "content": "围绕【虎】主题，以《翠羽吟》为词牌名填词一首，符合中国古典诗词的格律规范。"
+    },
+    {
+      "annotations": [],
+      "content": null,
+      "refusal": null,
+      "role": "assistant",
+      "tool_calls": [
+        {
+          "function": {
+            "arguments": "{\"poem_text\":\"林壑风生，山君夜啸，斑斓影过荒渡。石径苔深，松关月冷，独立千峰烟暮。电目穿云，霜牙裂雾，百兽潜踪无语。正落叶、卷地如涛，惊起半岩秋雨。\\n\\n曾卧长林据险，也巡原啮雪，饮涧听瀑。气压狐豺，威临魑魅，谁敢轻婴强弩。世换尘喧，更怜顾盼，犹带大荒雄古。待一啸、震裂空冥，万壑尽回寒鼓。\",\"rule_name\":\"翠羽吟\",\"genre\":\"Ci\",\"include_punctuation\":true,\"rhyme_book_name\":\"Cilinzhengyun\"}",
+            "name": "validate_meter"
+          },
+          "id": "call_BECjLCD3cIen2YQuj7FjGkoO",
+          "type": "function"
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_BECjLCD3cIen2YQuj7FjGkoO",
+      "name": "validate_meter",
+      "content": "{\"tool_name\": \"validate_meter\", \"passed\": false, \"issues\": [{\"type\": \"Length\", \"message\": \"字数不匹配 (111字/应126字):\\n  从第1句开始不匹配: 「林壑风生」为4字, 谱面第1句应为3字\\n  传入句式: [4, 4, 6, 4, 4, 6, 4, 4, 6, 3, 4, 6, 6, 5, 4, 4, 4, 6, 4, 4, 6, 3, 4, 6]\\n  谱面句式: [3, 3, 5, 4, 7, 6, 6, 3, 4, 6, 7, 4, 4, 6, 4, 5, 6, 6, 5, 3, 4, 6, 7, 4, 4, 4]\", \"position\": -1, \"character\": \"\"}], \"metrics\": {\"rhyme_name\": null, \"rhyme_chars\": null, \"rhyme_positions\": null, \"closest_rule\": null, \"tone_error_count\": 0, \"rhyme_error_count\": 0, \"violation_count\": 1, \"checked_chars\": 0}, \"metadata\": {\"warning_count\": 0, \"hints\": [\"共 1 处错误，请逐一修改后重新调用 validate_meter 校验。\"]}}"
+    },
+    {
+      "annotations": [],
+      "content": null,
+      "refusal": null,
+      "role": "assistant",
+      "tool_calls": [
+        {
+          "function": {
+            "arguments": "{\"poem_text\":\"山啸起，月啸起，林黑动飞尘。石径苔深人不度，电目穿云裂暮昏。霜爪踏危垠。千嶂静，百兽奔，长风卷怒鳞。 \\n\\n曾据险，曾饮涧，雪满大荒身。气压狐豺魑魅伏，威振冈峦草木振。斑影过秋榛。今顾盼，尚雄浑，一声摇远旻。\",\"rule_name\":\"翠羽吟\",\"genre\":\"Ci\",\"include_punctuation\":true,\"rhyme_book_name\":\"Cilinzhengyun\"}",
+            "name": "validate_meter"
+          },
+          "id": "call_ax1JsgezcCAMZUTZPAkwXnvn",
+          "type": "function"
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_ax1JsgezcCAMZUTZPAkwXnvn",
+      "name": "validate_meter",
+      "content": "{\"tool_name\": \"validate_meter\", \"passed\": false, \"issues\": [{\"type\": \"Length\", \"message\": \"字数不匹配 (82字/应126字):\\n  前3句匹配, 第4句开始出错: 「石径苔深人不度」为7字, 应为4字\\n  传入句式: [3, 3, 5, 7, 7, 5, 3, 3, 5, 3, 3, 5, 7, 7, 5, 3, 3, 5]\\n  谱面句式: [3, 3, 5, 4, 7, 6, 6, 3, 4, 6, 7, 4, 4, 6, 4, 5, 6, 6, 5, 3, 4, 6, 7, 4, 4, 4]\", \"position\": -1, \"character\": \"\"}], \"metrics\": {\"rhyme_name\": null, \"rhyme_chars\": null, \"rhyme_positions\": null, \"closest_rule\": null, \"tone_error_count\": 0, \"rhyme_error_count\": 0, \"violation_count\": 1, \"checked_chars\": 0}, \"metadata\": {\"warning_count\": 0, \"hints\": [\"共 1 处错误，请逐一修改后重新调用 validate_meter 校验。\"]}}"
+    },
+    {
+      "annotations": [],
+      "content": null,
+      "refusal": null,
+      "role": "assistant",
+      "tool_calls": [
+        {
+          "function": {
+            "arguments": "{\"poem_text\":\"风乍吼，林乍吼，斑影动秋榛。石径深苔，千峰冷月，电目裂荒昏。霜爪踏危石，长啸裂烟云。惊万壑，百兽奔。\\n\\n曾据险，曾饮涧，雪满大荒身。气压狐豺，威临魑魅，怒步撼山根。顾盼余雄在，苍莽见精神。听一啸，撼乾坤。\",\"rule_name\":\"翠羽吟\",\"genre\":\"Ci\",\"include_punctuation\":true,\"rhyme_book_name\":\"Cilinzhengyun\"}",
+            "name": "validate_meter"
+          },
+          "id": "call_JowOB3rXX0Q8nmmXD3yasQyg",
+          "type": "function"
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_JowOB3rXX0Q8nmmXD3yasQyg",
+      "name": "validate_meter",
+      "content": "{\"tool_name\": \"validate_meter\", \"passed\": false, \"issues\": [{\"type\": \"Length\", \"message\": \"字数不匹配 (80字/应126字):\\n  前4句匹配, 第5句开始出错: 「千峰冷月」为4字, 应为7字\\n  传入句式: [3, 3, 5, 4, 4, 5, 5, 5, 3, 3, 3, 3, 5, 4, 4, 5, 5, 5, 3, 3]\\n  谱面句式: [3, 3, 5, 4, 7, 6, 6, 3, 4, 6, 7, 4, 4, 6, 4, 5, 6, 6, 5, 3, 4, 6, 7, 4, 4, 4]\", \"position\": -1, \"character\": \"\"}], \"metrics\": {\"rhyme_name\": null, \"rhyme_chars\": null, \"rhyme_positions\": null, \"closest_rule\": null, \"tone_error_count\": 0, \"rhyme_error_count\": 0, \"violation_count\": 1, \"checked_chars\": 0}, \"metadata\": {\"warning_count\": 0, \"hints\": [\"共 1 处错误，请逐一修改后重新调用 validate_meter 校验。\"]}}"
+    },
+    {
+      "annotations": [],
+      "content": null,
+      "refusal": null,
+      "role": "assistant",
+      "tool_calls": [
+        {
+          "function": {
+            "arguments": "{\"poem_text\":\"风乍吼，林乍吼，斑影动秋榛。石径深苔，千峰寒月照空岷，电目裂昏尘。霜爪踏危巘，长啸振层云。惊万壑，百兽奔，叶落满溪津。 \\n\\n曾据险，曾饮涧，雪满大荒身。气压狐豺，威临魑魅镇山神，怒步撼嶙峋。顾盼余雄在，苍莽见精神。听一啸，裂夕曛，四野寂无邻。\",\"rule_name\":\"翠羽吟\",\"genre\":\"Ci\",\"include_punctuation\":true,\"rhyme_book_name\":\"Cilinzhengyun\"}",
+            "name": "validate_meter"
+          },
+          "id": "call_gRAJayFqAoHNbJQWa2bSGn4n",
+          "type": "function"
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_gRAJayFqAoHNbJQWa2bSGn4n",
+      "name": "validate_meter",
+      "content": "{\"tool_name\": \"validate_meter\", \"passed\": false, \"issues\": [{\"type\": \"Length\", \"message\": \"字数不匹配 (96字/应126字):\\n  前5句匹配, 第6句开始出错: 「电目裂昏尘」为5字, 应为6字\\n  传入句式: [3, 3, 5, 4, 7, 5, 5, 5, 3, 3, 5, 3, 3, 5, 4, 7, 5, 5, 5, 3, 3, 5]\\n  谱面句式: [3, 3, 5, 4, 7, 6, 6, 3, 4, 6, 7, 4, 4, 6, 4, 5, 6, 6, 5, 3, 4, 6, 7, 4, 4, 4]\", \"position\": -1, \"character\": \"\"}], \"metrics\": {\"rhyme_name\": null, \"rhyme_chars\": null, \"rhyme_positions\": null, \"closest_rule\": null, \"tone_error_count\": 0, \"rhyme_error_count\": 0, \"violation_count\": 1, \"checked_chars\": 0}, \"metadata\": {\"warning_count\": 0, \"hints\": [\"共 1 处错误，请逐一修改后重新调用 validate_meter 校验。\"]}}"
+    },
+    {
+      "annotations": [],
+      "content": null,
+      "refusal": null,
+      "role": "assistant",
+      "tool_calls": [
+        {
+          "function": {
+            "arguments": "{\"poem_text\":\"风乍吼，林乍吼，斑影动秋榛。石径深苔，千峰寒月照空岷，电目裂荒昏。霜爪踏危巘，长啸振层云。惊万壑，百兽奔。松末叶飞纷。\\n\\n曾据险，曾饮涧，雪满大荒身。气压狐豺，威临魑魅镇山神，怒步撼嶙峋。顾盼余雄在，苍莽见精神。听一啸，裂夕曛。四野寂无邻。\\n\\n今尚有，人尚说，幽壁走星纹。夜半溪桥樵子过，犹道林深不可扪。清梦落寒雯。\",\"rule_name\":\"翠羽吟\",\"genre\":\"Ci\",\"include_punctuation\":true,\"rhyme_book_name\":\"Cilinzhengyun\"}",
+            "name": "validate_meter"
+          },
+          "id": "call_8Jwto4IK1a9F8OuGoZx22lh9",
+          "type": "function"
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_8Jwto4IK1a9F8OuGoZx22lh9",
+      "name": "validate_meter",
+      "content": "{\"tool_name\": \"validate_meter\", \"passed\": false, \"issues\": [{\"type\": \"Tone\", \"message\": \"应为仄, 实为平\", \"position\": 0, \"character\": \"风\"}, {\"type\": \"Tone\", \"message\": \"应为平, 实为仄\", \"position\": 2, \"character\": \"吼\"}, {\"type\": \"Tone\", \"message\": \"应为仄, 实为平\", \"position\": 3, \"character\": \"林\"}, {\"type\": \"Tone\", \"message\": \"应为平, 实为仄\", \"position\": 5, \"character\": \"吼\"}, {\"type\": \"Tone\", \"message\": \"应为仄, 实为平\", \"position\": 15, \"character\": \"千\"}, {\"type\": \"Tone\", \"message\": \"应为平, 实为仄\", \"position\": 23, \"character\": \"目\"}, {\"type\": \"Tone\", \"message\": \"应为平, 实为仄\", \"position\": 24, \"character\": \"裂\"}, {\"type\": \"Tone\", \"message\": \"应为仄, 实为平\", \"position\": 26, \"character\": \"昏\"}, {\"type\": \"Tone\", \"message\": \"应为仄, 实为平\", \"position\": 27, \"character\": \"霜\"}, {\"type\": \"Tone\", \"message\": \"应为平, 实为仄\", \"position\": 28, \"character\": \"爪\"}, {\"type\": \"Tone\", \"message\": \"应为平, 实为仄\", \"position\": 33, \"character\": \"啸\"}, {\"type\": \"Tone\", \"message\": \"应为仄, 实为平\", \"position\": 35, \"character\": \"层\"}, {\"type\": \"Tone\", \"message\": \"应为仄, 实为平\", \"position\": 37, \"character\": \"惊\"}, {\"type\": \"Tone\", \"message\": \"应为平, 实为仄\", \"position\": 38, \"character\": \"万\"}, {\"type\": \"Tone\", \"message\": \"应为平, 实为仄\", \"position\": 39, \"character\": \"壑\"}, {\"type\": \"Tone\", \"message\": \"应为平, 实为仄\", \"position\": 41, \"character\": \"兽\"}, {\"type\": \"Tone\", \"message\": \"应为仄, 实为平\", \"position\": 43, \"character\": \"松\"}, {\"type\": \"Tone\", \"message\": \"应为平, 实为仄\", \"position\": 45, \"character\": \"叶\"}, {\"type\": \"Tone\", \"message\": \"应为仄, 实为平\", \"position\": 48, \"character\": \"曾\"}, {\"type\": \"Tone\", \"message\": \"应为仄, 实为平\", \"position\": 51, \"character\": \"曾\"}, {\"type\": \"Tone\", \"message\": \"应为平, 实为仄\", \"position\": 52, \"character\": \"饮\"}, {\"type\": \"Tone\", \"message\": \"应为平, 实为仄\", \"position\": 53, \"character\": \"涧\"}, {\"type\": \"Tone\", \"message\": \"应为平, 实为仄\", \"position\": 54, \"character\": \"雪\"}, {\"type\": \"Tone\", \"message\": \"应为平, 实为仄\", \"position\": 55, \"character\": \"满\"}, {\"type\": \"Tone\", \"message\": \"应为平, 实为仄\", \"position\": 56, \"character\": \"大\"}, {\"type\": \"Tone\", \"message\": \"应为仄, 实为平\", \"position\": 57, \"character\": \"荒\"}, {\"type\": \"Tone\", \"message\": \"应为仄, 实为平\", \"position\": 58, \"character\": \"身\"}, {\"type\": \"Tone\", \"message\": \"应为平, 实为仄\", \"position\": 60, \"character\": \"压\"}, {\"type\": \"Tone\", \"message\": \"应为仄, 实为平\", \"position\": 62, \"character\": \"豺\"}, {\"type\": \"Tone\", \"message\": \"应为仄, 实为平\", \"position\": 63, \"character\": \"威\"}, {\"type\": \"Tone\", \"message\": \"应为仄, 实为平\", \"position\": 69, \"character\": \"神\"}, {\"type\": \"Tone\", \"message\": \"应为平, 实为仄\", \"position\": 72, \"character\": \"撼\"}, {\"type\": \"Tone\", \"message\": \"应为平, 实为仄\", \"position\": 76, \"character\": \"盼\"}, {\"type\": \"Tone\", \"message\": \"应为仄, 实为平\", \"position\": 77, \"character\": \"余\"}, {\"type\": \"Tone\", \"message\": \"应为平, 实为仄\", \"position\": 81, \"character\": \"莽\"}, {\"type\": \"Tone\", \"message\": \"应为平, 实为仄\", \"position\": 82, \"character\": \"见\"}, {\"type\": \"Tone\", \"message\": \"应为仄, 实为平\", \"position\": 83, \"character\": \"精\"}, {\"type\": \"Tone\", \"message\": \"应为仄, 实为平\", \"position\": 84, \"character\": \"神\"}, {\"type\": \"Tone\", \"message\": \"应为平, 实为仄\", \"position\": 87, \"character\": \"啸\"}, {\"type\": \"Tone\", \"message\": \"应为平, 实为仄\", \"position\": 88, \"character\": \"裂\"}, {\"type\": \"Tone\", \"message\": \"应为仄, 实为平\", \"position\": 90, \"character\": \"曛\"}, {\"type\": \"Tone\", \"message\": \"应为平, 实为仄\", \"position\": 91, \"character\": \"四\"}, {\"type\": \"Tone\", \"message\": \"应为平, 实为仄\", \"position\": 92, \"character\": \"野\"}, {\"type\": \"Tone\", \"message\": \"应为仄, 实为平\", \"position\": 95, \"character\": \"邻\"}, {\"type\": \"Tone\", \"message\": \"应为仄, 实为平\", \"position\": 96, \"character\": \"今\"}, {\"type\": \"Tone\", \"message\": \"应为仄, 实为平\", \"position\": 102, \"character\": \"幽\"}, {\"type\": \"Tone\", \"message\": \"应为平, 实为仄\", \"position\": 103, \"character\": \"壁\"}, {\"type\": \"Tone\", \"message\": \"应为平, 实为仄\", \"position\": 104, \"character\": \"走\"}, {\"type\": \"Tone\", \"message\": \"应为仄, 实为平\", \"position\": 105, \"character\": \"星\"}, {\"type\": \"Tone\", \"message\": \"应为平, 实为仄\", \"position\": 108, \"character\": \"半\"}, {\"type\": \"Tone\", \"message\": \"应为仄, 实为平\", \"position\": 110, \"character\": \"桥\"}, {\"type\": \"Tone\", \"message\": \"应为仄, 实为平\", \"position\": 111, \"character\": \"樵\"}, {\"type\": \"Tone\", \"message\": \"应为平, 实为仄\", \"position\": 112, \"character\": \"子\"}, {\"type\": \"Tone\", \"message\": \"应为平, 实为仄\", \"position\": 115, \"character\": \"道\"}, {\"type\": \"Tone\", \"message\": \"应为仄, 实为平\", \"position\": 116, \"character\": \"林\"}, {\"type\": \"Tone\", \"message\": \"应为仄, 实为平\", \"position\": 124, \"character\": \"寒\"}, {\"type\": \"Rhyme\", \"message\": \"出韵\", \"position\": 2, \"character\": \"吼\"}, {\"type\": \"Rhyme\", \"message\": \"出韵\", \"position\": 5, \"character\": \"吼\"}, {\"type\": \"Rhyme\", \"message\": \"出韵\", \"position\": 33, \"character\": \"啸\"}, {\"type\": \"Rhyme\", \"message\": \"出韵\", \"position\": 46, \"character\": \"飞\"}, {\"type\": \"Rhyme\", \"message\": \"出韵\", \"position\": 53, \"character\": \"涧\"}, {\"type\": \"Rhyme\", \"message\": \"出韵\", \"position\": 61, \"character\": \"狐\"}, {\"type\": \"Rhyme\", \"message\": \"出韵\", \"position\": 76, \"character\": \"盼\"}, {\"type\": \"Rhyme\", \"message\": \"出韵\", \"position\": 88, \"character\": \"裂\"}, {\"type\": \"Rhyme\", \"message\": \"出韵\", \"position\": 100, \"character\": \"尚\"}, {\"type\": \"Rhyme\", \"message\": \"出韵\", \"position\": 113, \"character\": \"过\"}, {\"type\": \"Punctuation\", \"message\": \"标点有误: 第3字「吼」后应为句号(。), 实为，\", \"position\": 2, \"character\": \"吼\"}, {\"type\": \"Punctuation\", \"message\": \"标点有误: 第6字「吼」后应为句号(。), 实为，\", \"position\": 5, \"character\": \"吼\"}, {\"type\": \"Punctuation\", \"message\": \"标点有误: 第22字「岷」后应为句号(。), 实为，\", \"position\": 21, \"character\": \"岷\"}, {\"type\": \"Punctuation\", \"message\": \"缺少标点: 第28字「霜」后应为逗号(，)\", \"position\": 27, \"character\": \"霜\"}, {\"type\": \"Punctuation\", \"message\": \"缺少标点: 第34字「啸」后应为句号(。)\", \"position\": 33, \"character\": \"啸\"}, {\"type\": \"Punctuation\", \"message\": \"标点有误: 第37字「云」后应为顿号(、), 实为。\", \"position\": 36, \"character\": \"云\"}, {\"type\": \"Punctuation\", \"message\": \"缺少标点: 第41字「百」后应为逗号(，)\", \"position\": 40, \"character\": \"百\"}, {\"type\": \"Punctuation\", \"message\": \"缺少标点: 第47字「飞」后应为句号(。)\", \"position\": 46, \"character\": \"飞\"}, {\"type\": \"Punctuation\", \"message\": \"标点有误: 第54字「涧」后应为句号(。), 实为，\", \"position\": 53, \"character\": \"涧\"}, {\"type\": \"Punctuation\", \"message\": \"缺少标点: 第58字「荒」后应为逗号(，)\", \"position\": 57, \"character\": \"荒\"}, {\"type\": \"Punctuation\", \"message\": \"缺少标点: 第62字「狐」后应为句号(。)\", \"position\": 61, \"character\": \"狐\"}, {\"type\": \"Punctuation\", \"message\": \"缺少标点: 第68字「镇」后应为逗号(，)\", \"position\": 67, \"character\": \"镇\"}, {\"type\": \"Punctuation\", \"message\": \"缺少标点: 第72字「步」后应为逗号(，)\", \"position\": 71, \"character\": \"步\"}, {\"type\": \"Punctuation\", \"message\": \"缺少标点: 第77字「盼」后应为句号(。)\", \"position\": 76, \"character\": \"盼\"}, {\"type\": \"Punctuation\", \"message\": \"缺少标点: 第83字「见」后应为逗号(，)\", \"position\": 82, \"character\": \"见\"}, {\"type\": \"Punctuation\", \"message\": \"缺少标点: 第89字「裂」后应为句号(。)\", \"position\": 88, \"character\": \"裂\"}, {\"type\": \"Punctuation\", \"message\": \"缺少标点: 第94字「寂」后应为逗号(，)\", \"position\": 93, \"character\": \"寂\"}, {\"type\": \"Punctuation\", \"message\": \"缺少标点: 第97字「今」后应为顿号(、)\", \"position\": 96, \"character\": \"今\"}, {\"type\": \"Punctuation\", \"message\": \"缺少标点: 第101字「尚」后应为句号(。)\", \"position\": 100, \"character\": \"尚\"}, {\"type\": \"Punctuation\", \"message\": \"标点有误: 第114字「过」后应为句号(。), 实为，\", \"position\": 113, \"character\": \"过\"}, {\"type\": \"Punctuation\", \"message\": \"缺少标点: 第118字「深」后应为逗号(，)\", \"position\": 117, \"character\": \"深\"}, {\"type\": \"Punctuation\", \"message\": \"缺少标点: 第122字「清」后应为逗号(，)\", \"position\": 121, \"character\": \"清\"}, {\"type\": \"Punctuation\", \"message\": \"多余标点: 第27字「昏」后不应有标点(。)\", \"position\": 26, \"character\": \"昏\"}, {\"type\": \"Punctuation\", \"message\": \"多余标点: 第32字「巘」后不应有标点(，)\", \"position\": 31, \"character\": \"巘\"}, {\"type\": \"Punctuation\", \"message\": \"多余标点: 第40字「壑」后不应有标点(，)\", \"position\": 39, \"character\": \"壑\"}, {\"type\": \"Punctuation\", \"message\": \"多余标点: 第43字「奔」后不应有标点(。)\", \"position\": 42, \"character\": \"奔\"}, {\"type\": \"Punctuation\", \"message\": \"多余标点: 第48字「纷」后不应有标点(。)\", \"position\": 47, \"character\": \"纷\"}, {\"type\": \"Punctuation\", \"message\": \"多余标点: 第51字「险」后不应有标点(，)\", \"position\": 50, \"character\": \"险\"}, {\"type\": \"Punctuation\", \"message\": \"多余标点: 第59字「身」后不应有标点(。)\", \"position\": 58, \"character\": \"身\"}, {\"type\": \"Punctuation\", \"message\": \"多余标点: 第63字「豺」后不应有标点(，)\", \"position\": 62, \"character\": \"豺\"}, {\"type\": \"Punctuation\", \"message\": \"多余标点: 第70字「神」后不应有标点(，)\", \"position\": 69, \"character\": \"神\"}, {\"type\": \"Punctuation\", \"message\": \"多余标点: 第75字「峋」后不应有标点(。)\", \"position\": 74, \"character\": \"峋\"}, {\"type\": \"Punctuation\", \"message\": \"多余标点: 第80字「在」后不应有标点(，)\", \"position\": 79, \"character\": \"在\"}, {\"type\": \"Punctuation\", \"message\": \"多余标点: 第85字「神」后不应有标点(。)\", \"position\": 84, \"character\": \"神\"}, {\"type\": \"Punctuation\", \"message\": \"多余标点: 第88字「啸」后不应有标点(，)\", \"position\": 87, \"character\": \"啸\"}, {\"type\": \"Punctuation\", \"message\": \"多余标点: 第91字「曛」后不应有标点(。)\", \"position\": 90, \"character\": \"曛\"}, {\"type\": \"Punctuation\", \"message\": \"多余标点: 第96字「邻」后不应有标点(。)\", \"position\": 95, \"character\": \"邻\"}, {\"type\": \"Punctuation\", \"message\": \"多余标点: 第99字「有」后不应有标点(，)\", \"position\": 98, \"character\": \"有\"}, {\"type\": \"Punctuation\", \"message\": \"多余标点: 第102字「说」后不应有标点(，)\", \"position\": 101, \"character\": \"说\"}, {\"type\": \"Punctuation\", \"message\": \"多余标点: 第121字「扪」后不应有标点(。)\", \"position\": 120, \"character\": \"扪\"}], \"metrics\": {\"rhyme_name\": \"第6部_平\", \"rhyme_chars\": [\"吼\", \"吼\", \"榛\", \"岷\", \"啸\", \"飞\", \"涧\", \"狐\", \"盼\", \"裂\", \"尚\", \"纹\", \"过\", \"雯\"], \"rhyme_positions\": [2, 5, 10, 21, 33, 46, 53, 61, 76, 88, 100, 106, 113, 125], \"closest_rule\": {\"char_count\": 126, \"cipai\": \"翠羽吟\", \"genre\": \"Ci\", \"name\": \"翠羽吟_钦谱_格一\"}, \"tone_error_count\": 56, \"rhyme_error_count\": 10, \"violation_count\": 106, \"checked_chars\": 126}, \"metadata\": {\"warning_count\": 11, \"hints\": [\"平仄错误（应平实仄）：位置2「吼」、位置5「吼」、位置23「目」、位置24「裂」、位置28「爪」等，共 29 处。\", \"平仄错误（应仄实平）：位置0「风」、位置3「林」、位置15「千」、位置26「昏」、位置27「霜」等，共 27 处。\", \"押韵错误：韵脚 「吼」、「吼」、「啸」、「飞」、「涧」 不在目标韵部「第6部_平」中。调用 rhyme_lookup(category=第6部_平, book=Cilinzhengyun, limit=20) 查看常用字。\", \"修改以上 106 处错误后，重新调用 validate_meter 校验，直到零错误。\"]}}"
+    }
+  ],
+  "raw_text": "\\boxed{怒虎啸，壮虎啸，金额炯双瞋。石磴阴森，千岩寒雾压荒榛，迅步卷飙尘。霜甲裂危壁，长尾扫层旻。摇绝壑，惊宿麇。林暗走魈鼢。\n\n雄据险，时饮涧，气概老山神。势压狐豺，威临魑魅镇嶙峋，独啸裂黄昏。顾盼余雄在，苍莽见精神。巡古洞，穿密筠。风叶满溪蘋。\n\n今尚说，野老说，幽谷卧斑纹。夜半樵歌桥外断，犹恐深林月下闻。清梦落寒雯。}",
+  "final_validation": null
+}

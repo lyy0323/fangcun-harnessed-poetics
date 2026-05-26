@@ -1,0 +1,5143 @@
+{
+  "id": "解语花_钦谱_格一__洞庭",
+  "cipai": "解语花_钦谱_格一",
+  "model": "gpt-5.4",
+  "condition": "ablation_d1_no_template",
+  "elapsed_s": 41.22,
+  "tool_trace": [
+    {
+      "round": 0,
+      "observations": [
+        {
+          "call": {
+            "name": "validate_meter",
+            "arguments": {
+              "poem_text": "烟波万顷，秋入苍茫，远树半涵晴霭。雁影低回，正落日、微明沙外。兰桡乍解，向水阔、天长如海。倚危阑，目断君山，几点青螺在。\n\n谁把清愁暗买。奈西风又起，吹冷湘带。月浸空明，更照见、渔灯相对。浮生易改，剩梦里、涛声犹在。待明朝，重泛中流，细数波心蟹。",
+              "rule_name": "解语花",
+              "genre": "Ci",
+              "include_punctuation": true,
+              "rhyme_book_name": "Cilinzhengyun"
+            },
+            "call_id": "call_mED1yKPICeBZmh2zOD2gyBsI"
+          },
+          "response": {
+            "tool_name": "validate_meter",
+            "passed": false,
+            "issues": [
+              {
+                "type": "Length",
+                "message": "字数不匹配 (97字/应98字):\n  第3句「远树半涵晴霭」应为5字, 实为6字 (+1)\n  第6句「微明沙外」应为6字, 实为4字 (-2)\n  第18句「渔灯相对」应为6字, 实为4字 (-2)\n  第24句「细数波心蟹」应为3字, 实为5字 (+2)\n  传入句式: [4, 4, 6, 4, 3, 4, 4, 3, 4, 3, 4, 5, 6, 5, 4, 4, 3, 4, 4, 3, 4, 3, 4, 5]\n  谱面句式: [4, 4, 5, 4, 3, 6, 4, 3, 4, 3, 4, 5, 6, 5, 4, 4, 3, 6, 4, 3, 4, 3, 4, 3]",
+                "position": -1,
+                "character": ""
+              }
+            ],
+            "metrics": {
+              "rhyme_name": null,
+              "rhyme_chars": null,
+              "rhyme_positions": null,
+              "closest_rule": null,
+              "display_segments": [],
+              "tone_error_count": 0,
+              "rhyme_error_count": 0,
+              "violation_count": 1,
+              "checked_chars": 0
+            },
+            "metadata": {
+              "raw_response": {
+                "chars": [
+                  "烟",
+                  "波",
+                  "万",
+                  "顷",
+                  "秋",
+                  "入",
+                  "苍",
+                  "茫",
+                  "远",
+                  "树",
+                  "半",
+                  "涵",
+                  "晴",
+                  "霭",
+                  "雁",
+                  "影",
+                  "低",
+                  "回",
+                  "正",
+                  "落",
+                  "日",
+                  "微",
+                  "明",
+                  "沙",
+                  "外",
+                  "兰",
+                  "桡",
+                  "乍",
+                  "解",
+                  "向",
+                  "水",
+                  "阔",
+                  "天",
+                  "长",
+                  "如",
+                  "海",
+                  "倚",
+                  "危",
+                  "阑",
+                  "目",
+                  "断",
+                  "君",
+                  "山",
+                  "几",
+                  "点",
+                  "青",
+                  "螺",
+                  "在",
+                  "谁",
+                  "把",
+                  "清",
+                  "愁",
+                  "暗",
+                  "买",
+                  "奈",
+                  "西",
+                  "风",
+                  "又",
+                  "起",
+                  "吹",
+                  "冷",
+                  "湘",
+                  "带",
+                  "月",
+                  "浸",
+                  "空",
+                  "明",
+                  "更",
+                  "照",
+                  "见",
+                  "渔",
+                  "灯",
+                  "相",
+                  "对",
+                  "浮",
+                  "生",
+                  "易",
+                  "改",
+                  "剩",
+                  "梦",
+                  "里",
+                  "涛",
+                  "声",
+                  "犹",
+                  "在",
+                  "待",
+                  "明",
+                  "朝",
+                  "重",
+                  "泛",
+                  "中",
+                  "流",
+                  "细",
+                  "数",
+                  "波",
+                  "心",
+                  "蟹"
+                ],
+                "closest_rule": null,
+                "display_segments": [],
+                "errors": [
+                  {
+                    "actual": null,
+                    "character": "",
+                    "error_type": "Length",
+                    "expected": null,
+                    "message": "字数不匹配 (97字/应98字):\n  第3句「远树半涵晴霭」应为5字, 实为6字 (+1)\n  第6句「微明沙外」应为6字, 实为4字 (-2)\n  第18句「渔灯相对」应为6字, 实为4字 (-2)\n  第24句「细数波心蟹」应为3字, 实为5字 (+2)\n  传入句式: [4, 4, 6, 4, 3, 4, 4, 3, 4, 3, 4, 5, 6, 5, 4, 4, 3, 4, 4, 3, 4, 3, 4, 5]\n  谱面句式: [4, 4, 5, 4, 3, 6, 4, 3, 4, 3, 4, 5, 6, 5, 4, 4, 3, 6, 4, 3, 4, 3, 4, 3]",
+                    "position": -1
+                  }
+                ],
+                "is_valid": false,
+                "rhyme_chars": null,
+                "rhyme_groups": [],
+                "rhyme_name": null,
+                "rhyme_positions": null,
+                "rhyme_relations": [],
+                "tone_pattern": [],
+                "warnings": []
+              },
+              "warning_count": 0,
+              "warnings": [],
+              "hints": [
+                "共 1 处错误，请逐一修改后重新调用 validate_meter 校验。"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "round": 1,
+      "observations": [
+        {
+          "call": {
+            "name": "validate_meter",
+            "arguments": {
+              "poem_text": "烟波万顷，秋入苍茫，远树涵晴霭。雁影低回，正落日、微明沙渚之外。兰桡乍解，向水阔、天长如海。倚危阑，目断君山，几点青螺在。\n\n谁把清愁暗买。奈西风又起，吹冷湘带。月浸空明，更照见、遥汀渔火相对。浮生易改，剩梦里、涛声犹在。待明朝，重泛中流，数蟹。",
+              "rule_name": "解语花",
+              "genre": "Ci",
+              "include_punctuation": true,
+              "rhyme_book_name": "Cilinzhengyun"
+            },
+            "call_id": "call_H6ly3zQxrcH77ba2L86SeehC"
+          },
+          "response": {
+            "tool_name": "validate_meter",
+            "passed": false,
+            "issues": [
+              {
+                "type": "Length",
+                "message": "字数不匹配 (97字/应98字):\n  第24句「数蟹」应为3字, 实为2字 (-1)\n  传入句式: [4, 4, 5, 4, 3, 6, 4, 3, 4, 3, 4, 5, 6, 5, 4, 4, 3, 6, 4, 3, 4, 3, 4, 2]\n  谱面句式: [4, 4, 5, 4, 3, 6, 4, 3, 4, 3, 4, 5, 6, 5, 4, 4, 3, 6, 4, 3, 4, 3, 4, 3]",
+                "position": -1,
+                "character": ""
+              }
+            ],
+            "metrics": {
+              "rhyme_name": null,
+              "rhyme_chars": null,
+              "rhyme_positions": null,
+              "closest_rule": null,
+              "display_segments": [],
+              "tone_error_count": 0,
+              "rhyme_error_count": 0,
+              "violation_count": 1,
+              "checked_chars": 0
+            },
+            "metadata": {
+              "raw_response": {
+                "chars": [
+                  "烟",
+                  "波",
+                  "万",
+                  "顷",
+                  "秋",
+                  "入",
+                  "苍",
+                  "茫",
+                  "远",
+                  "树",
+                  "涵",
+                  "晴",
+                  "霭",
+                  "雁",
+                  "影",
+                  "低",
+                  "回",
+                  "正",
+                  "落",
+                  "日",
+                  "微",
+                  "明",
+                  "沙",
+                  "渚",
+                  "之",
+                  "外",
+                  "兰",
+                  "桡",
+                  "乍",
+                  "解",
+                  "向",
+                  "水",
+                  "阔",
+                  "天",
+                  "长",
+                  "如",
+                  "海",
+                  "倚",
+                  "危",
+                  "阑",
+                  "目",
+                  "断",
+                  "君",
+                  "山",
+                  "几",
+                  "点",
+                  "青",
+                  "螺",
+                  "在",
+                  "谁",
+                  "把",
+                  "清",
+                  "愁",
+                  "暗",
+                  "买",
+                  "奈",
+                  "西",
+                  "风",
+                  "又",
+                  "起",
+                  "吹",
+                  "冷",
+                  "湘",
+                  "带",
+                  "月",
+                  "浸",
+                  "空",
+                  "明",
+                  "更",
+                  "照",
+                  "见",
+                  "遥",
+                  "汀",
+                  "渔",
+                  "火",
+                  "相",
+                  "对",
+                  "浮",
+                  "生",
+                  "易",
+                  "改",
+                  "剩",
+                  "梦",
+                  "里",
+                  "涛",
+                  "声",
+                  "犹",
+                  "在",
+                  "待",
+                  "明",
+                  "朝",
+                  "重",
+                  "泛",
+                  "中",
+                  "流",
+                  "数",
+                  "蟹"
+                ],
+                "closest_rule": null,
+                "display_segments": [],
+                "errors": [
+                  {
+                    "actual": null,
+                    "character": "",
+                    "error_type": "Length",
+                    "expected": null,
+                    "message": "字数不匹配 (97字/应98字):\n  第24句「数蟹」应为3字, 实为2字 (-1)\n  传入句式: [4, 4, 5, 4, 3, 6, 4, 3, 4, 3, 4, 5, 6, 5, 4, 4, 3, 6, 4, 3, 4, 3, 4, 2]\n  谱面句式: [4, 4, 5, 4, 3, 6, 4, 3, 4, 3, 4, 5, 6, 5, 4, 4, 3, 6, 4, 3, 4, 3, 4, 3]",
+                    "position": -1
+                  }
+                ],
+                "is_valid": false,
+                "rhyme_chars": null,
+                "rhyme_groups": [],
+                "rhyme_name": null,
+                "rhyme_positions": null,
+                "rhyme_relations": [],
+                "tone_pattern": [],
+                "warnings": []
+              },
+              "warning_count": 0,
+              "warnings": [],
+              "hints": [
+                "共 1 处错误，请逐一修改后重新调用 validate_meter 校验。"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "observations": [
+        {
+          "call": {
+            "name": "validate_meter",
+            "arguments": {
+              "poem_text": "烟波万顷，秋入苍茫，远树涵晴霭。雁影低回，正落日、微明沙渚之外。兰桡乍解，向水阔、天长如海。倚危阑，目断君山，几点青螺在。\n\n谁把清愁暗买。奈西风又起，吹冷湘带。月浸空明，更照见、遥汀渔火相对。浮生易改，剩梦里、涛声犹在。待明朝，重泛中流，数沙蟹。",
+              "rule_name": "解语花",
+              "genre": "Ci",
+              "include_punctuation": true,
+              "rhyme_book_name": "Cilinzhengyun"
+            },
+            "call_id": "call_Ja3ZQ4oV4g6kugS9vmrhGZNb"
+          },
+          "response": {
+            "tool_name": "validate_meter",
+            "passed": false,
+            "issues": [
+              {
+                "type": "Tone",
+                "message": "应为仄, 实为平",
+                "position": 4,
+                "character": "秋"
+              },
+              {
+                "type": "Tone",
+                "message": "应为平, 实为仄",
+                "position": 8,
+                "character": "远"
+              },
+              {
+                "type": "Tone",
+                "message": "应为平, 实为仄",
+                "position": 9,
+                "character": "树"
+              },
+              {
+                "type": "Tone",
+                "message": "应为仄, 实为平",
+                "position": 10,
+                "character": "涵"
+              },
+              {
+                "type": "Tone",
+                "message": "应为平, 实为仄",
+                "position": 14,
+                "character": "影"
+              },
+              {
+                "type": "Tone",
+                "message": "应为平, 实为仄",
+                "position": 18,
+                "character": "落"
+              },
+              {
+                "type": "Tone",
+                "message": "应为仄, 实为平",
+                "position": 20,
+                "character": "微"
+              },
+              {
+                "type": "Tone",
+                "message": "应为仄, 实为平",
+                "position": 21,
+                "character": "明"
+              },
+              {
+                "type": "Tone",
+                "message": "应为仄, 实为平",
+                "position": 22,
+                "character": "沙"
+              },
+              {
+                "type": "Tone",
+                "message": "应为平, 实为仄",
+                "position": 23,
+                "character": "渚"
+              },
+              {
+                "type": "Tone",
+                "message": "应为平, 实为仄",
+                "position": 30,
+                "character": "向"
+              },
+              {
+                "type": "Tone",
+                "message": "应为平, 实为仄",
+                "position": 31,
+                "character": "水"
+              },
+              {
+                "type": "Tone",
+                "message": "应为平, 实为仄",
+                "position": 37,
+                "character": "倚"
+              },
+              {
+                "type": "Tone",
+                "message": "应为仄, 实为平",
+                "position": 38,
+                "character": "危"
+              },
+              {
+                "type": "Tone",
+                "message": "应为仄, 实为平",
+                "position": 39,
+                "character": "阑"
+              },
+              {
+                "type": "Tone",
+                "message": "应为平, 实为仄",
+                "position": 40,
+                "character": "目"
+              },
+              {
+                "type": "Tone",
+                "message": "应为仄, 实为平",
+                "position": 49,
+                "character": "谁"
+              },
+              {
+                "type": "Tone",
+                "message": "应为平, 实为仄",
+                "position": 65,
+                "character": "浸"
+              },
+              {
+                "type": "Tone",
+                "message": "应为仄, 实为平",
+                "position": 67,
+                "character": "明"
+              },
+              {
+                "type": "Tone",
+                "message": "应为平, 实为仄",
+                "position": 69,
+                "character": "照"
+              },
+              {
+                "type": "Tone",
+                "message": "应为仄, 实为平",
+                "position": 71,
+                "character": "遥"
+              },
+              {
+                "type": "Tone",
+                "message": "应为仄, 实为平",
+                "position": 72,
+                "character": "汀"
+              },
+              {
+                "type": "Tone",
+                "message": "应为仄, 实为平",
+                "position": 73,
+                "character": "渔"
+              },
+              {
+                "type": "Tone",
+                "message": "应为平, 实为仄",
+                "position": 74,
+                "character": "火"
+              },
+              {
+                "type": "Tone",
+                "message": "应为平, 实为仄",
+                "position": 81,
+                "character": "剩"
+              },
+              {
+                "type": "Tone",
+                "message": "应为仄, 实为平",
+                "position": 89,
+                "character": "明"
+              },
+              {
+                "type": "Tone",
+                "message": "应为仄, 实为平",
+                "position": 96,
+                "character": "沙"
+              },
+              {
+                "type": "Rhyme",
+                "message": "出韵",
+                "position": 16,
+                "character": "回"
+              },
+              {
+                "type": "Rhyme",
+                "message": "出韵",
+                "position": 67,
+                "character": "明"
+              },
+              {
+                "type": "Rhyme",
+                "message": "出韵",
+                "position": 76,
+                "character": "对"
+              },
+              {
+                "type": "Punctuation",
+                "message": "标点有误: 第17字「回」后应为句号(。), 实为，",
+                "position": 16,
+                "character": "回"
+              },
+              {
+                "type": "Punctuation",
+                "message": "标点有误: 第20字「日」后应为逗号(，), 实为、",
+                "position": 19,
+                "character": "日"
+              },
+              {
+                "type": "Punctuation",
+                "message": "标点有误: 第30字「解」后应为句号(。), 实为，",
+                "position": 29,
+                "character": "解"
+              },
+              {
+                "type": "Punctuation",
+                "message": "标点有误: 第68字「明」后应为句号(。), 实为，",
+                "position": 67,
+                "character": "明"
+              },
+              {
+                "type": "Punctuation",
+                "message": "标点有误: 第71字「见」后应为逗号(，), 实为、",
+                "position": 70,
+                "character": "见"
+              },
+              {
+                "type": "Punctuation",
+                "message": "标点有误: 第81字「改」后应为句号(。), 实为，",
+                "position": 80,
+                "character": "改"
+              },
+              {
+                "type": "Punctuation",
+                "message": "标点有误: 第91字「朝」后应为顿号(、), 实为，",
+                "position": 90,
+                "character": "朝"
+              }
+            ],
+            "metrics": {
+              "rhyme_name": "第5部_仄",
+              "rhyme_chars": [
+                "霭",
+                "回",
+                "外",
+                "解",
+                "海",
+                "在",
+                "买",
+                "带",
+                "明",
+                "对",
+                "改",
+                "在",
+                "蟹"
+              ],
+              "rhyme_positions": [
+                12,
+                16,
+                25,
+                29,
+                36,
+                48,
+                54,
+                63,
+                67,
+                76,
+                80,
+                87,
+                97
+              ],
+              "closest_rule": {
+                "char_count": 98,
+                "cipai": "解语花",
+                "genre": "Ci",
+                "name": "解语花_钦谱_格二"
+              },
+              "display_segments": [
+                {
+                  "rule_items": [
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": "句",
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": "句",
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    }
+                  ],
+                  "start_index": 0,
+                  "text_chars": [
+                    "烟",
+                    "波",
+                    "万",
+                    "顷",
+                    "秋",
+                    "入",
+                    "苍",
+                    "茫",
+                    "远",
+                    "树",
+                    "涵",
+                    "晴",
+                    "霭"
+                  ]
+                },
+                {
+                  "rule_items": [
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    }
+                  ],
+                  "start_index": 13,
+                  "text_chars": [
+                    "雁",
+                    "影",
+                    "低",
+                    "回"
+                  ]
+                },
+                {
+                  "rule_items": [
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": "句",
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    }
+                  ],
+                  "start_index": 17,
+                  "text_chars": [
+                    "正",
+                    "落",
+                    "日",
+                    "微",
+                    "明",
+                    "沙",
+                    "渚",
+                    "之",
+                    "外"
+                  ]
+                },
+                {
+                  "rule_items": [
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    }
+                  ],
+                  "start_index": 26,
+                  "text_chars": [
+                    "兰",
+                    "桡",
+                    "乍",
+                    "解"
+                  ]
+                },
+                {
+                  "rule_items": [
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": "读",
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    }
+                  ],
+                  "start_index": 30,
+                  "text_chars": [
+                    "向",
+                    "水",
+                    "阔",
+                    "天",
+                    "长",
+                    "如",
+                    "海"
+                  ]
+                },
+                {
+                  "rule_items": [
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": "句",
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": "句",
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    }
+                  ],
+                  "start_index": 37,
+                  "text_chars": [
+                    "倚",
+                    "危",
+                    "阑",
+                    "目",
+                    "断",
+                    "君",
+                    "山",
+                    "几",
+                    "点",
+                    "青",
+                    "螺",
+                    "在"
+                  ]
+                },
+                {
+                  "rule_items": [
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    }
+                  ],
+                  "start_index": 49,
+                  "text_chars": [
+                    "谁",
+                    "把",
+                    "清",
+                    "愁",
+                    "暗",
+                    "买"
+                  ]
+                },
+                {
+                  "rule_items": [
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": "句",
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    }
+                  ],
+                  "start_index": 55,
+                  "text_chars": [
+                    "奈",
+                    "西",
+                    "风",
+                    "又",
+                    "起",
+                    "吹",
+                    "冷",
+                    "湘",
+                    "带"
+                  ]
+                },
+                {
+                  "rule_items": [
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    }
+                  ],
+                  "start_index": 64,
+                  "text_chars": [
+                    "月",
+                    "浸",
+                    "空",
+                    "明"
+                  ]
+                },
+                {
+                  "rule_items": [
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": "句",
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    }
+                  ],
+                  "start_index": 68,
+                  "text_chars": [
+                    "更",
+                    "照",
+                    "见",
+                    "遥",
+                    "汀",
+                    "渔",
+                    "火",
+                    "相",
+                    "对"
+                  ]
+                },
+                {
+                  "rule_items": [
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    }
+                  ],
+                  "start_index": 77,
+                  "text_chars": [
+                    "浮",
+                    "生",
+                    "易",
+                    "改"
+                  ]
+                },
+                {
+                  "rule_items": [
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": "读",
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    }
+                  ],
+                  "start_index": 81,
+                  "text_chars": [
+                    "剩",
+                    "梦",
+                    "里",
+                    "涛",
+                    "声",
+                    "犹",
+                    "在"
+                  ]
+                },
+                {
+                  "rule_items": [
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": "读",
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": "句",
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    }
+                  ],
+                  "start_index": 88,
+                  "text_chars": [
+                    "待",
+                    "明",
+                    "朝",
+                    "重",
+                    "泛",
+                    "中",
+                    "流",
+                    "数",
+                    "沙",
+                    "蟹"
+                  ]
+                }
+              ],
+              "tone_error_count": 27,
+              "rhyme_error_count": 3,
+              "violation_count": 37,
+              "checked_chars": 98
+            },
+            "metadata": {
+              "raw_response": {
+                "chars": [
+                  "烟",
+                  "波",
+                  "万",
+                  "顷",
+                  "秋",
+                  "入",
+                  "苍",
+                  "茫",
+                  "远",
+                  "树",
+                  "涵",
+                  "晴",
+                  "霭",
+                  "雁",
+                  "影",
+                  "低",
+                  "回",
+                  "正",
+                  "落",
+                  "日",
+                  "微",
+                  "明",
+                  "沙",
+                  "渚",
+                  "之",
+                  "外",
+                  "兰",
+                  "桡",
+                  "乍",
+                  "解",
+                  "向",
+                  "水",
+                  "阔",
+                  "天",
+                  "长",
+                  "如",
+                  "海",
+                  "倚",
+                  "危",
+                  "阑",
+                  "目",
+                  "断",
+                  "君",
+                  "山",
+                  "几",
+                  "点",
+                  "青",
+                  "螺",
+                  "在",
+                  "谁",
+                  "把",
+                  "清",
+                  "愁",
+                  "暗",
+                  "买",
+                  "奈",
+                  "西",
+                  "风",
+                  "又",
+                  "起",
+                  "吹",
+                  "冷",
+                  "湘",
+                  "带",
+                  "月",
+                  "浸",
+                  "空",
+                  "明",
+                  "更",
+                  "照",
+                  "见",
+                  "遥",
+                  "汀",
+                  "渔",
+                  "火",
+                  "相",
+                  "对",
+                  "浮",
+                  "生",
+                  "易",
+                  "改",
+                  "剩",
+                  "梦",
+                  "里",
+                  "涛",
+                  "声",
+                  "犹",
+                  "在",
+                  "待",
+                  "明",
+                  "朝",
+                  "重",
+                  "泛",
+                  "中",
+                  "流",
+                  "数",
+                  "沙",
+                  "蟹"
+                ],
+                "closest_rule": {
+                  "char_count": 98,
+                  "cipai": "解语花",
+                  "genre": "Ci",
+                  "name": "解语花_钦谱_格二"
+                },
+                "display_segments": [
+                  {
+                    "rule_items": [
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": "句",
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": "句",
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      }
+                    ],
+                    "start_index": 0,
+                    "text_chars": [
+                      "烟",
+                      "波",
+                      "万",
+                      "顷",
+                      "秋",
+                      "入",
+                      "苍",
+                      "茫",
+                      "远",
+                      "树",
+                      "涵",
+                      "晴",
+                      "霭"
+                    ]
+                  },
+                  {
+                    "rule_items": [
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      }
+                    ],
+                    "start_index": 13,
+                    "text_chars": [
+                      "雁",
+                      "影",
+                      "低",
+                      "回"
+                    ]
+                  },
+                  {
+                    "rule_items": [
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": "句",
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      }
+                    ],
+                    "start_index": 17,
+                    "text_chars": [
+                      "正",
+                      "落",
+                      "日",
+                      "微",
+                      "明",
+                      "沙",
+                      "渚",
+                      "之",
+                      "外"
+                    ]
+                  },
+                  {
+                    "rule_items": [
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      }
+                    ],
+                    "start_index": 26,
+                    "text_chars": [
+                      "兰",
+                      "桡",
+                      "乍",
+                      "解"
+                    ]
+                  },
+                  {
+                    "rule_items": [
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": "读",
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      }
+                    ],
+                    "start_index": 30,
+                    "text_chars": [
+                      "向",
+                      "水",
+                      "阔",
+                      "天",
+                      "长",
+                      "如",
+                      "海"
+                    ]
+                  },
+                  {
+                    "rule_items": [
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": "句",
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": "句",
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      }
+                    ],
+                    "start_index": 37,
+                    "text_chars": [
+                      "倚",
+                      "危",
+                      "阑",
+                      "目",
+                      "断",
+                      "君",
+                      "山",
+                      "几",
+                      "点",
+                      "青",
+                      "螺",
+                      "在"
+                    ]
+                  },
+                  {
+                    "rule_items": [
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      }
+                    ],
+                    "start_index": 49,
+                    "text_chars": [
+                      "谁",
+                      "把",
+                      "清",
+                      "愁",
+                      "暗",
+                      "买"
+                    ]
+                  },
+                  {
+                    "rule_items": [
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": "句",
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      }
+                    ],
+                    "start_index": 55,
+                    "text_chars": [
+                      "奈",
+                      "西",
+                      "风",
+                      "又",
+                      "起",
+                      "吹",
+                      "冷",
+                      "湘",
+                      "带"
+                    ]
+                  },
+                  {
+                    "rule_items": [
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      }
+                    ],
+                    "start_index": 64,
+                    "text_chars": [
+                      "月",
+                      "浸",
+                      "空",
+                      "明"
+                    ]
+                  },
+                  {
+                    "rule_items": [
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": "句",
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      }
+                    ],
+                    "start_index": 68,
+                    "text_chars": [
+                      "更",
+                      "照",
+                      "见",
+                      "遥",
+                      "汀",
+                      "渔",
+                      "火",
+                      "相",
+                      "对"
+                    ]
+                  },
+                  {
+                    "rule_items": [
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      }
+                    ],
+                    "start_index": 77,
+                    "text_chars": [
+                      "浮",
+                      "生",
+                      "易",
+                      "改"
+                    ]
+                  },
+                  {
+                    "rule_items": [
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": "读",
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      }
+                    ],
+                    "start_index": 81,
+                    "text_chars": [
+                      "剩",
+                      "梦",
+                      "里",
+                      "涛",
+                      "声",
+                      "犹",
+                      "在"
+                    ]
+                  },
+                  {
+                    "rule_items": [
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": "读",
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": "句",
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      }
+                    ],
+                    "start_index": 88,
+                    "text_chars": [
+                      "待",
+                      "明",
+                      "朝",
+                      "重",
+                      "泛",
+                      "中",
+                      "流",
+                      "数",
+                      "沙",
+                      "蟹"
+                    ]
+                  }
+                ],
+                "errors": [
+                  {
+                    "actual": "P",
+                    "character": "秋",
+                    "error_type": "Tone",
+                    "expected": "Z",
+                    "message": "应为仄, 实为平",
+                    "position": 4
+                  },
+                  {
+                    "actual": "Z",
+                    "character": "远",
+                    "error_type": "Tone",
+                    "expected": "P",
+                    "message": "应为平, 实为仄",
+                    "position": 8
+                  },
+                  {
+                    "actual": "Z",
+                    "character": "树",
+                    "error_type": "Tone",
+                    "expected": "P",
+                    "message": "应为平, 实为仄",
+                    "position": 9
+                  },
+                  {
+                    "actual": "P",
+                    "character": "涵",
+                    "error_type": "Tone",
+                    "expected": "Z",
+                    "message": "应为仄, 实为平",
+                    "position": 10
+                  },
+                  {
+                    "actual": "Z",
+                    "character": "影",
+                    "error_type": "Tone",
+                    "expected": "P",
+                    "message": "应为平, 实为仄",
+                    "position": 14
+                  },
+                  {
+                    "actual": "Z",
+                    "character": "落",
+                    "error_type": "Tone",
+                    "expected": "P",
+                    "message": "应为平, 实为仄",
+                    "position": 18
+                  },
+                  {
+                    "actual": "P",
+                    "character": "微",
+                    "error_type": "Tone",
+                    "expected": "Z",
+                    "message": "应为仄, 实为平",
+                    "position": 20
+                  },
+                  {
+                    "actual": "P",
+                    "character": "明",
+                    "error_type": "Tone",
+                    "expected": "Z",
+                    "message": "应为仄, 实为平",
+                    "position": 21
+                  },
+                  {
+                    "actual": "P",
+                    "character": "沙",
+                    "error_type": "Tone",
+                    "expected": "Z",
+                    "message": "应为仄, 实为平",
+                    "position": 22
+                  },
+                  {
+                    "actual": "Z",
+                    "character": "渚",
+                    "error_type": "Tone",
+                    "expected": "P",
+                    "message": "应为平, 实为仄",
+                    "position": 23
+                  },
+                  {
+                    "actual": "Z",
+                    "character": "向",
+                    "error_type": "Tone",
+                    "expected": "P",
+                    "message": "应为平, 实为仄",
+                    "position": 30
+                  },
+                  {
+                    "actual": "Z",
+                    "character": "水",
+                    "error_type": "Tone",
+                    "expected": "P",
+                    "message": "应为平, 实为仄",
+                    "position": 31
+                  },
+                  {
+                    "actual": "Z",
+                    "character": "倚",
+                    "error_type": "Tone",
+                    "expected": "P",
+                    "message": "应为平, 实为仄",
+                    "position": 37
+                  },
+                  {
+                    "actual": "P",
+                    "character": "危",
+                    "error_type": "Tone",
+                    "expected": "Z",
+                    "message": "应为仄, 实为平",
+                    "position": 38
+                  },
+                  {
+                    "actual": "P",
+                    "character": "阑",
+                    "error_type": "Tone",
+                    "expected": "Z",
+                    "message": "应为仄, 实为平",
+                    "position": 39
+                  },
+                  {
+                    "actual": "Z",
+                    "character": "目",
+                    "error_type": "Tone",
+                    "expected": "P",
+                    "message": "应为平, 实为仄",
+                    "position": 40
+                  },
+                  {
+                    "actual": "P",
+                    "character": "谁",
+                    "error_type": "Tone",
+                    "expected": "Z",
+                    "message": "应为仄, 实为平",
+                    "position": 49
+                  },
+                  {
+                    "actual": "Z",
+                    "character": "浸",
+                    "error_type": "Tone",
+                    "expected": "P",
+                    "message": "应为平, 实为仄",
+                    "position": 65
+                  },
+                  {
+                    "actual": "P",
+                    "character": "明",
+                    "error_type": "Tone",
+                    "expected": "Z",
+                    "message": "应为仄, 实为平",
+                    "position": 67
+                  },
+                  {
+                    "actual": "Z",
+                    "character": "照",
+                    "error_type": "Tone",
+                    "expected": "P",
+                    "message": "应为平, 实为仄",
+                    "position": 69
+                  },
+                  {
+                    "actual": "P",
+                    "character": "遥",
+                    "error_type": "Tone",
+                    "expected": "Z",
+                    "message": "应为仄, 实为平",
+                    "position": 71
+                  },
+                  {
+                    "actual": "P",
+                    "character": "汀",
+                    "error_type": "Tone",
+                    "expected": "Z",
+                    "message": "应为仄, 实为平",
+                    "position": 72
+                  },
+                  {
+                    "actual": "P",
+                    "character": "渔",
+                    "error_type": "Tone",
+                    "expected": "Z",
+                    "message": "应为仄, 实为平",
+                    "position": 73
+                  },
+                  {
+                    "actual": "Z",
+                    "character": "火",
+                    "error_type": "Tone",
+                    "expected": "P",
+                    "message": "应为平, 实为仄",
+                    "position": 74
+                  },
+                  {
+                    "actual": "Z",
+                    "character": "剩",
+                    "error_type": "Tone",
+                    "expected": "P",
+                    "message": "应为平, 实为仄",
+                    "position": 81
+                  },
+                  {
+                    "actual": "P",
+                    "character": "明",
+                    "error_type": "Tone",
+                    "expected": "Z",
+                    "message": "应为仄, 实为平",
+                    "position": 89
+                  },
+                  {
+                    "actual": "P",
+                    "character": "沙",
+                    "error_type": "Tone",
+                    "expected": "Z",
+                    "message": "应为仄, 实为平",
+                    "position": 96
+                  },
+                  {
+                    "actual": "第3部_仄,第3部_平",
+                    "character": "回",
+                    "error_type": "Rhyme",
+                    "expected": "第5部_仄",
+                    "message": "出韵",
+                    "position": 16
+                  },
+                  {
+                    "actual": "第11部_平",
+                    "character": "明",
+                    "error_type": "Rhyme",
+                    "expected": "第5部_仄",
+                    "message": "出韵",
+                    "position": 67
+                  },
+                  {
+                    "actual": "第3部_仄",
+                    "character": "对",
+                    "error_type": "Rhyme",
+                    "expected": "第5部_仄",
+                    "message": "出韵",
+                    "position": 76
+                  },
+                  {
+                    "actual": "，",
+                    "character": "回",
+                    "error_type": "Punctuation",
+                    "expected": "句号(。)",
+                    "message": "标点有误: 第17字「回」后应为句号(。), 实为，",
+                    "position": 16
+                  },
+                  {
+                    "actual": "、",
+                    "character": "日",
+                    "error_type": "Punctuation",
+                    "expected": "逗号(，)",
+                    "message": "标点有误: 第20字「日」后应为逗号(，), 实为、",
+                    "position": 19
+                  },
+                  {
+                    "actual": "，",
+                    "character": "解",
+                    "error_type": "Punctuation",
+                    "expected": "句号(。)",
+                    "message": "标点有误: 第30字「解」后应为句号(。), 实为，",
+                    "position": 29
+                  },
+                  {
+                    "actual": "，",
+                    "character": "明",
+                    "error_type": "Punctuation",
+                    "expected": "句号(。)",
+                    "message": "标点有误: 第68字「明」后应为句号(。), 实为，",
+                    "position": 67
+                  },
+                  {
+                    "actual": "、",
+                    "character": "见",
+                    "error_type": "Punctuation",
+                    "expected": "逗号(，)",
+                    "message": "标点有误: 第71字「见」后应为逗号(，), 实为、",
+                    "position": 70
+                  },
+                  {
+                    "actual": "，",
+                    "character": "改",
+                    "error_type": "Punctuation",
+                    "expected": "句号(。)",
+                    "message": "标点有误: 第81字「改」后应为句号(。), 实为，",
+                    "position": 80
+                  },
+                  {
+                    "actual": "，",
+                    "character": "朝",
+                    "error_type": "Punctuation",
+                    "expected": "顿号(、)",
+                    "message": "标点有误: 第91字「朝」后应为顿号(、), 实为，",
+                    "position": 90
+                  }
+                ],
+                "is_valid": false,
+                "rhyme_chars": [
+                  "霭",
+                  "回",
+                  "外",
+                  "解",
+                  "海",
+                  "在",
+                  "买",
+                  "带",
+                  "明",
+                  "对",
+                  "改",
+                  "在",
+                  "蟹"
+                ],
+                "rhyme_groups": [
+                  {
+                    "positions": [
+                      12,
+                      16,
+                      25,
+                      29,
+                      36,
+                      48,
+                      54,
+                      63,
+                      67,
+                      76,
+                      80,
+                      87,
+                      97
+                    ],
+                    "type": "same"
+                  }
+                ],
+                "rhyme_name": "第5部_仄",
+                "rhyme_positions": [
+                  12,
+                  16,
+                  25,
+                  29,
+                  36,
+                  48,
+                  54,
+                  63,
+                  67,
+                  76,
+                  80,
+                  87,
+                  97
+                ],
+                "rhyme_relations": [],
+                "tone_pattern": [
+                  "P",
+                  "P",
+                  "Z",
+                  "Z",
+                  "Z",
+                  "Z",
+                  "P",
+                  "P",
+                  "P",
+                  "P",
+                  "Z",
+                  "P",
+                  "Z",
+                  "Z",
+                  "P",
+                  "P",
+                  "Z",
+                  "P",
+                  "P",
+                  "Z",
+                  "Z",
+                  "Z",
+                  "Z",
+                  "P",
+                  "P",
+                  "Z",
+                  "P",
+                  "P",
+                  "Z",
+                  "Z",
+                  "P",
+                  "P",
+                  "Z",
+                  "P",
+                  "P",
+                  "Z",
+                  "Z",
+                  "P",
+                  "Z",
+                  "Z",
+                  "P",
+                  "Z",
+                  "P",
+                  "P",
+                  "P",
+                  "Z",
+                  "P",
+                  "P",
+                  "Z",
+                  "Z",
+                  "Z",
+                  "P",
+                  "P",
+                  "Z",
+                  "Z",
+                  "Z",
+                  "P",
+                  "P",
+                  "Z",
+                  "Z",
+                  "Z",
+                  "Z",
+                  "P",
+                  "Z",
+                  "Z",
+                  "P",
+                  "P",
+                  "Z",
+                  "P",
+                  "P",
+                  "Z",
+                  "Z",
+                  "Z",
+                  "Z",
+                  "P",
+                  "P",
+                  "Z",
+                  "P",
+                  "P",
+                  "Z",
+                  "Z",
+                  "P",
+                  "P",
+                  "Z",
+                  "P",
+                  "P",
+                  "P",
+                  "Z",
+                  "Z",
+                  "Z",
+                  "P",
+                  "Z",
+                  "Z",
+                  "P",
+                  "P",
+                  "Z",
+                  "Z",
+                  "Z"
+                ],
+                "warnings": [
+                  {
+                    "character": "明",
+                    "message": "「明」在第22、68、90字出现3次",
+                    "positions": [
+                      21,
+                      67,
+                      89
+                    ],
+                    "warning_type": "Duplicate"
+                  },
+                  {
+                    "character": "沙",
+                    "message": "「沙」在第23、97字出现2次",
+                    "positions": [
+                      22,
+                      96
+                    ],
+                    "warning_type": "Duplicate"
+                  },
+                  {
+                    "character": "在",
+                    "message": "「在」在第49、88字出现2次",
+                    "positions": [
+                      48,
+                      87
+                    ],
+                    "warning_type": "Duplicate"
+                  }
+                ]
+              },
+              "warning_count": 3,
+              "warnings": [
+                {
+                  "character": "明",
+                  "message": "「明」在第22、68、90字出现3次",
+                  "positions": [
+                    21,
+                    67,
+                    89
+                  ],
+                  "warning_type": "Duplicate"
+                },
+                {
+                  "character": "沙",
+                  "message": "「沙」在第23、97字出现2次",
+                  "positions": [
+                    22,
+                    96
+                  ],
+                  "warning_type": "Duplicate"
+                },
+                {
+                  "character": "在",
+                  "message": "「在」在第49、88字出现2次",
+                  "positions": [
+                    48,
+                    87
+                  ],
+                  "warning_type": "Duplicate"
+                }
+              ],
+              "hints": [
+                "平仄错误（应平实仄）：位置8「远」、位置9「树」、位置14「影」、位置18「落」、位置23「渚」等，共 13 处。",
+                "平仄错误（应仄实平）：位置4「秋」、位置10「涵」、位置20「微」、位置21「明」、位置22「沙」等，共 14 处。",
+                "押韵错误：韵脚 「回」、「明」、「对」 不在目标韵部「第5部_仄」中。调用 rhyme_lookup(category=第5部_仄, book=Cilinzhengyun, limit=20) 查看常用字。",
+                "修改以上 37 处错误后，重新调用 validate_meter 校验，直到零错误。"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "observations": [
+        {
+          "call": {
+            "name": "rhyme_lookup",
+            "arguments": {
+              "book": "Cilinzhengyun",
+              "category": "第5部_仄",
+              "limit": 20
+            },
+            "call_id": "call_k3CQZY6zrQcNwtVjW1Gv0HRQ"
+          },
+          "response": {
+            "tool_name": "rhyme_lookup",
+            "passed": true,
+            "issues": [],
+            "metrics": {},
+            "metadata": {
+              "results": {
+                "category_name": "第5部_仄",
+                "characters": [
+                  "在",
+                  "大",
+                  "再",
+                  "爱",
+                  "快",
+                  "带",
+                  "太",
+                  "买",
+                  "外",
+                  "派",
+                  "队",
+                  "卖",
+                  "届",
+                  "改",
+                  "喝",
+                  "坏",
+                  "待",
+                  "倍",
+                  "海",
+                  "怪"
+                ],
+                "relations": {
+                  "ye_ping": [
+                    "第5部_平"
+                  ]
+                },
+                "tone_type": "Z",
+                "total": 328
+              }
+            }
+          }
+        },
+        {
+          "call": {
+            "name": "char_lookup",
+            "arguments": {
+              "book": "Cilinzhengyun",
+              "char": "暮"
+            },
+            "call_id": "call_mckWLma6lOx76DKxM31hV6Df"
+          },
+          "response": {
+            "tool_name": "char_lookup",
+            "passed": true,
+            "issues": [],
+            "metrics": {},
+            "metadata": {
+              "results": {
+                "char": "暮",
+                "rhyme_categories": [
+                  {
+                    "name": "第4部_仄",
+                    "tone_type": "Z"
+                  }
+                ],
+                "tones": [
+                  "去"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "call": {
+            "name": "char_lookup",
+            "arguments": {
+              "book": "Cilinzhengyun",
+              "char": "冷"
+            },
+            "call_id": "call_VyswZJYoSU7GGdjjqwxyLm5F"
+          },
+          "response": {
+            "tool_name": "char_lookup",
+            "passed": true,
+            "issues": [],
+            "metrics": {},
+            "metadata": {
+              "results": {
+                "char": "冷",
+                "rhyme_categories": [
+                  {
+                    "name": "第11部_仄",
+                    "tone_type": "Z"
+                  }
+                ],
+                "tones": [
+                  "上"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "call": {
+            "name": "char_lookup",
+            "arguments": {
+              "book": "Cilinzhengyun",
+              "char": "晚"
+            },
+            "call_id": "call_MbJZORF8az7P2MJQg94KPcl1"
+          },
+          "response": {
+            "tool_name": "char_lookup",
+            "passed": true,
+            "issues": [],
+            "metrics": {},
+            "metadata": {
+              "results": {
+                "char": "晚",
+                "rhyme_categories": [
+                  {
+                    "name": "第7部_仄",
+                    "tone_type": "Z"
+                  }
+                ],
+                "tones": [
+                  "上"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "call": {
+            "name": "char_lookup",
+            "arguments": {
+              "book": "Cilinzhengyun",
+              "char": "远"
+            },
+            "call_id": "call_YHF7vhaCjs7tvhPqboWT4L8v"
+          },
+          "response": {
+            "tool_name": "char_lookup",
+            "passed": true,
+            "issues": [],
+            "metrics": {},
+            "metadata": {
+              "results": {
+                "char": "远",
+                "rhyme_categories": [
+                  {
+                    "name": "第7部_仄",
+                    "tone_type": "Z"
+                  }
+                ],
+                "tones": [
+                  "上",
+                  "去"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "call": {
+            "name": "char_lookup",
+            "arguments": {
+              "book": "Cilinzhengyun",
+              "char": "渺"
+            },
+            "call_id": "call_7keo1bKTvkcFJcpjuq8pVyOY"
+          },
+          "response": {
+            "tool_name": "char_lookup",
+            "passed": true,
+            "issues": [],
+            "metrics": {},
+            "metadata": {
+              "results": {
+                "char": "渺",
+                "rhyme_categories": [
+                  {
+                    "name": "第8部_仄",
+                    "tone_type": "Z"
+                  }
+                ],
+                "tones": [
+                  "上"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "call": {
+            "name": "char_lookup",
+            "arguments": {
+              "book": "Cilinzhengyun",
+              "char": "影"
+            },
+            "call_id": "call_P9kAJ92UDWPqyCrf34DNQKHt"
+          },
+          "response": {
+            "tool_name": "char_lookup",
+            "passed": true,
+            "issues": [],
+            "metrics": {},
+            "metadata": {
+              "results": {
+                "char": "影",
+                "rhyme_categories": [
+                  {
+                    "name": "第11部_仄",
+                    "tone_type": "Z"
+                  }
+                ],
+                "tones": [
+                  "上"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "call": {
+            "name": "char_lookup",
+            "arguments": {
+              "book": "Cilinzhengyun",
+              "char": "断"
+            },
+            "call_id": "call_l6LUYYHKzkQSKiXGCcwiApN1"
+          },
+          "response": {
+            "tool_name": "char_lookup",
+            "passed": true,
+            "issues": [],
+            "metrics": {},
+            "metadata": {
+              "results": {
+                "char": "断",
+                "rhyme_categories": [
+                  {
+                    "name": "第7部_仄",
+                    "tone_type": "Z"
+                  }
+                ],
+                "tones": [
+                  "上",
+                  "去"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "call": {
+            "name": "char_lookup",
+            "arguments": {
+              "book": "Cilinzhengyun",
+              "char": "暮"
+            },
+            "call_id": "call_oSPGIkHyi4yID4p3xGzY4gpB"
+          },
+          "response": {
+            "tool_name": "char_lookup",
+            "passed": true,
+            "issues": [],
+            "metrics": {},
+            "metadata": {
+              "results": {
+                "char": "暮",
+                "rhyme_categories": [
+                  {
+                    "name": "第4部_仄",
+                    "tone_type": "Z"
+                  }
+                ],
+                "tones": [
+                  "去"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "call": {
+            "name": "char_lookup",
+            "arguments": {
+              "book": "Cilinzhengyun",
+              "char": "外"
+            },
+            "call_id": "call_2719zY64TKO79G5j4iwts4BU"
+          },
+          "response": {
+            "tool_name": "char_lookup",
+            "passed": true,
+            "issues": [],
+            "metrics": {},
+            "metadata": {
+              "results": {
+                "char": "外",
+                "rhyme_categories": [
+                  {
+                    "name": "第3部_仄",
+                    "tone_type": "Z"
+                  },
+                  {
+                    "name": "第5部_仄",
+                    "tone_type": "Z"
+                  }
+                ],
+                "tones": [
+                  "去"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "call": {
+            "name": "char_lookup",
+            "arguments": {
+              "book": "Cilinzhengyun",
+              "char": "渚"
+            },
+            "call_id": "call_WGGIo1MpPO1gQL7aMx5H79EO"
+          },
+          "response": {
+            "tool_name": "char_lookup",
+            "passed": true,
+            "issues": [],
+            "metrics": {},
+            "metadata": {
+              "results": {
+                "char": "渚",
+                "rhyme_categories": [
+                  {
+                    "name": "第4部_仄",
+                    "tone_type": "Z"
+                  }
+                ],
+                "tones": [
+                  "上"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "call": {
+            "name": "char_lookup",
+            "arguments": {
+              "book": "Cilinzhengyun",
+              "char": "火"
+            },
+            "call_id": "call_BGhZWCvzzDD1mpIQkQ3Rf5In"
+          },
+          "response": {
+            "tool_name": "char_lookup",
+            "passed": true,
+            "issues": [],
+            "metrics": {},
+            "metadata": {
+              "results": {
+                "char": "火",
+                "rhyme_categories": [
+                  {
+                    "name": "第9部_仄",
+                    "tone_type": "Z"
+                  }
+                ],
+                "tones": [
+                  "上"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "call": {
+            "name": "char_lookup",
+            "arguments": {
+              "book": "Cilinzhengyun",
+              "char": "蟹"
+            },
+            "call_id": "call_3eaaHPKDrXmx8fXCnwnXAQ48"
+          },
+          "response": {
+            "tool_name": "char_lookup",
+            "passed": true,
+            "issues": [],
+            "metrics": {},
+            "metadata": {
+              "results": {
+                "char": "蟹",
+                "rhyme_categories": [
+                  {
+                    "name": "第5部_仄",
+                    "tone_type": "Z"
+                  }
+                ],
+                "tones": [
+                  "上"
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "round": 4,
+      "observations": [
+        {
+          "call": {
+            "name": "validate_meter",
+            "arguments": {
+              "poem_text": "烟波万顷，冷入苍茫，暮霭沉天外。雁字低回。正断岸，斜阳沙渚之外。兰桡乍解。对水阔、天长如海。倚危樯，望断君山，几点青螺在。\n\n谁把清愁暗买。奈西风又起，吹冷湘带。月印空波。更照见，寒汀渔艇仍在。浮生易改。剩梦里、涛声犹在。待明朝、重泛中流，数沙蟹。",
+              "rule_name": "解语花",
+              "genre": "Ci",
+              "include_punctuation": true,
+              "rhyme_book_name": "Cilinzhengyun"
+            },
+            "call_id": "call_p3r5DIXq3KCB1OviiJReS87q"
+          },
+          "response": {
+            "tool_name": "validate_meter",
+            "passed": false,
+            "issues": [
+              {
+                "type": "Tone",
+                "message": "应为平, 实为仄",
+                "position": 8,
+                "character": "暮"
+              },
+              {
+                "type": "Tone",
+                "message": "应为平, 实为仄",
+                "position": 9,
+                "character": "霭"
+              },
+              {
+                "type": "Tone",
+                "message": "应为仄, 实为平",
+                "position": 10,
+                "character": "沉"
+              },
+              {
+                "type": "Tone",
+                "message": "应为平, 实为仄",
+                "position": 18,
+                "character": "断"
+              },
+              {
+                "type": "Tone",
+                "message": "应为仄, 实为平",
+                "position": 20,
+                "character": "斜"
+              },
+              {
+                "type": "Tone",
+                "message": "应为仄, 实为平",
+                "position": 21,
+                "character": "阳"
+              },
+              {
+                "type": "Tone",
+                "message": "应为仄, 实为平",
+                "position": 22,
+                "character": "沙"
+              },
+              {
+                "type": "Tone",
+                "message": "应为平, 实为仄",
+                "position": 23,
+                "character": "渚"
+              },
+              {
+                "type": "Tone",
+                "message": "应为平, 实为仄",
+                "position": 30,
+                "character": "对"
+              },
+              {
+                "type": "Tone",
+                "message": "应为平, 实为仄",
+                "position": 31,
+                "character": "水"
+              },
+              {
+                "type": "Tone",
+                "message": "应为平, 实为仄",
+                "position": 37,
+                "character": "倚"
+              },
+              {
+                "type": "Tone",
+                "message": "应为仄, 实为平",
+                "position": 38,
+                "character": "危"
+              },
+              {
+                "type": "Tone",
+                "message": "应为仄, 实为平",
+                "position": 39,
+                "character": "樯"
+              },
+              {
+                "type": "Tone",
+                "message": "应为仄, 实为平",
+                "position": 49,
+                "character": "谁"
+              },
+              {
+                "type": "Tone",
+                "message": "应为平, 实为仄",
+                "position": 65,
+                "character": "印"
+              },
+              {
+                "type": "Tone",
+                "message": "应为仄, 实为平",
+                "position": 67,
+                "character": "波"
+              },
+              {
+                "type": "Tone",
+                "message": "应为平, 实为仄",
+                "position": 69,
+                "character": "照"
+              },
+              {
+                "type": "Tone",
+                "message": "应为仄, 实为平",
+                "position": 71,
+                "character": "寒"
+              },
+              {
+                "type": "Tone",
+                "message": "应为仄, 实为平",
+                "position": 72,
+                "character": "汀"
+              },
+              {
+                "type": "Tone",
+                "message": "应为仄, 实为平",
+                "position": 73,
+                "character": "渔"
+              },
+              {
+                "type": "Tone",
+                "message": "应为平, 实为仄",
+                "position": 74,
+                "character": "艇"
+              },
+              {
+                "type": "Tone",
+                "message": "应为平, 实为仄",
+                "position": 81,
+                "character": "剩"
+              },
+              {
+                "type": "Tone",
+                "message": "应为仄, 实为平",
+                "position": 89,
+                "character": "明"
+              },
+              {
+                "type": "Tone",
+                "message": "应为仄, 实为平",
+                "position": 96,
+                "character": "沙"
+              },
+              {
+                "type": "Rhyme",
+                "message": "出韵",
+                "position": 16,
+                "character": "回"
+              },
+              {
+                "type": "Rhyme",
+                "message": "出韵",
+                "position": 67,
+                "character": "波"
+              }
+            ],
+            "metrics": {
+              "rhyme_name": "第5部_仄",
+              "rhyme_chars": [
+                "外",
+                "回",
+                "外",
+                "解",
+                "海",
+                "在",
+                "买",
+                "带",
+                "波",
+                "在",
+                "改",
+                "在",
+                "蟹"
+              ],
+              "rhyme_positions": [
+                12,
+                16,
+                25,
+                29,
+                36,
+                48,
+                54,
+                63,
+                67,
+                76,
+                80,
+                87,
+                97
+              ],
+              "closest_rule": {
+                "char_count": 98,
+                "cipai": "解语花",
+                "genre": "Ci",
+                "name": "解语花_钦谱_格二"
+              },
+              "display_segments": [
+                {
+                  "rule_items": [
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": "句",
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": "句",
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    }
+                  ],
+                  "start_index": 0,
+                  "text_chars": [
+                    "烟",
+                    "波",
+                    "万",
+                    "顷",
+                    "冷",
+                    "入",
+                    "苍",
+                    "茫",
+                    "暮",
+                    "霭",
+                    "沉",
+                    "天",
+                    "外"
+                  ]
+                },
+                {
+                  "rule_items": [
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    }
+                  ],
+                  "start_index": 13,
+                  "text_chars": [
+                    "雁",
+                    "字",
+                    "低",
+                    "回"
+                  ]
+                },
+                {
+                  "rule_items": [
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": "句",
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    }
+                  ],
+                  "start_index": 17,
+                  "text_chars": [
+                    "正",
+                    "断",
+                    "岸",
+                    "斜",
+                    "阳",
+                    "沙",
+                    "渚",
+                    "之",
+                    "外"
+                  ]
+                },
+                {
+                  "rule_items": [
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    }
+                  ],
+                  "start_index": 26,
+                  "text_chars": [
+                    "兰",
+                    "桡",
+                    "乍",
+                    "解"
+                  ]
+                },
+                {
+                  "rule_items": [
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": "读",
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    }
+                  ],
+                  "start_index": 30,
+                  "text_chars": [
+                    "对",
+                    "水",
+                    "阔",
+                    "天",
+                    "长",
+                    "如",
+                    "海"
+                  ]
+                },
+                {
+                  "rule_items": [
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": "句",
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": "句",
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    }
+                  ],
+                  "start_index": 37,
+                  "text_chars": [
+                    "倚",
+                    "危",
+                    "樯",
+                    "望",
+                    "断",
+                    "君",
+                    "山",
+                    "几",
+                    "点",
+                    "青",
+                    "螺",
+                    "在"
+                  ]
+                },
+                {
+                  "rule_items": [
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    }
+                  ],
+                  "start_index": 49,
+                  "text_chars": [
+                    "谁",
+                    "把",
+                    "清",
+                    "愁",
+                    "暗",
+                    "买"
+                  ]
+                },
+                {
+                  "rule_items": [
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": "句",
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    }
+                  ],
+                  "start_index": 55,
+                  "text_chars": [
+                    "奈",
+                    "西",
+                    "风",
+                    "又",
+                    "起",
+                    "吹",
+                    "冷",
+                    "湘",
+                    "带"
+                  ]
+                },
+                {
+                  "rule_items": [
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    }
+                  ],
+                  "start_index": 64,
+                  "text_chars": [
+                    "月",
+                    "印",
+                    "空",
+                    "波"
+                  ]
+                },
+                {
+                  "rule_items": [
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": "句",
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    }
+                  ],
+                  "start_index": 68,
+                  "text_chars": [
+                    "更",
+                    "照",
+                    "见",
+                    "寒",
+                    "汀",
+                    "渔",
+                    "艇",
+                    "仍",
+                    "在"
+                  ]
+                },
+                {
+                  "rule_items": [
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    }
+                  ],
+                  "start_index": 77,
+                  "text_chars": [
+                    "浮",
+                    "生",
+                    "易",
+                    "改"
+                  ]
+                },
+                {
+                  "rule_items": [
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": "读",
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    }
+                  ],
+                  "start_index": 81,
+                  "text_chars": [
+                    "剩",
+                    "梦",
+                    "里",
+                    "涛",
+                    "声",
+                    "犹",
+                    "在"
+                  ]
+                },
+                {
+                  "rule_items": [
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": "读",
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "P"
+                    },
+                    {
+                      "comment": "句",
+                      "tone": "P"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    },
+                    {
+                      "comment": null,
+                      "tone": "Z"
+                    }
+                  ],
+                  "start_index": 88,
+                  "text_chars": [
+                    "待",
+                    "明",
+                    "朝",
+                    "重",
+                    "泛",
+                    "中",
+                    "流",
+                    "数",
+                    "沙",
+                    "蟹"
+                  ]
+                }
+              ],
+              "tone_error_count": 24,
+              "rhyme_error_count": 2,
+              "violation_count": 26,
+              "checked_chars": 98
+            },
+            "metadata": {
+              "raw_response": {
+                "chars": [
+                  "烟",
+                  "波",
+                  "万",
+                  "顷",
+                  "冷",
+                  "入",
+                  "苍",
+                  "茫",
+                  "暮",
+                  "霭",
+                  "沉",
+                  "天",
+                  "外",
+                  "雁",
+                  "字",
+                  "低",
+                  "回",
+                  "正",
+                  "断",
+                  "岸",
+                  "斜",
+                  "阳",
+                  "沙",
+                  "渚",
+                  "之",
+                  "外",
+                  "兰",
+                  "桡",
+                  "乍",
+                  "解",
+                  "对",
+                  "水",
+                  "阔",
+                  "天",
+                  "长",
+                  "如",
+                  "海",
+                  "倚",
+                  "危",
+                  "樯",
+                  "望",
+                  "断",
+                  "君",
+                  "山",
+                  "几",
+                  "点",
+                  "青",
+                  "螺",
+                  "在",
+                  "谁",
+                  "把",
+                  "清",
+                  "愁",
+                  "暗",
+                  "买",
+                  "奈",
+                  "西",
+                  "风",
+                  "又",
+                  "起",
+                  "吹",
+                  "冷",
+                  "湘",
+                  "带",
+                  "月",
+                  "印",
+                  "空",
+                  "波",
+                  "更",
+                  "照",
+                  "见",
+                  "寒",
+                  "汀",
+                  "渔",
+                  "艇",
+                  "仍",
+                  "在",
+                  "浮",
+                  "生",
+                  "易",
+                  "改",
+                  "剩",
+                  "梦",
+                  "里",
+                  "涛",
+                  "声",
+                  "犹",
+                  "在",
+                  "待",
+                  "明",
+                  "朝",
+                  "重",
+                  "泛",
+                  "中",
+                  "流",
+                  "数",
+                  "沙",
+                  "蟹"
+                ],
+                "closest_rule": {
+                  "char_count": 98,
+                  "cipai": "解语花",
+                  "genre": "Ci",
+                  "name": "解语花_钦谱_格二"
+                },
+                "display_segments": [
+                  {
+                    "rule_items": [
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": "句",
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": "句",
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      }
+                    ],
+                    "start_index": 0,
+                    "text_chars": [
+                      "烟",
+                      "波",
+                      "万",
+                      "顷",
+                      "冷",
+                      "入",
+                      "苍",
+                      "茫",
+                      "暮",
+                      "霭",
+                      "沉",
+                      "天",
+                      "外"
+                    ]
+                  },
+                  {
+                    "rule_items": [
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      }
+                    ],
+                    "start_index": 13,
+                    "text_chars": [
+                      "雁",
+                      "字",
+                      "低",
+                      "回"
+                    ]
+                  },
+                  {
+                    "rule_items": [
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": "句",
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      }
+                    ],
+                    "start_index": 17,
+                    "text_chars": [
+                      "正",
+                      "断",
+                      "岸",
+                      "斜",
+                      "阳",
+                      "沙",
+                      "渚",
+                      "之",
+                      "外"
+                    ]
+                  },
+                  {
+                    "rule_items": [
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      }
+                    ],
+                    "start_index": 26,
+                    "text_chars": [
+                      "兰",
+                      "桡",
+                      "乍",
+                      "解"
+                    ]
+                  },
+                  {
+                    "rule_items": [
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": "读",
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      }
+                    ],
+                    "start_index": 30,
+                    "text_chars": [
+                      "对",
+                      "水",
+                      "阔",
+                      "天",
+                      "长",
+                      "如",
+                      "海"
+                    ]
+                  },
+                  {
+                    "rule_items": [
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": "句",
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": "句",
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      }
+                    ],
+                    "start_index": 37,
+                    "text_chars": [
+                      "倚",
+                      "危",
+                      "樯",
+                      "望",
+                      "断",
+                      "君",
+                      "山",
+                      "几",
+                      "点",
+                      "青",
+                      "螺",
+                      "在"
+                    ]
+                  },
+                  {
+                    "rule_items": [
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      }
+                    ],
+                    "start_index": 49,
+                    "text_chars": [
+                      "谁",
+                      "把",
+                      "清",
+                      "愁",
+                      "暗",
+                      "买"
+                    ]
+                  },
+                  {
+                    "rule_items": [
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": "句",
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      }
+                    ],
+                    "start_index": 55,
+                    "text_chars": [
+                      "奈",
+                      "西",
+                      "风",
+                      "又",
+                      "起",
+                      "吹",
+                      "冷",
+                      "湘",
+                      "带"
+                    ]
+                  },
+                  {
+                    "rule_items": [
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      }
+                    ],
+                    "start_index": 64,
+                    "text_chars": [
+                      "月",
+                      "印",
+                      "空",
+                      "波"
+                    ]
+                  },
+                  {
+                    "rule_items": [
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": "句",
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      }
+                    ],
+                    "start_index": 68,
+                    "text_chars": [
+                      "更",
+                      "照",
+                      "见",
+                      "寒",
+                      "汀",
+                      "渔",
+                      "艇",
+                      "仍",
+                      "在"
+                    ]
+                  },
+                  {
+                    "rule_items": [
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      }
+                    ],
+                    "start_index": 77,
+                    "text_chars": [
+                      "浮",
+                      "生",
+                      "易",
+                      "改"
+                    ]
+                  },
+                  {
+                    "rule_items": [
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": "读",
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      }
+                    ],
+                    "start_index": 81,
+                    "text_chars": [
+                      "剩",
+                      "梦",
+                      "里",
+                      "涛",
+                      "声",
+                      "犹",
+                      "在"
+                    ]
+                  },
+                  {
+                    "rule_items": [
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": "读",
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "P"
+                      },
+                      {
+                        "comment": "句",
+                        "tone": "P"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      },
+                      {
+                        "comment": null,
+                        "tone": "Z"
+                      }
+                    ],
+                    "start_index": 88,
+                    "text_chars": [
+                      "待",
+                      "明",
+                      "朝",
+                      "重",
+                      "泛",
+                      "中",
+                      "流",
+                      "数",
+                      "沙",
+                      "蟹"
+                    ]
+                  }
+                ],
+                "errors": [
+                  {
+                    "actual": "Z",
+                    "character": "暮",
+                    "error_type": "Tone",
+                    "expected": "P",
+                    "message": "应为平, 实为仄",
+                    "position": 8
+                  },
+                  {
+                    "actual": "Z",
+                    "character": "霭",
+                    "error_type": "Tone",
+                    "expected": "P",
+                    "message": "应为平, 实为仄",
+                    "position": 9
+                  },
+                  {
+                    "actual": "P",
+                    "character": "沉",
+                    "error_type": "Tone",
+                    "expected": "Z",
+                    "message": "应为仄, 实为平",
+                    "position": 10
+                  },
+                  {
+                    "actual": "Z",
+                    "character": "断",
+                    "error_type": "Tone",
+                    "expected": "P",
+                    "message": "应为平, 实为仄",
+                    "position": 18
+                  },
+                  {
+                    "actual": "P",
+                    "character": "斜",
+                    "error_type": "Tone",
+                    "expected": "Z",
+                    "message": "应为仄, 实为平",
+                    "position": 20
+                  },
+                  {
+                    "actual": "P",
+                    "character": "阳",
+                    "error_type": "Tone",
+                    "expected": "Z",
+                    "message": "应为仄, 实为平",
+                    "position": 21
+                  },
+                  {
+                    "actual": "P",
+                    "character": "沙",
+                    "error_type": "Tone",
+                    "expected": "Z",
+                    "message": "应为仄, 实为平",
+                    "position": 22
+                  },
+                  {
+                    "actual": "Z",
+                    "character": "渚",
+                    "error_type": "Tone",
+                    "expected": "P",
+                    "message": "应为平, 实为仄",
+                    "position": 23
+                  },
+                  {
+                    "actual": "Z",
+                    "character": "对",
+                    "error_type": "Tone",
+                    "expected": "P",
+                    "message": "应为平, 实为仄",
+                    "position": 30
+                  },
+                  {
+                    "actual": "Z",
+                    "character": "水",
+                    "error_type": "Tone",
+                    "expected": "P",
+                    "message": "应为平, 实为仄",
+                    "position": 31
+                  },
+                  {
+                    "actual": "Z",
+                    "character": "倚",
+                    "error_type": "Tone",
+                    "expected": "P",
+                    "message": "应为平, 实为仄",
+                    "position": 37
+                  },
+                  {
+                    "actual": "P",
+                    "character": "危",
+                    "error_type": "Tone",
+                    "expected": "Z",
+                    "message": "应为仄, 实为平",
+                    "position": 38
+                  },
+                  {
+                    "actual": "P",
+                    "character": "樯",
+                    "error_type": "Tone",
+                    "expected": "Z",
+                    "message": "应为仄, 实为平",
+                    "position": 39
+                  },
+                  {
+                    "actual": "P",
+                    "character": "谁",
+                    "error_type": "Tone",
+                    "expected": "Z",
+                    "message": "应为仄, 实为平",
+                    "position": 49
+                  },
+                  {
+                    "actual": "Z",
+                    "character": "印",
+                    "error_type": "Tone",
+                    "expected": "P",
+                    "message": "应为平, 实为仄",
+                    "position": 65
+                  },
+                  {
+                    "actual": "P",
+                    "character": "波",
+                    "error_type": "Tone",
+                    "expected": "Z",
+                    "message": "应为仄, 实为平",
+                    "position": 67
+                  },
+                  {
+                    "actual": "Z",
+                    "character": "照",
+                    "error_type": "Tone",
+                    "expected": "P",
+                    "message": "应为平, 实为仄",
+                    "position": 69
+                  },
+                  {
+                    "actual": "P",
+                    "character": "寒",
+                    "error_type": "Tone",
+                    "expected": "Z",
+                    "message": "应为仄, 实为平",
+                    "position": 71
+                  },
+                  {
+                    "actual": "P",
+                    "character": "汀",
+                    "error_type": "Tone",
+                    "expected": "Z",
+                    "message": "应为仄, 实为平",
+                    "position": 72
+                  },
+                  {
+                    "actual": "P",
+                    "character": "渔",
+                    "error_type": "Tone",
+                    "expected": "Z",
+                    "message": "应为仄, 实为平",
+                    "position": 73
+                  },
+                  {
+                    "actual": "Z",
+                    "character": "艇",
+                    "error_type": "Tone",
+                    "expected": "P",
+                    "message": "应为平, 实为仄",
+                    "position": 74
+                  },
+                  {
+                    "actual": "Z",
+                    "character": "剩",
+                    "error_type": "Tone",
+                    "expected": "P",
+                    "message": "应为平, 实为仄",
+                    "position": 81
+                  },
+                  {
+                    "actual": "P",
+                    "character": "明",
+                    "error_type": "Tone",
+                    "expected": "Z",
+                    "message": "应为仄, 实为平",
+                    "position": 89
+                  },
+                  {
+                    "actual": "P",
+                    "character": "沙",
+                    "error_type": "Tone",
+                    "expected": "Z",
+                    "message": "应为仄, 实为平",
+                    "position": 96
+                  },
+                  {
+                    "actual": "第3部_仄,第3部_平",
+                    "character": "回",
+                    "error_type": "Rhyme",
+                    "expected": "第5部_仄",
+                    "message": "出韵",
+                    "position": 16
+                  },
+                  {
+                    "actual": "第9部_平",
+                    "character": "波",
+                    "error_type": "Rhyme",
+                    "expected": "第5部_仄",
+                    "message": "出韵",
+                    "position": 67
+                  }
+                ],
+                "is_valid": false,
+                "rhyme_chars": [
+                  "外",
+                  "回",
+                  "外",
+                  "解",
+                  "海",
+                  "在",
+                  "买",
+                  "带",
+                  "波",
+                  "在",
+                  "改",
+                  "在",
+                  "蟹"
+                ],
+                "rhyme_groups": [
+                  {
+                    "positions": [
+                      12,
+                      16,
+                      25,
+                      29,
+                      36,
+                      48,
+                      54,
+                      63,
+                      67,
+                      76,
+                      80,
+                      87,
+                      97
+                    ],
+                    "type": "same"
+                  }
+                ],
+                "rhyme_name": "第5部_仄",
+                "rhyme_positions": [
+                  12,
+                  16,
+                  25,
+                  29,
+                  36,
+                  48,
+                  54,
+                  63,
+                  67,
+                  76,
+                  80,
+                  87,
+                  97
+                ],
+                "rhyme_relations": [],
+                "tone_pattern": [
+                  "P",
+                  "P",
+                  "Z",
+                  "Z",
+                  "Z",
+                  "Z",
+                  "P",
+                  "P",
+                  "P",
+                  "P",
+                  "Z",
+                  "P",
+                  "Z",
+                  "Z",
+                  "P",
+                  "P",
+                  "Z",
+                  "P",
+                  "P",
+                  "Z",
+                  "Z",
+                  "Z",
+                  "Z",
+                  "P",
+                  "P",
+                  "Z",
+                  "P",
+                  "P",
+                  "Z",
+                  "Z",
+                  "P",
+                  "P",
+                  "Z",
+                  "P",
+                  "P",
+                  "Z",
+                  "Z",
+                  "P",
+                  "Z",
+                  "Z",
+                  "P",
+                  "Z",
+                  "P",
+                  "P",
+                  "P",
+                  "Z",
+                  "P",
+                  "P",
+                  "Z",
+                  "Z",
+                  "Z",
+                  "P",
+                  "P",
+                  "Z",
+                  "Z",
+                  "Z",
+                  "P",
+                  "P",
+                  "Z",
+                  "Z",
+                  "Z",
+                  "Z",
+                  "P",
+                  "Z",
+                  "Z",
+                  "P",
+                  "P",
+                  "Z",
+                  "P",
+                  "P",
+                  "Z",
+                  "Z",
+                  "Z",
+                  "Z",
+                  "P",
+                  "P",
+                  "Z",
+                  "P",
+                  "P",
+                  "Z",
+                  "Z",
+                  "P",
+                  "P",
+                  "Z",
+                  "P",
+                  "P",
+                  "P",
+                  "Z",
+                  "Z",
+                  "Z",
+                  "P",
+                  "Z",
+                  "Z",
+                  "P",
+                  "P",
+                  "Z",
+                  "Z",
+                  "Z"
+                ],
+                "warnings": [
+                  {
+                    "character": "波",
+                    "message": "「波」在第2、68字出现2次",
+                    "positions": [
+                      1,
+                      67
+                    ],
+                    "warning_type": "Duplicate"
+                  },
+                  {
+                    "character": "冷",
+                    "message": "「冷」在第5、62字出现2次",
+                    "positions": [
+                      4,
+                      61
+                    ],
+                    "warning_type": "Duplicate"
+                  },
+                  {
+                    "character": "天",
+                    "message": "「天」在第12、34字出现2次",
+                    "positions": [
+                      11,
+                      33
+                    ],
+                    "warning_type": "Duplicate"
+                  },
+                  {
+                    "character": "外",
+                    "message": "「外」在第13、26字出现2次",
+                    "positions": [
+                      12,
+                      25
+                    ],
+                    "warning_type": "Duplicate"
+                  },
+                  {
+                    "character": "断",
+                    "message": "「断」在第19、42字出现2次",
+                    "positions": [
+                      18,
+                      41
+                    ],
+                    "warning_type": "Duplicate"
+                  },
+                  {
+                    "character": "沙",
+                    "message": "「沙」在第23、97字出现2次",
+                    "positions": [
+                      22,
+                      96
+                    ],
+                    "warning_type": "Duplicate"
+                  },
+                  {
+                    "character": "在",
+                    "message": "「在」在第49、77、88字出现3次",
+                    "positions": [
+                      48,
+                      76,
+                      87
+                    ],
+                    "warning_type": "Duplicate"
+                  }
+                ]
+              },
+              "warning_count": 7,
+              "warnings": [
+                {
+                  "character": "波",
+                  "message": "「波」在第2、68字出现2次",
+                  "positions": [
+                    1,
+                    67
+                  ],
+                  "warning_type": "Duplicate"
+                },
+                {
+                  "character": "冷",
+                  "message": "「冷」在第5、62字出现2次",
+                  "positions": [
+                    4,
+                    61
+                  ],
+                  "warning_type": "Duplicate"
+                },
+                {
+                  "character": "天",
+                  "message": "「天」在第12、34字出现2次",
+                  "positions": [
+                    11,
+                    33
+                  ],
+                  "warning_type": "Duplicate"
+                },
+                {
+                  "character": "外",
+                  "message": "「外」在第13、26字出现2次",
+                  "positions": [
+                    12,
+                    25
+                  ],
+                  "warning_type": "Duplicate"
+                },
+                {
+                  "character": "断",
+                  "message": "「断」在第19、42字出现2次",
+                  "positions": [
+                    18,
+                    41
+                  ],
+                  "warning_type": "Duplicate"
+                },
+                {
+                  "character": "沙",
+                  "message": "「沙」在第23、97字出现2次",
+                  "positions": [
+                    22,
+                    96
+                  ],
+                  "warning_type": "Duplicate"
+                },
+                {
+                  "character": "在",
+                  "message": "「在」在第49、77、88字出现3次",
+                  "positions": [
+                    48,
+                    76,
+                    87
+                  ],
+                  "warning_type": "Duplicate"
+                }
+              ],
+              "hints": [
+                "平仄错误（应平实仄）：位置8「暮」、位置9「霭」、位置18「断」、位置23「渚」、位置30「对」等，共 11 处。",
+                "平仄错误（应仄实平）：位置10「沉」、位置20「斜」、位置21「阳」、位置22「沙」、位置38「危」等，共 13 处。",
+                "押韵错误：韵脚 「回」、「波」 不在目标韵部「第5部_仄」中。调用 rhyme_lookup(category=第5部_仄, book=Cilinzhengyun, limit=20) 查看常用字。",
+                "修改以上 26 处错误后，重新调用 validate_meter 校验，直到零错误。"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "messages": [
+    {
+      "role": "system",
+      "content": "你是一位精通格律的中国古典诗词创作助手。你可以调用部分「方寸」诗词知识工具来辅助创作。\n\n## 关于词谱（你无法查询，需凭自身知识）\n\n你无法调用词谱查询工具（rules_list/examples），需要凭自身对词牌格律的记忆来创作：\n- 每个词牌规定了精确的行数、每行字数、每个字位的平仄类别（平/仄/可平可仄），以及押韵位置\n- 词牌有约800种，龙谱和钦谱共收录2500+变体\n- 词按字数分为：小令（≤58字）、中调（59-90字）、长调（>90字）\n- 词用词林正韵（Cilinzhengyun，19个韵部），诗用平水韵（Pingshuiyun，106个韵部），不可搞混\n- 你需要根据词牌名回忆其格律结构，包括句式、平仄和韵位\n\n## 严格执行以下流程\n\n### 第一步：起草\n凭记忆中的词牌格律起草正文，带标点（韵脚用句号，句用逗号，读用顿号）。正文必须放在 content 中。\n\n### 第二步：立即校验\n起草完成后**立即**调用 validate_meter，参数：\n- poem_text = 正文\n- rule_name = 词牌名（如「念奴娇」，不需要精确到格几）\n- genre = Ci（词）或 Shi（诗）\n- include_punctuation = true（词）\n\n### 第三步：修订循环\n根据 validate_meter 返回的 errors、warnings 和 hints 修改正文：\n- errors 必须修复，参考 hints 中的替换建议\n- warnings（重字警告）尽量避免\n- 每次修改后重新 validate_meter，直到 is_valid=true\n- 系统会提示剩余轮次数，轮次不足时优先输出当前最佳版本\n\n## 可用工具\n- validate_meter：校验格律（核心）\n- char_lookup：查字的声调和韵部\n- rhyme_lookup：查韵部字表（建议 limit=20）\n- rhyme_list：浏览韵部概览\n- dictionary_search：查对仗字、词语联想（建议 limit=10）\n- dictionary_allusion：查典故\n- free_rhyme：韵脚检测\n- search_text：全文检索古诗词\n\n## 重要约束\n\n- 禁止输出古人原作或已有作品，必须原创\n- 正文必须始终出现在 content 中，不要只放在工具参数里\n- 起草时可以用□（方框）作为占位符，提交 validate_meter 时允许，但最终 \\boxed{} 输出中不得包含□\n\n## 输出要求\n\n- 格律校验通过后，立即将诗词正文包裹在 \\boxed{} 中输出，不要继续思考或修改\n- \\boxed{} 内只放诗词正文（带标点），不放任何其他内容\n- 不输出标题、词牌名、注释或创作过程说明"
+    },
+    {
+      "role": "user",
+      "content": "围绕【洞庭】主题，以《解语花》为词牌名填词一首，符合中国古典诗词的格律规范。"
+    },
+    {
+      "annotations": [],
+      "content": null,
+      "refusal": null,
+      "role": "assistant",
+      "tool_calls": [
+        {
+          "function": {
+            "arguments": "{\"poem_text\":\"烟波万顷，秋入苍茫，远树半涵晴霭。雁影低回，正落日、微明沙外。兰桡乍解，向水阔、天长如海。倚危阑，目断君山，几点青螺在。\\n\\n谁把清愁暗买。奈西风又起，吹冷湘带。月浸空明，更照见、渔灯相对。浮生易改，剩梦里、涛声犹在。待明朝，重泛中流，细数波心蟹。\",\"rule_name\":\"解语花\",\"genre\":\"Ci\",\"include_punctuation\":true,\"rhyme_book_name\":\"Cilinzhengyun\"}",
+            "name": "validate_meter"
+          },
+          "id": "call_mED1yKPICeBZmh2zOD2gyBsI",
+          "type": "function"
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_mED1yKPICeBZmh2zOD2gyBsI",
+      "name": "validate_meter",
+      "content": "{\"tool_name\": \"validate_meter\", \"passed\": false, \"issues\": [{\"type\": \"Length\", \"message\": \"字数不匹配 (97字/应98字):\\n  第3句「远树半涵晴霭」应为5字, 实为6字 (+1)\\n  第6句「微明沙外」应为6字, 实为4字 (-2)\\n  第18句「渔灯相对」应为6字, 实为4字 (-2)\\n  第24句「细数波心蟹」应为3字, 实为5字 (+2)\\n  传入句式: [4, 4, 6, 4, 3, 4, 4, 3, 4, 3, 4, 5, 6, 5, 4, 4, 3, 4, 4, 3, 4, 3, 4, 5]\\n  谱面句式: [4, 4, 5, 4, 3, 6, 4, 3, 4, 3, 4, 5, 6, 5, 4, 4, 3, 6, 4, 3, 4, 3, 4, 3]\", \"position\": -1, \"character\": \"\"}], \"metrics\": {\"rhyme_name\": null, \"rhyme_chars\": null, \"rhyme_positions\": null, \"closest_rule\": null, \"tone_error_count\": 0, \"rhyme_error_count\": 0, \"violation_count\": 1, \"checked_chars\": 0}, \"metadata\": {\"warning_count\": 0, \"hints\": [\"共 1 处错误，请逐一修改后重新调用 validate_meter 校验。\"]}}"
+    },
+    {
+      "annotations": [],
+      "content": null,
+      "refusal": null,
+      "role": "assistant",
+      "tool_calls": [
+        {
+          "function": {
+            "arguments": "{\"poem_text\":\"烟波万顷，秋入苍茫，远树涵晴霭。雁影低回，正落日、微明沙渚之外。兰桡乍解，向水阔、天长如海。倚危阑，目断君山，几点青螺在。\\n\\n谁把清愁暗买。奈西风又起，吹冷湘带。月浸空明，更照见、遥汀渔火相对。浮生易改，剩梦里、涛声犹在。待明朝，重泛中流，数蟹。\",\"rule_name\":\"解语花\",\"genre\":\"Ci\",\"include_punctuation\":true,\"rhyme_book_name\":\"Cilinzhengyun\"}",
+            "name": "validate_meter"
+          },
+          "id": "call_H6ly3zQxrcH77ba2L86SeehC",
+          "type": "function"
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_H6ly3zQxrcH77ba2L86SeehC",
+      "name": "validate_meter",
+      "content": "{\"tool_name\": \"validate_meter\", \"passed\": false, \"issues\": [{\"type\": \"Length\", \"message\": \"字数不匹配 (97字/应98字):\\n  第24句「数蟹」应为3字, 实为2字 (-1)\\n  传入句式: [4, 4, 5, 4, 3, 6, 4, 3, 4, 3, 4, 5, 6, 5, 4, 4, 3, 6, 4, 3, 4, 3, 4, 2]\\n  谱面句式: [4, 4, 5, 4, 3, 6, 4, 3, 4, 3, 4, 5, 6, 5, 4, 4, 3, 6, 4, 3, 4, 3, 4, 3]\", \"position\": -1, \"character\": \"\"}], \"metrics\": {\"rhyme_name\": null, \"rhyme_chars\": null, \"rhyme_positions\": null, \"closest_rule\": null, \"tone_error_count\": 0, \"rhyme_error_count\": 0, \"violation_count\": 1, \"checked_chars\": 0}, \"metadata\": {\"warning_count\": 0, \"hints\": [\"共 1 处错误，请逐一修改后重新调用 validate_meter 校验。\"]}}"
+    },
+    {
+      "annotations": [],
+      "content": null,
+      "refusal": null,
+      "role": "assistant",
+      "tool_calls": [
+        {
+          "function": {
+            "arguments": "{\"poem_text\":\"烟波万顷，秋入苍茫，远树涵晴霭。雁影低回，正落日、微明沙渚之外。兰桡乍解，向水阔、天长如海。倚危阑，目断君山，几点青螺在。\\n\\n谁把清愁暗买。奈西风又起，吹冷湘带。月浸空明，更照见、遥汀渔火相对。浮生易改，剩梦里、涛声犹在。待明朝，重泛中流，数沙蟹。\",\"rule_name\":\"解语花\",\"genre\":\"Ci\",\"include_punctuation\":true,\"rhyme_book_name\":\"Cilinzhengyun\"}",
+            "name": "validate_meter"
+          },
+          "id": "call_Ja3ZQ4oV4g6kugS9vmrhGZNb",
+          "type": "function"
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_Ja3ZQ4oV4g6kugS9vmrhGZNb",
+      "name": "validate_meter",
+      "content": "{\"tool_name\": \"validate_meter\", \"passed\": false, \"issues\": [{\"type\": \"Tone\", \"message\": \"应为仄, 实为平\", \"position\": 4, \"character\": \"秋\"}, {\"type\": \"Tone\", \"message\": \"应为平, 实为仄\", \"position\": 8, \"character\": \"远\"}, {\"type\": \"Tone\", \"message\": \"应为平, 实为仄\", \"position\": 9, \"character\": \"树\"}, {\"type\": \"Tone\", \"message\": \"应为仄, 实为平\", \"position\": 10, \"character\": \"涵\"}, {\"type\": \"Tone\", \"message\": \"应为平, 实为仄\", \"position\": 14, \"character\": \"影\"}, {\"type\": \"Tone\", \"message\": \"应为平, 实为仄\", \"position\": 18, \"character\": \"落\"}, {\"type\": \"Tone\", \"message\": \"应为仄, 实为平\", \"position\": 20, \"character\": \"微\"}, {\"type\": \"Tone\", \"message\": \"应为仄, 实为平\", \"position\": 21, \"character\": \"明\"}, {\"type\": \"Tone\", \"message\": \"应为仄, 实为平\", \"position\": 22, \"character\": \"沙\"}, {\"type\": \"Tone\", \"message\": \"应为平, 实为仄\", \"position\": 23, \"character\": \"渚\"}, {\"type\": \"Tone\", \"message\": \"应为平, 实为仄\", \"position\": 30, \"character\": \"向\"}, {\"type\": \"Tone\", \"message\": \"应为平, 实为仄\", \"position\": 31, \"character\": \"水\"}, {\"type\": \"Tone\", \"message\": \"应为平, 实为仄\", \"position\": 37, \"character\": \"倚\"}, {\"type\": \"Tone\", \"message\": \"应为仄, 实为平\", \"position\": 38, \"character\": \"危\"}, {\"type\": \"Tone\", \"message\": \"应为仄, 实为平\", \"position\": 39, \"character\": \"阑\"}, {\"type\": \"Tone\", \"message\": \"应为平, 实为仄\", \"position\": 40, \"character\": \"目\"}, {\"type\": \"Tone\", \"message\": \"应为仄, 实为平\", \"position\": 49, \"character\": \"谁\"}, {\"type\": \"Tone\", \"message\": \"应为平, 实为仄\", \"position\": 65, \"character\": \"浸\"}, {\"type\": \"Tone\", \"message\": \"应为仄, 实为平\", \"position\": 67, \"character\": \"明\"}, {\"type\": \"Tone\", \"message\": \"应为平, 实为仄\", \"position\": 69, \"character\": \"照\"}, {\"type\": \"Tone\", \"message\": \"应为仄, 实为平\", \"position\": 71, \"character\": \"遥\"}, {\"type\": \"Tone\", \"message\": \"应为仄, 实为平\", \"position\": 72, \"character\": \"汀\"}, {\"type\": \"Tone\", \"message\": \"应为仄, 实为平\", \"position\": 73, \"character\": \"渔\"}, {\"type\": \"Tone\", \"message\": \"应为平, 实为仄\", \"position\": 74, \"character\": \"火\"}, {\"type\": \"Tone\", \"message\": \"应为平, 实为仄\", \"position\": 81, \"character\": \"剩\"}, {\"type\": \"Tone\", \"message\": \"应为仄, 实为平\", \"position\": 89, \"character\": \"明\"}, {\"type\": \"Tone\", \"message\": \"应为仄, 实为平\", \"position\": 96, \"character\": \"沙\"}, {\"type\": \"Rhyme\", \"message\": \"出韵\", \"position\": 16, \"character\": \"回\"}, {\"type\": \"Rhyme\", \"message\": \"出韵\", \"position\": 67, \"character\": \"明\"}, {\"type\": \"Rhyme\", \"message\": \"出韵\", \"position\": 76, \"character\": \"对\"}, {\"type\": \"Punctuation\", \"message\": \"标点有误: 第17字「回」后应为句号(。), 实为，\", \"position\": 16, \"character\": \"回\"}, {\"type\": \"Punctuation\", \"message\": \"标点有误: 第20字「日」后应为逗号(，), 实为、\", \"position\": 19, \"character\": \"日\"}, {\"type\": \"Punctuation\", \"message\": \"标点有误: 第30字「解」后应为句号(。), 实为，\", \"position\": 29, \"character\": \"解\"}, {\"type\": \"Punctuation\", \"message\": \"标点有误: 第68字「明」后应为句号(。), 实为，\", \"position\": 67, \"character\": \"明\"}, {\"type\": \"Punctuation\", \"message\": \"标点有误: 第71字「见」后应为逗号(，), 实为、\", \"position\": 70, \"character\": \"见\"}, {\"type\": \"Punctuation\", \"message\": \"标点有误: 第81字「改」后应为句号(。), 实为，\", \"position\": 80, \"character\": \"改\"}, {\"type\": \"Punctuation\", \"message\": \"标点有误: 第91字「朝」后应为顿号(、), 实为，\", \"position\": 90, \"character\": \"朝\"}], \"metrics\": {\"rhyme_name\": \"第5部_仄\", \"rhyme_chars\": [\"霭\", \"回\", \"外\", \"解\", \"海\", \"在\", \"买\", \"带\", \"明\", \"对\", \"改\", \"在\", \"蟹\"], \"rhyme_positions\": [12, 16, 25, 29, 36, 48, 54, 63, 67, 76, 80, 87, 97], \"closest_rule\": {\"char_count\": 98, \"cipai\": \"解语花\", \"genre\": \"Ci\", \"name\": \"解语花_钦谱_格二\"}, \"tone_error_count\": 27, \"rhyme_error_count\": 3, \"violation_count\": 37, \"checked_chars\": 98}, \"metadata\": {\"warning_count\": 3, \"hints\": [\"平仄错误（应平实仄）：位置8「远」、位置9「树」、位置14「影」、位置18「落」、位置23「渚」等，共 13 处。\", \"平仄错误（应仄实平）：位置4「秋」、位置10「涵」、位置20「微」、位置21「明」、位置22「沙」等，共 14 处。\", \"押韵错误：韵脚 「回」、「明」、「对」 不在目标韵部「第5部_仄」中。调用 rhyme_lookup(category=第5部_仄, book=Cilinzhengyun, limit=20) 查看常用字。\", \"修改以上 37 处错误后，重新调用 validate_meter 校验，直到零错误。\"]}}"
+    },
+    {
+      "annotations": [],
+      "content": null,
+      "refusal": null,
+      "role": "assistant",
+      "tool_calls": [
+        {
+          "function": {
+            "arguments": "{\"book\": \"Cilinzhengyun\", \"category\": \"第5部_仄\", \"limit\": 20}",
+            "name": "rhyme_lookup"
+          },
+          "id": "call_k3CQZY6zrQcNwtVjW1Gv0HRQ",
+          "type": "function"
+        },
+        {
+          "function": {
+            "arguments": "{\"book\": \"Cilinzhengyun\", \"char\": \"暮\"}",
+            "name": "char_lookup"
+          },
+          "id": "call_mckWLma6lOx76DKxM31hV6Df",
+          "type": "function"
+        },
+        {
+          "function": {
+            "arguments": "{\"book\": \"Cilinzhengyun\", \"char\": \"冷\"}",
+            "name": "char_lookup"
+          },
+          "id": "call_VyswZJYoSU7GGdjjqwxyLm5F",
+          "type": "function"
+        },
+        {
+          "function": {
+            "arguments": "{\"book\": \"Cilinzhengyun\", \"char\": \"晚\"}",
+            "name": "char_lookup"
+          },
+          "id": "call_MbJZORF8az7P2MJQg94KPcl1",
+          "type": "function"
+        },
+        {
+          "function": {
+            "arguments": "{\"book\": \"Cilinzhengyun\", \"char\": \"远\"}",
+            "name": "char_lookup"
+          },
+          "id": "call_YHF7vhaCjs7tvhPqboWT4L8v",
+          "type": "function"
+        },
+        {
+          "function": {
+            "arguments": "{\"book\": \"Cilinzhengyun\", \"char\": \"渺\"}",
+            "name": "char_lookup"
+          },
+          "id": "call_7keo1bKTvkcFJcpjuq8pVyOY",
+          "type": "function"
+        },
+        {
+          "function": {
+            "arguments": "{\"book\": \"Cilinzhengyun\", \"char\": \"影\"}",
+            "name": "char_lookup"
+          },
+          "id": "call_P9kAJ92UDWPqyCrf34DNQKHt",
+          "type": "function"
+        },
+        {
+          "function": {
+            "arguments": "{\"book\": \"Cilinzhengyun\", \"char\": \"断\"}",
+            "name": "char_lookup"
+          },
+          "id": "call_l6LUYYHKzkQSKiXGCcwiApN1",
+          "type": "function"
+        },
+        {
+          "function": {
+            "arguments": "{\"book\": \"Cilinzhengyun\", \"char\": \"暮\"}",
+            "name": "char_lookup"
+          },
+          "id": "call_oSPGIkHyi4yID4p3xGzY4gpB",
+          "type": "function"
+        },
+        {
+          "function": {
+            "arguments": "{\"book\": \"Cilinzhengyun\", \"char\": \"外\"}",
+            "name": "char_lookup"
+          },
+          "id": "call_2719zY64TKO79G5j4iwts4BU",
+          "type": "function"
+        },
+        {
+          "function": {
+            "arguments": "{\"book\": \"Cilinzhengyun\", \"char\": \"渚\"}",
+            "name": "char_lookup"
+          },
+          "id": "call_WGGIo1MpPO1gQL7aMx5H79EO",
+          "type": "function"
+        },
+        {
+          "function": {
+            "arguments": "{\"book\": \"Cilinzhengyun\", \"char\": \"火\"}",
+            "name": "char_lookup"
+          },
+          "id": "call_BGhZWCvzzDD1mpIQkQ3Rf5In",
+          "type": "function"
+        },
+        {
+          "function": {
+            "arguments": "{\"book\": \"Cilinzhengyun\", \"char\": \"蟹\"}",
+            "name": "char_lookup"
+          },
+          "id": "call_3eaaHPKDrXmx8fXCnwnXAQ48",
+          "type": "function"
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_k3CQZY6zrQcNwtVjW1Gv0HRQ",
+      "name": "rhyme_lookup",
+      "content": "{\"tool_name\": \"rhyme_lookup\", \"passed\": true, \"issues\": [], \"metrics\": {}, \"metadata\": {\"results\": {\"category_name\": \"第5部_仄\", \"characters\": [\"在\", \"大\", \"再\", \"爱\", \"快\", \"带\", \"太\", \"买\", \"外\", \"派\", \"队\", \"卖\", \"届\", \"改\", \"喝\", \"坏\", \"待\", \"倍\", \"海\", \"怪\"], \"relations\": {\"ye_ping\": [\"第5部_平\"]}, \"tone_type\": \"Z\", \"total\": 328}}}"
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_mckWLma6lOx76DKxM31hV6Df",
+      "name": "char_lookup",
+      "content": "{\"tool_name\": \"char_lookup\", \"passed\": true, \"issues\": [], \"metrics\": {}, \"metadata\": {\"results\": {\"char\": \"暮\", \"rhyme_categories\": [{\"name\": \"第4部_仄\", \"tone_type\": \"Z\"}], \"tones\": [\"去\"]}}}"
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_VyswZJYoSU7GGdjjqwxyLm5F",
+      "name": "char_lookup",
+      "content": "{\"tool_name\": \"char_lookup\", \"passed\": true, \"issues\": [], \"metrics\": {}, \"metadata\": {\"results\": {\"char\": \"冷\", \"rhyme_categories\": [{\"name\": \"第11部_仄\", \"tone_type\": \"Z\"}], \"tones\": [\"上\"]}}}"
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_MbJZORF8az7P2MJQg94KPcl1",
+      "name": "char_lookup",
+      "content": "{\"tool_name\": \"char_lookup\", \"passed\": true, \"issues\": [], \"metrics\": {}, \"metadata\": {\"results\": {\"char\": \"晚\", \"rhyme_categories\": [{\"name\": \"第7部_仄\", \"tone_type\": \"Z\"}], \"tones\": [\"上\"]}}}"
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_YHF7vhaCjs7tvhPqboWT4L8v",
+      "name": "char_lookup",
+      "content": "{\"tool_name\": \"char_lookup\", \"passed\": true, \"issues\": [], \"metrics\": {}, \"metadata\": {\"results\": {\"char\": \"远\", \"rhyme_categories\": [{\"name\": \"第7部_仄\", \"tone_type\": \"Z\"}], \"tones\": [\"上\", \"去\"]}}}"
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_7keo1bKTvkcFJcpjuq8pVyOY",
+      "name": "char_lookup",
+      "content": "{\"tool_name\": \"char_lookup\", \"passed\": true, \"issues\": [], \"metrics\": {}, \"metadata\": {\"results\": {\"char\": \"渺\", \"rhyme_categories\": [{\"name\": \"第8部_仄\", \"tone_type\": \"Z\"}], \"tones\": [\"上\"]}}}"
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_P9kAJ92UDWPqyCrf34DNQKHt",
+      "name": "char_lookup",
+      "content": "{\"tool_name\": \"char_lookup\", \"passed\": true, \"issues\": [], \"metrics\": {}, \"metadata\": {\"results\": {\"char\": \"影\", \"rhyme_categories\": [{\"name\": \"第11部_仄\", \"tone_type\": \"Z\"}], \"tones\": [\"上\"]}}}"
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_l6LUYYHKzkQSKiXGCcwiApN1",
+      "name": "char_lookup",
+      "content": "{\"tool_name\": \"char_lookup\", \"passed\": true, \"issues\": [], \"metrics\": {}, \"metadata\": {\"results\": {\"char\": \"断\", \"rhyme_categories\": [{\"name\": \"第7部_仄\", \"tone_type\": \"Z\"}], \"tones\": [\"上\", \"去\"]}}}"
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_oSPGIkHyi4yID4p3xGzY4gpB",
+      "name": "char_lookup",
+      "content": "{\"tool_name\": \"char_lookup\", \"passed\": true, \"issues\": [], \"metrics\": {}, \"metadata\": {\"results\": {\"char\": \"暮\", \"rhyme_categories\": [{\"name\": \"第4部_仄\", \"tone_type\": \"Z\"}], \"tones\": [\"去\"]}}}"
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_2719zY64TKO79G5j4iwts4BU",
+      "name": "char_lookup",
+      "content": "{\"tool_name\": \"char_lookup\", \"passed\": true, \"issues\": [], \"metrics\": {}, \"metadata\": {\"results\": {\"char\": \"外\", \"rhyme_categories\": [{\"name\": \"第3部_仄\", \"tone_type\": \"Z\"}, {\"name\": \"第5部_仄\", \"tone_type\": \"Z\"}], \"tones\": [\"去\"]}}}"
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_WGGIo1MpPO1gQL7aMx5H79EO",
+      "name": "char_lookup",
+      "content": "{\"tool_name\": \"char_lookup\", \"passed\": true, \"issues\": [], \"metrics\": {}, \"metadata\": {\"results\": {\"char\": \"渚\", \"rhyme_categories\": [{\"name\": \"第4部_仄\", \"tone_type\": \"Z\"}], \"tones\": [\"上\"]}}}"
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_BGhZWCvzzDD1mpIQkQ3Rf5In",
+      "name": "char_lookup",
+      "content": "{\"tool_name\": \"char_lookup\", \"passed\": true, \"issues\": [], \"metrics\": {}, \"metadata\": {\"results\": {\"char\": \"火\", \"rhyme_categories\": [{\"name\": \"第9部_仄\", \"tone_type\": \"Z\"}], \"tones\": [\"上\"]}}}"
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_3eaaHPKDrXmx8fXCnwnXAQ48",
+      "name": "char_lookup",
+      "content": "{\"tool_name\": \"char_lookup\", \"passed\": true, \"issues\": [], \"metrics\": {}, \"metadata\": {\"results\": {\"char\": \"蟹\", \"rhyme_categories\": [{\"name\": \"第5部_仄\", \"tone_type\": \"Z\"}], \"tones\": [\"上\"]}}}"
+    },
+    {
+      "annotations": [],
+      "content": null,
+      "refusal": null,
+      "role": "assistant",
+      "tool_calls": [
+        {
+          "function": {
+            "arguments": "{\"poem_text\":\"烟波万顷，冷入苍茫，暮霭沉天外。雁字低回。正断岸，斜阳沙渚之外。兰桡乍解。对水阔、天长如海。倚危樯，望断君山，几点青螺在。\\n\\n谁把清愁暗买。奈西风又起，吹冷湘带。月印空波。更照见，寒汀渔艇仍在。浮生易改。剩梦里、涛声犹在。待明朝、重泛中流，数沙蟹。\",\"rule_name\":\"解语花\",\"genre\":\"Ci\",\"include_punctuation\":true,\"rhyme_book_name\":\"Cilinzhengyun\"}",
+            "name": "validate_meter"
+          },
+          "id": "call_p3r5DIXq3KCB1OviiJReS87q",
+          "type": "function"
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_p3r5DIXq3KCB1OviiJReS87q",
+      "name": "validate_meter",
+      "content": "{\"tool_name\": \"validate_meter\", \"passed\": false, \"issues\": [{\"type\": \"Tone\", \"message\": \"应为平, 实为仄\", \"position\": 8, \"character\": \"暮\"}, {\"type\": \"Tone\", \"message\": \"应为平, 实为仄\", \"position\": 9, \"character\": \"霭\"}, {\"type\": \"Tone\", \"message\": \"应为仄, 实为平\", \"position\": 10, \"character\": \"沉\"}, {\"type\": \"Tone\", \"message\": \"应为平, 实为仄\", \"position\": 18, \"character\": \"断\"}, {\"type\": \"Tone\", \"message\": \"应为仄, 实为平\", \"position\": 20, \"character\": \"斜\"}, {\"type\": \"Tone\", \"message\": \"应为仄, 实为平\", \"position\": 21, \"character\": \"阳\"}, {\"type\": \"Tone\", \"message\": \"应为仄, 实为平\", \"position\": 22, \"character\": \"沙\"}, {\"type\": \"Tone\", \"message\": \"应为平, 实为仄\", \"position\": 23, \"character\": \"渚\"}, {\"type\": \"Tone\", \"message\": \"应为平, 实为仄\", \"position\": 30, \"character\": \"对\"}, {\"type\": \"Tone\", \"message\": \"应为平, 实为仄\", \"position\": 31, \"character\": \"水\"}, {\"type\": \"Tone\", \"message\": \"应为平, 实为仄\", \"position\": 37, \"character\": \"倚\"}, {\"type\": \"Tone\", \"message\": \"应为仄, 实为平\", \"position\": 38, \"character\": \"危\"}, {\"type\": \"Tone\", \"message\": \"应为仄, 实为平\", \"position\": 39, \"character\": \"樯\"}, {\"type\": \"Tone\", \"message\": \"应为仄, 实为平\", \"position\": 49, \"character\": \"谁\"}, {\"type\": \"Tone\", \"message\": \"应为平, 实为仄\", \"position\": 65, \"character\": \"印\"}, {\"type\": \"Tone\", \"message\": \"应为仄, 实为平\", \"position\": 67, \"character\": \"波\"}, {\"type\": \"Tone\", \"message\": \"应为平, 实为仄\", \"position\": 69, \"character\": \"照\"}, {\"type\": \"Tone\", \"message\": \"应为仄, 实为平\", \"position\": 71, \"character\": \"寒\"}, {\"type\": \"Tone\", \"message\": \"应为仄, 实为平\", \"position\": 72, \"character\": \"汀\"}, {\"type\": \"Tone\", \"message\": \"应为仄, 实为平\", \"position\": 73, \"character\": \"渔\"}, {\"type\": \"Tone\", \"message\": \"应为平, 实为仄\", \"position\": 74, \"character\": \"艇\"}, {\"type\": \"Tone\", \"message\": \"应为平, 实为仄\", \"position\": 81, \"character\": \"剩\"}, {\"type\": \"Tone\", \"message\": \"应为仄, 实为平\", \"position\": 89, \"character\": \"明\"}, {\"type\": \"Tone\", \"message\": \"应为仄, 实为平\", \"position\": 96, \"character\": \"沙\"}, {\"type\": \"Rhyme\", \"message\": \"出韵\", \"position\": 16, \"character\": \"回\"}, {\"type\": \"Rhyme\", \"message\": \"出韵\", \"position\": 67, \"character\": \"波\"}], \"metrics\": {\"rhyme_name\": \"第5部_仄\", \"rhyme_chars\": [\"外\", \"回\", \"外\", \"解\", \"海\", \"在\", \"买\", \"带\", \"波\", \"在\", \"改\", \"在\", \"蟹\"], \"rhyme_positions\": [12, 16, 25, 29, 36, 48, 54, 63, 67, 76, 80, 87, 97], \"closest_rule\": {\"char_count\": 98, \"cipai\": \"解语花\", \"genre\": \"Ci\", \"name\": \"解语花_钦谱_格二\"}, \"tone_error_count\": 24, \"rhyme_error_count\": 2, \"violation_count\": 26, \"checked_chars\": 98}, \"metadata\": {\"warning_count\": 7, \"hints\": [\"平仄错误（应平实仄）：位置8「暮」、位置9「霭」、位置18「断」、位置23「渚」、位置30「对」等，共 11 处。\", \"平仄错误（应仄实平）：位置10「沉」、位置20「斜」、位置21「阳」、位置22「沙」、位置38「危」等，共 13 处。\", \"押韵错误：韵脚 「回」、「波」 不在目标韵部「第5部_仄」中。调用 rhyme_lookup(category=第5部_仄, book=Cilinzhengyun, limit=20) 查看常用字。\", \"修改以上 26 处错误后，重新调用 validate_meter 校验，直到零错误。\"]}}"
+    }
+  ],
+  "raw_text": "\\boxed{烟波万顷，冷入苍茫，暮霭沉天外。雁字低回。正断岸，斜阳沙渚之外。兰桡乍解。对水阔、天长如海。倚危樯，望断君山，几点青螺在。\n\n谁把清愁暗买。奈西风又起，吹冷湘带。月印空波。更照见，寒汀渔艇仍在。浮生易改。剩梦里、涛声犹在。待明朝、重泛中流，数沙蟹。}",
+  "final_validation": null
+}

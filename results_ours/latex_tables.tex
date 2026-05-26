@@ -1,0 +1,105 @@
+\begin{table*}[t]
+\centering
+\setlength{\tabcolsep}{3pt}
+\scriptsize
+\caption{Complete experimental results. N = valid poems evaluated; ZER = zero-error rate (\%); CTA = character-level tonal accuracy (\%); Err = mean error count; Fatal = structural failure rate (\%); Warn = mean warnings; Rounds = mean tool-calling rounds; Calls = mean tool calls; Tok = mean tokens (k); Time = mean seconds per poem.}
+\label{tab:full-overall}
+\begin{tabular}{l|ccccc|ccccc|ccccc|ccccc|cc|cc}
+\toprule
+& \multicolumn{5}{c|}{N} & \multicolumn{5}{c|}{ZER (\%)} & \multicolumn{5}{c|}{CTA (\%)} & \multicolumn{5}{c|}{Avg Err} & \multicolumn{2}{c|}{Rounds (A)} & \multicolumn{2}{c}{Cost (A)} \\
+\textbf{Model} & A & B & C & D1 & D2 & A & B & C & D1 & D2 & A & B & C & D1 & D2 & A & B & C & D1 & D2 & Rnd & Calls & Tok(k) & Time \\
+\midrule
+GLM-5.1 & 144 & 141 & 144 & — & — & 100 & 13 & 12 & — & — & 100.0 & 98.9 & 98.5 & — & — & 0.0 & 4.0 & 4.3 & — & — & 8.7 & 16 & 27.2 & 395 \\
+DeepSeek-V3.2-reasoner & 144 & 115 & 144 & — & — & 99 & 23 & 20 & — & — & 100.0 & 98.9 & 98.4 & — & — & 0.0 & 2.3 & 3.4 & — & — & 8.2 & 14 & 17.5 & 103 \\
+Qwen & 78 & 144 & 144 & — & — & 97 & 0 & 3 & — & — & 100.0 & — & 97.8 & — & — & 0.0 & 1.0 & 2.7 & — & — & 4.4 & 4 & 14.5 & 194 \\
+claude-opus-4-6 & 144 & 146 & 144 & — & — & 97 & 19 & 15 & — & — & 100.0 & 98.4 & 98.3 & — & — & 0.2 & 1.2 & 3.0 & — & — & 8.5 & 16 & 15.7 & 116 \\
+DeepSeek-V4-Pro & 144 & 144 & 144 & 144 & 143 & 97 & 23 & 23 & 85 & 31 & 100.0 & 99.0 & 99.0 & 99.9 & 98.5 & 0.1 & 1.8 & 2.0 & 1.2 & 1.4 & 9.1 & 17 & 11.9 & 62 \\
+gemini-3.1-pro-preview & 142 & 141 & 141 & — & — & 94 & 21 & 26 & — & — & 100.0 & 98.7 & 99.1 & — & — & 0.1 & 3.2 & 1.9 & — & — & 7.3 & 8 & 4.9 & 161 \\
+gpt-5.4 & 144 & 144 & 144 & 144 & 143 & 88 & 15 & 10 & 36 & 14 & 99.8 & 98.8 & 98.7 & 99.9 & 98.0 & 0.5 & 2.2 & 4.0 & 9.4 & 4.2 & 4.8 & 6 & 6.6 & 33 \\
+MiniMax-M2.5 & 75 & 142 & 142 & — & — & 36 & 3 & 2 & — & — & 99.9 & 98.7 & 96.5 & — & — & 4.7 & 1.8 & 2.6 & — & — & 19.6 & 20 & 1.2 & 183 \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\small
+\caption{Error type breakdown and warning analysis. Fatal = poems with structural mismatch or $>$10 content errors (\%); Tone/Rhyme = total error counts; Warn = mean warnings per poem (2-gram + rhyme duplicate for cí, default for shī).}
+\label{tab:error-breakdown}
+\begin{tabular}{l|rrrrr|rrrrr|rrrrr}
+\toprule
+& \multicolumn{5}{c|}{Fatal (\%)} & \multicolumn{5}{c|}{Total Tone Errors} & \multicolumn{5}{c}{Mean Warnings} \\
+\textbf{Model} & A & B & C & D1 & D2 & A & B & C & D1 & D2 & A & B & C & D1 & D2 \\
+\midrule
+GLM-5.1 & 0 & 77 & 70 & — & — & 0 & 398 & 452 & — & — & 0.13 & 0.10 & 0.22 & — & — \\
+DeepSeek-V3.2-reasoner & 1 & 51 & 49 & — & — & 0 & 189 & 379 & — & — & 1.26 & 0.40 & 0.38 & — & — \\
+Qwen & 1 & 100 & 86 & — & — & 0 & 0 & 240 & — & — & 0.58 & 0.00 & 0.10 & — & — \\
+claude-opus-4-6 & 3 & 67 & 64 & — & — & 27 & 76 & 299 & — & — & 0.33 & 0.02 & 0.18 & — & — \\
+DeepSeek-V4-Pro & 3 & 53 & 54 & 12 & 29 & 5 & 164 & 177 & 157 & 156 & 0.90 & 0.20 & 0.24 & 0.51 & 0.48 \\
+gemini-3.1-pro-preview & 5 & 55 & 64 & — & — & 2 & 330 & 158 & — & — & 0.08 & 0.03 & 0.11 & — & — \\
+gpt-5.4 & 7 & 65 & 70 & 62 & 46 & 52 & 198 & 430 & 1116 & 441 & 0.83 & 0.08 & 0.07 & 0.32 & 0.42 \\
+MiniMax-M2.5 & 63 & 92 & 86 & — & — & 269 & 104 & 219 & — & — & 0.55 & 0.04 & 0.20 & — & — \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\small
+\caption{ZER (\%) by form category. Condition A (full tool access) vs Condition C (baseline). $\Delta$ columns show the improvement from tool augmentation.}
+\label{tab:form-category}
+\begin{tabular}{l|rrrrrr|rrrrrr|rrrrrr}
+\toprule
+& \multicolumn{6}{c|}{Condition A} & \multicolumn{6}{c|}{Condition C} & \multicolumn{6}{c}{$\Delta$ (A$-$C, pp)} \\
+\textbf{Model} & Pop.CQ & Rare CQ & Pop.Short & Rare Short & Reg.Verse & Special & Pop.CQ & Rare CQ & Pop.Short & Rare Short & Reg.Verse & Special & Pop.CQ & Rare CQ & Pop.Short & Rare Short & Reg.Verse & Special \\
+\midrule
+GLM-5.1 & 100 & 100 & 100 & 100 & 100 & 100 & 2 & 0 & 80 & 0 & 44 & 12 & +98 & +100 & +20 & +100 & +56 & +88 \\
+DeepSeek-V3.2-reasoner & 100 & 98 & 100 & 100 & 100 & 100 & 28 & 0 & 40 & 0 & 62 & 12 & +72 & +98 & +60 & +100 & +38 & +88 \\
+Qwen & 97 & 90 & 100 & 100 & 100 & 100 & 0 & 0 & 20 & 0 & 12 & 0 & +97 & +90 & +80 & +100 & +88 & +100 \\
+claude-opus-4-6 & 98 & 94 & 100 & 100 & 100 & 100 & 8 & 0 & 60 & 0 & 62 & 25 & +90 & +94 & +40 & +100 & +38 & +75 \\
+DeepSeek-V4-Pro & 100 & 92 & 90 & 100 & 100 & 100 & 30 & 2 & 50 & 0 & 56 & 38 & +70 & +90 & +40 & +100 & +44 & +62 \\
+gemini-3.1-pro-preview & 94 & 92 & 100 & 100 & 100 & 86 & 22 & 0 & 80 & 11 & 81 & 43 & +72 & +92 & +20 & +89 & +19 & +43 \\
+gpt-5.4 & 90 & 84 & 90 & 80 & 100 & 88 & 12 & 0 & 50 & 0 & 12 & 25 & +78 & +84 & +40 & +80 & +88 & +62 \\
+MiniMax-M2.5 & 20 & 21 & 80 & 0 & 92 & 25 & 2 & 0 & 11 & 0 & 0 & 12 & +18 & +21 & +69 & +0 & +92 & +12 \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\small
+\caption{Ablation study. D1 = template lookup removed (rules\_list, examples); D2 = prosody validation removed (validate\_meter). D1 form-category breakdown reveals which models rely on memorized vs.\ queried templates.}
+\label{tab:ablation}
+\begin{tabular}{l|rrr|rr|rrrrrr}
+\toprule
+& \multicolumn{3}{c|}{Overall ZER (\%)} & \multicolumn{2}{c|}{$\Delta$ (pp)} & \multicolumn{6}{c}{D1 ZER by Form Category (\%)} \\
+\textbf{Model} & A & D1 & D2 & D1$-$A & D2$-$A & Pop.CQ & Rare CQ & Pop.Short & Rare Short & Reg.Verse & Special \\
+\midrule
+DeepSeek-V4-Pro & 97 & 85 & 31 & -11 & -66 & 96 & 74 & 80 & 100 & 88 & 75 \\
+gpt-5.4 & 88 & 36 & 14 & -52 & -74 & 54 & 0 & 90 & 0 & 94 & 12 \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\setlength{\tabcolsep}{3pt}
+\scriptsize
+\caption{Literary quality (3-judge ranking average, capped at 100) and originality. Quality dimensions: Flu = fluency, Coh = coherence, Poe = poetic quality. Orig = originality score (1 $-$ mean bigram Jaccard to classical corpus, higher = more original). Plag = plagiarism rate (\%, exact match to pre-modern work on sentences $>$4 chars).}
+\label{tab:quality-originality}
+\begin{tabular}{l|rrrr|rrrr|rrrr|rrrr|rrrr|rr|rr}
+\toprule
+& \multicolumn{4}{c|}{Quality (A)} & \multicolumn{4}{c|}{Quality (B)} & \multicolumn{4}{c|}{Quality (C)} & \multicolumn{4}{c|}{Quality (D1)} & \multicolumn{4}{c|}{Quality (D2)} & \multicolumn{2}{c|}{Orig (A)} & \multicolumn{2}{c}{Orig (C)} \\
+\textbf{Model} & Flu & Coh & Poe & Avg & Flu & Coh & Poe & Avg & Flu & Coh & Poe & Avg & Flu & Coh & Poe & Avg & Flu & Coh & Poe & Avg & Scr & Pl\% & Scr & Pl\% \\
+\midrule
+GLM-5.1 & 63.1 & 64.5 & 61.4 & 63.0 & 63.4 & 62.2 & 62.5 & 62.7 & 71.1 & 69.4 & 70.3 & 70.3 & — & — & — & — & — & — & — & — & 0.732 & 0.7 & 0.715 & 8.3 \\
+DeepSeek-V3.2-reasoner & 68.3 & 68.3 & 68.0 & 68.2 & 70.1 & 67.4 & 68.8 & 68.8 & 75.8 & 74.6 & 75.7 & 75.4 & — & — & — & — & — & — & — & — & 0.685 & 5.6 & 0.692 & 6.2 \\
+Qwen & 61.8 & 61.8 & 60.6 & 61.4 & — & — & — & — & — & — & — & — & — & — & — & — & — & — & — & — & 0.686 & 5.1 & 0.657 & 12.7 \\
+claude-opus-4-6 & 73.2 & 73.3 & 73.8 & 73.4 & 71.2 & 70.6 & 70.4 & 70.7 & 82.0 & 82.4 & 81.1 & 81.8 & — & — & — & — & — & — & — & — & 0.684 & 9.3 & 0.670 & 7.6 \\
+DeepSeek-V4-Pro & 73.7 & 73.4 & 72.0 & 73.0 & 80.4 & 78.3 & 81.0 & 79.9 & 80.6 & 76.1 & 80.8 & 79.2 & 78.1 & 76.9 & 76.5 & 77.2 & 71.9 & 71.9 & 71.1 & 71.6 & 0.677 & 7.9 & 0.683 & 7.0 \\
+gemini-3.1-pro-preview & 71.1 & 72.1 & 72.3 & 71.8 & 78.8 & 77.1 & 77.8 & 77.9 & 75.3 & 74.0 & 73.9 & 74.4 & — & — & — & — & — & — & — & — & 0.687 & 9.2 & 0.680 & 7.8 \\
+gpt-5.4 & 85.5 & 83.4 & 87.5 & 85.5 & 89.5 & 87.1 & 87.9 & 88.2 & 91.3 & 89.7 & 90.4 & 90.5 & 78.7 & 77.4 & 81.6 & 79.3 & 82.0 & 81.4 & 80.1 & 81.2 & 0.729 & 2.8 & 0.712 & 2.8 \\
+MiniMax-M2.5 & 42.2 & 42.1 & 43.4 & 42.6 & 45.2 & 44.4 & 46.8 & 45.5 & 49.6 & 49.7 & 50.3 & 49.9 & — & — & — & — & — & — & — & — & 0.697 & 9.0 & 0.690 & 9.4 \\
+\bottomrule
+\end{tabular}
+\end{table*}

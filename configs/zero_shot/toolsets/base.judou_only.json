@@ -1,0 +1,43 @@
+{
+  "include": [
+    "get_rule",
+    "check_judou"
+  ],
+  "exclude": [
+    "prosody",
+    "check_prosody",
+    "rule_lookup",
+    "phrase_suggest",
+    "repetition",
+    "imagery",
+    "char_lookup",
+    "rhyme_lookup",
+    "rhyme_list",
+    "allusion_search"
+  ],
+  "limits": {
+    "max_tool_rounds": 12,
+    "max_tool_calls_per_tool": 12
+  },
+  "final_validation": {
+    "tool_names": [
+      "check_judou"
+    ]
+  },
+  "tools": {
+    "get_rule": {
+      "description": "Get the cipai structure before drafting. The text argument must contain only the cipai or rule name, e.g. \"疏影\". Never include the poem title, prompt, draft, explanation, or theme.",
+      "metadata_defaults": {
+        "genre": "Ci",
+        "ensure_longpu": true
+      }
+    },
+    "check_judou": {
+      "description": "Check only the poem body's character count and judou break positions. The text argument must be only the ci body with punctuation/newlines. Do not include title, cipai label, prompt, notes, or explanation.",
+      "metadata_defaults": {
+        "genre": "Ci",
+        "ensure_longpu": true
+      }
+    }
+  }
+}
