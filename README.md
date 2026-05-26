@@ -2,16 +2,16 @@
 
 ## 1. Models
 
-| Display Name | model_id | Provider | Endpoint | Context | Temperature | max_tokens | timeout | API Key |
-|---|---|---|---|---|---|---|---|---|
-| claude-opus-4-6 | claude-opus-4-6 | Anthropic (via gateway) | platform-api.xaminim.com | 1M | 0.7 | 4096 | 120s | single |
-| gpt-5.4 | gpt-5.4 | OpenAI (via gateway) | platform-api.xaminim.com | 1M | 0.7 | 4096 | 120s | single |
-| gemini-3.1-pro-preview | gemini-3.1-pro-preview | Google (via gateway) | platform-api.xaminim.com | 2M | 0.7 | 4096 | 120s | single |
-| MiniMax-M2.5 | MiniMax-M2.5 | MiniMax (via gateway) | platform-api.xaminim.com | — | 0.7 | 4096 | 120s | single |
-| DeepSeek-V4-Pro | deepseek-chat | DeepSeek (official) | api.deepseek.com | 1M | 0.7 | 4096 | 120s | single |
-| GLM-5.1 | glm | Zhipu (via SJTU) | models.sjtu.edu.cn | 128k | 0.7 | 4096 | 300s | 3-key rotation |
-| Qwen3.5 | qwen | Alibaba (via SJTU) | models.sjtu.edu.cn | 256k | 0.7 | 4096 | 300s | 3-key rotation |
-| DeepSeek-V3.2-reasoner | deepseek-reasoner | DeepSeek (via SJTU) | models.sjtu.edu.cn | 32k | 0.7 | 4096 | 300s | 3-key rotation |
+| Display Name | model_id | Provider | Context | Temperature | max_tokens | timeout | API Key |
+|---|---|---|---|---|---|---|---|
+| claude-opus-4-6 | claude-opus-4-6 | Anthropic | 1M | 0.7 | 4096 | 120s | single |
+| gpt-5.4 | gpt-5.4 | OpenAI | 1M | 0.7 | 4096 | 120s | single |
+| gemini-3.1-pro-preview | gemini-3.1-pro-preview | Google | 2M | 0.7 | 4096 | 120s | single |
+| MiniMax-M2.5 | MiniMax-M2.5 | MiniMax | — | 0.7 | 4096 | 120s | single |
+| DeepSeek-V4-Pro | deepseek-chat | DeepSeek | 1M | 0.7 | 4096 | 120s | single |
+| GLM-5.1 | glm | Zhipu | 128k | 0.7 | 4096 | 300s | 3-key rotation |
+| Qwen3.5 | qwen | Alibaba | 256k | 0.7 | 4096 | 300s | 3-key rotation |
+| DeepSeek-V3.2-reasoner | deepseek-reasoner | DeepSeek | 32k | 0.7 | 4096 | 300s | 3-key rotation |
 
 ### LLM Call Parameters (shared)
 - Temperature: **0.7** (all models, all conditions)
